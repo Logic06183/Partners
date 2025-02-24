@@ -118,7 +118,9 @@ map <- ggplot() +
   geom_sf(data = partners_sf,
           aes(size = total_projects,
               color = leadership),
-          alpha = 0.9) +
+          alpha = 0.85,
+          stroke = 1.2,
+          shape = 21) +
   
   # Customize colors for points
   scale_color_manual(
@@ -165,6 +167,8 @@ map <- ggplot() +
     plot.background = element_rect(fill = "white", color = "gray80", size = 0.3),
     panel.background = element_rect(fill = alpha("#F0F8FF", 0.2), color = NA),
     legend.key.size = unit(1.2, "cm"),
+    legend.spacing.y = unit(0.2, "cm"),
+    legend.box.spacing = unit(0.4, "cm"),
     plot.margin = margin(20, 20, 20, 20)
   ) +
   
@@ -220,7 +224,7 @@ cat("\nTotal African institutions:", nrow(df_africa))
 cat("\n\nParticipation by Project:")
 project_counts <- data.frame(
   CHAMNHA = sum(df_africa$CHAMNHA),
-  "HE2AT" = sum(df_africa$HEAT),  # Simple text version
+  "HE²AT" = sum(df_africa$HEAT),
   ENBEL = sum(df_africa$ENBEL),
   GHAP = sum(df_africa$GHAP),
   HAPI = sum(df_africa$HAPI),
