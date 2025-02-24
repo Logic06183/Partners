@@ -79,7 +79,8 @@ if(length(missing_countries) > 0) {
 africa <- ne_countries(scale = "medium", continent = "Africa", returnclass = "sf")
 
 # Read the cleaned data
-df <- read_csv("C:/Users/CraigParker/OneDrive - Wits Health Consortium/PHR PC/Desktop/Partners/partners_cleaned.csv")
+df <- read_csv("C:/Users/CraigParker/OneDrive - Wits Health Consortium/PHR PC/Desktop/Partners/partners_cleaned.csv") %>%
+  mutate(Partners = as.character(Partners))  # Convert Partners to character
 
 # Filter for African institutions
 african_countries <- africa$name
@@ -333,16 +334,69 @@ write.csv(leadership_summary,
 
 cat("\nDetailed leadership summary has been saved to 'african_partners_leadership_summary.csv'\n")
 
+# Define project columns for network creation
+project_cols <- c("CHAMNHA", "HEAT", "ENBEL", "GHAP", "HAPI", "BioHEAT", "HIGH_Horizons")
+
+# Create edges based on project co-participation
+edges_df <- data.frame()
+institutions <- unique(df_africa$Institution)
+n <- length(institutions)
+
+for(i in 1:(n-1)) {
+  for(j in (i+1):n) {
+    inst1 <- institutions[i]
+    inst2 <- institutions[j]
+    
+    # Get rows for both institutions
+    row1 <- df_africa[df_africa$Institution == inst1, ]
+    row2 <- df_africa[df_africa$Institution == inst2, ]
+    
+    # Count shared projects
+    shared <- sum(
+      sapply(project_cols, function(col) {
+        row1[[col]] == 1 & row2[[col]] == 1
+      })
+    )
+    
+    if(shared > 0) {
+      edges_df <- rbind(edges_df, data.frame(
+        from = inst1,
+        to = inst2,
+        weight = shared
+      ))
+    }
+  }
+}
+
+# Create nodes data frame
+nodes_df <- data.frame(
+  name = institutions,
+  leadership = case_when(
+    df_africa$Gueladio_Cisse == 1 & df_africa$Matthew_Chersich == 1 ~ "Joint Projects",
+    df_africa$Gueladio_Cisse == 1 ~ "Gueladio Cisse",
+    df_africa$Matthew_Chersich == 1 ~ "Matthew Chersich",
+    df_africa$Pilot_Projects == 1 ~ "Pilot Projects",
+    TRUE ~ "Other"
+  )[match(institutions, df_africa$Institution)]
+)
+
+# Create the graph object
+graph <- tidygraph::tbl_graph(nodes = nodes_df, edges = edges_df)
+
+# Create the layout
+graph_layout <- create_layout(graph, 'fr')
+
 # Create the network plot
-ggraph(graph_layout, layout = 'fr') +
-  geom_edge_link(aes(width = weight), 
+network_plot <- ggraph(graph_layout) +
+  geom_edge_link(aes(width = weight),
                  alpha = 0.2, 
                  color = "gray50") +
   geom_node_point(aes(color = leadership),
                   size = 10) +
   geom_node_text(aes(label = name), 
                  repel = TRUE, 
-                 size = 3) +
+                 size = 3,
+                 max.overlaps = 100) +
   scale_edge_width(range = c(0.5, 2)) +
   scale_color_manual(values = c(
     'Gueladio Cisse' = '#2C85B2',    # Blue
@@ -358,4 +412,12 @@ ggraph(graph_layout, layout = 'fr') +
     legend.text = element_text(size = 10)
   ) +
   labs(color = "Project Leadership",
-       edge_width = "Partnership Strength") 
+       edge_width = "Number of Shared Projects")
+
+# Print and save the plot
+print(network_plot)
+ggsave("african_partnership_network.pdf", 
+       plot = network_plot,
+       width = 16, 
+       height = 16, 
+       dpi = 300) 
