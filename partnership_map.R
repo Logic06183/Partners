@@ -24,7 +24,8 @@ required_packages <- c(
   "ggrepel",      # for text label positioning
   "ggthemes",     # for scientific themes
   "scales",       # for better scale formatting
-  "ggraph"        # for network visualization
+  "ggraph",       # for network visualization
+  "ggnewscale"    # for multiple fill scales
 )
 
 # Install and load each package
@@ -105,13 +106,6 @@ df_africa <- df_africa %>%
 partners_sf <- df_africa %>%
   st_as_sf(coords = c("lon", "lat"), crs = 4326)
 
-# Define updated color scheme for leadership
-leadership_colors <- c(
-  'Gueladio Cisse' = '#2C85B2',      # More muted blue
-  'Matthew Chersich' = '#B23A48',     # More muted red
-  'Joint Projects' = '#7E4F88'        # More muted purple
-)
-
 # Create a vector of countries with partners
 partner_countries <- unique(df$Country)
 
@@ -119,71 +113,27 @@ partner_countries <- unique(df$Country)
 africa <- africa %>%
   mutate(has_partners = name %in% heat_countries)
 
+# Define leadership colors
+leadership_colors <- c(
+  'Gueladio Cisse' = '#2C85B2',    # Blue
+  'Matthew Chersich' = '#B23A48',   # Red
+  'Joint Projects' = '#7E4F88'      # Purple
+)
+
 # Create the map
 map <- ggplot() +
   # Base Africa map
   geom_sf(data = africa,
           aes(fill = has_partners),
-          color = "gray40",           # Darker boundary lines
+          color = "gray40",           
           size = 0.3) +
   
-  # Add graticules (latitude/longitude lines)
+  # Add graticules
   geom_sf(data = st_graticule(africa, lat = seq(-40, 40, 10), lon = seq(-20, 50, 10)),
           color = alpha("gray60", 0.3),
           size = 0.1) +
   
-  # Add partner points
-  geom_sf(data = partners_sf,
-          aes(size = total_projects,
-              fill = leadership,
-              color = leadership),
-          alpha = 0.85,
-          stroke = 0.5,
-          shape = 21) +
-  
-  # Add labels for all institutions
-  geom_text_repel(
-    data = partners_sf,  # Label all institutions
-    aes(label = Institution,
-        geometry = geometry),
-    stat = "sf_coordinates",
-    size = 2.8,
-    fontface = "bold",
-    box.padding = 0.8,
-    point.padding = 0.5,
-    force = 10,
-    max.overlaps = 50,  # Increase to show all labels
-    color = "black",
-    bg.color = "white",
-    bg.r = 0.15,
-    min.segment.length = 0.3,
-    segment.color = "gray50",
-    segment.size = 0.2,
-    nudge_x = 1,  # More horizontal spacing
-    nudge_y = 1,  # More vertical spacing
-    direction = "both"  # Allow both horizontal and vertical separation
-  ) +
-  
-  # Customize colors for points
-  scale_fill_manual(
-    values = c(
-      leadership_colors,
-      'Pilot Projects' = '#9B59B6'
-    ),
-    name = "Project Leadership",
-    breaks = c('Gueladio Cisse', 'Matthew Chersich', 'Joint Projects')
-  ) +
-  
-  scale_color_manual(
-    values = c(
-      leadership_colors,
-      'Pilot Projects' = '#9B59B6'
-    ),
-    name = "Project Leadership",
-    breaks = c('Gueladio Cisse', 'Matthew Chersich', 'Joint Projects')
-  ) +
-  
-  # Customize colors for choropleth
+  # First fill scale for countries
   scale_fill_manual(
     values = c(
       "TRUE" = alpha("#FFD700", 0.4),
@@ -192,6 +142,53 @@ map <- ggplot() +
     name = expression(paste("HE"^2, "AT Center")),
     labels = "Contributing Countries",
     breaks = c("TRUE")
+  ) +
+  
+  # Add new fill scale for points
+  new_scale("fill") +
+  
+  # Add partner points with filled colors
+  geom_sf(data = partners_sf,
+          aes(size = total_projects,
+              fill = leadership),    # This fills the circles based on leadership
+          color = "gray40",         # Dark gray border for all circles
+          alpha = 0.85,
+          stroke = 0.5,
+          shape = 21) +             # Filled circle with border
+  
+  # Add labels for all institutions
+  geom_text_repel(
+    data = partners_sf,
+    aes(label = Institution,
+        geometry = geometry),
+    stat = "sf_coordinates",
+    size = 2.8,
+    fontface = "bold",
+    box.padding = 0.8,
+    point.padding = 0.5,
+    force = 10,
+    max.overlaps = 50,
+    color = "black",
+    bg.color = "white",
+    bg.r = 0.15,
+    min.segment.length = 0.3,
+    segment.color = "gray50",
+    segment.size = 0.2,
+    nudge_x = 1,
+    nudge_y = 1,
+    direction = "both"
+  ) +
+  
+  # Second fill scale for leadership points
+  scale_fill_manual(
+    values = leadership_colors,
+    name = "Project Leadership",
+    breaks = c('Gueladio Cisse', 'Matthew Chersich', 'Joint Projects'),
+    guide = guide_legend(override.aes = list(
+      size = 5,
+      alpha = 0.85,
+      shape = 21
+    ))
   ) +
   
   # Customize size scale

@@ -39,7 +39,8 @@ df <- df %>%
       BioHEAT == 1 ~ "BioHEAT",
       HIGH_Horizons == 1 ~ "HIGH Horizons",
       TRUE ~ "Multiple Projects"
-    )
+    ),
+    is_major_partner = total_projects >= 3  # Flag major partners
   )
 
 # Convert to sf object
@@ -81,6 +82,26 @@ world_map <- ggplot() +
           alpha = 0.85,
           stroke = 1.2,
           shape = 21) +  # Filled circles with border
+  
+  # Add labels for major partners
+  geom_text_repel(
+    data = partners_sf %>% filter(is_major_partner),
+    aes(label = Institution,
+        geometry = geometry),
+    stat = "sf_coordinates",
+    size = 3,
+    fontface = "bold",
+    box.padding = 0.8,
+    point.padding = 0.5,
+    force = 10,
+    max.overlaps = 100,
+    color = "black",
+    bg.color = "white",
+    bg.r = 0.15,
+    min.segment.length = 0.3,
+    segment.color = "gray50",
+    segment.size = 0.2
+  ) +
   
   # Customize colors for points
   scale_color_manual(
