@@ -1,18 +1,36 @@
-# Required packages
-if (!require("pacman")) install.packages("pacman")
-pacman::p_load(
-  tidyverse,    # for data manipulation
-  sf,           # for spatial data
-  rnaturalearth,# for country boundaries
-  rnaturalearthdata,
-  ggspatial,    # for north arrow
-  viridis,      # for color palettes
-  showtext,     # for custom fonts
-  RColorBrewer, # for color palettes
-  ggrepel,      # for text label positioning
-  ggthemes,     # for scientific themes
-  scales        # for better scale formatting
+# Set CRAN mirror first
+options(repos = c(CRAN = "https://cloud.r-project.org"))
+
+# Function to install and load a package
+install_and_load <- function(package) {
+  if (!require(package, character.only = TRUE)) {
+    install.packages(package, dependencies = TRUE)
+    if (!require(package, character.only = TRUE)) {
+      stop(paste("Package", package, "failed to install/load"))
+    }
+  }
+}
+
+# Install and load required packages individually
+required_packages <- c(
+  "tidyverse",    # for data manipulation
+  "sf",           # for spatial data
+  "rnaturalearth",# for country boundaries
+  "rnaturalearthdata",
+  "ggspatial",    # for north arrow
+  "viridis",      # for color palettes
+  "showtext",     # for custom fonts
+  "RColorBrewer", # for color palettes
+  "ggrepel",      # for text label positioning
+  "ggthemes",     # for scientific themes
+  "scales",       # for better scale formatting
+  "ggraph"        # for network visualization
 )
+
+# Install and load each package
+for (pkg in required_packages) {
+  install_and_load(pkg)
+}
 
 # Load Google Fonts
 font_add_google("Montserrat", "montserrat")
@@ -72,16 +90,15 @@ df_africa <- df %>%
 df_africa <- df_africa %>%
   mutate(total_projects = CHAMNHA + HEAT + ENBEL + GHAP + HAPI + BioHEAT + HIGH_Horizons)
 
-# Determine leadership category
+# Create leadership categories based on the columns
 df_africa <- df_africa %>%
-  mutate(
-    leadership = case_when(
-      Gueladio_Cisse == 1 & Matthew_Chersich == 1 ~ "Joint Projects",
-      Gueladio_Cisse == 1 ~ "Gueladio Cisse",
-      Matthew_Chersich == 1 ~ "Matthew Chersich",
-      TRUE ~ "Pilot Projects"
-    )
-  )
+  mutate(leadership = case_when(
+    Gueladio_Cisse == 1 & Matthew_Chersich == 1 ~ "Joint Projects",
+    Gueladio_Cisse == 1 ~ "Gueladio Cisse",
+    Matthew_Chersich == 1 ~ "Matthew Chersich",
+    Pilot_Projects == 1 ~ "Pilot Projects",
+    TRUE ~ "Other"
+  ))
 
 # Convert to sf object
 partners_sf <- df_africa %>%
@@ -117,16 +134,49 @@ map <- ggplot() +
   # Add partner points
   geom_sf(data = partners_sf,
           aes(size = total_projects,
+              fill = leadership,
               color = leadership),
           alpha = 0.85,
-          stroke = 1.2,
+          stroke = 0.5,
           shape = 21) +
   
+  # Add labels for all institutions
+  geom_text_repel(
+    data = partners_sf,  # Label all institutions
+    aes(label = Institution,
+        geometry = geometry),
+    stat = "sf_coordinates",
+    size = 2.8,
+    fontface = "bold",
+    box.padding = 0.8,
+    point.padding = 0.5,
+    force = 10,
+    max.overlaps = 50,  # Increase to show all labels
+    color = "black",
+    bg.color = "white",
+    bg.r = 0.15,
+    min.segment.length = 0.3,
+    segment.color = "gray50",
+    segment.size = 0.2,
+    nudge_x = 1,  # More horizontal spacing
+    nudge_y = 1,  # More vertical spacing
+    direction = "both"  # Allow both horizontal and vertical separation
+  ) +
+  
   # Customize colors for points
+  scale_fill_manual(
+    values = c(
+      leadership_colors,
+      'Pilot Projects' = '#9B59B6'
+    ),
+    name = "Project Leadership",
+    breaks = c('Gueladio Cisse', 'Matthew Chersich', 'Joint Projects')
+  ) +
+  
   scale_color_manual(
     values = c(
       leadership_colors,
-      'Pilot Projects' = '#9B59B6'  # Same purple but not shown in legend
+      'Pilot Projects' = '#9B59B6'
     ),
     name = "Project Leadership",
     breaks = c('Gueladio Cisse', 'Matthew Chersich', 'Joint Projects')
@@ -138,8 +188,8 @@ map <- ggplot() +
       "TRUE" = alpha("#FFD700", 0.4),
       "FALSE" = "white"
     ),
-    name = expression(paste("HE"^2, "AT Center Countries")),
-    labels = expression(paste("HE"^2, "AT Contributing Countries")),
+    name = expression(paste("HE"^2, "AT Center")),
+    labels = "Contributing Countries",
     breaks = c("TRUE")
   ) +
   
@@ -281,4 +331,31 @@ write.csv(leadership_summary,
           "C:/Users/CraigParker/OneDrive - Wits Health Consortium/PHR PC/Desktop/Partners/african_partners_leadership_summary.csv", 
           row.names = FALSE)
 
-cat("\nDetailed leadership summary has been saved to 'african_partners_leadership_summary.csv'\n") 
+cat("\nDetailed leadership summary has been saved to 'african_partners_leadership_summary.csv'\n")
+
+# Create the network plot
+ggraph(graph_layout, layout = 'fr') +
+  geom_edge_link(aes(width = weight), 
+                 alpha = 0.2, 
+                 color = "gray50") +
+  geom_node_point(aes(color = leadership),
+                  size = 10) +
+  geom_node_text(aes(label = name), 
+                 repel = TRUE, 
+                 size = 3) +
+  scale_edge_width(range = c(0.5, 2)) +
+  scale_color_manual(values = c(
+    'Gueladio Cisse' = '#2C85B2',    # Blue
+    'Matthew Chersich' = '#B23A48',   # Red
+    'Joint Projects' = '#7E4F88',     # Purple
+    'Pilot Projects' = '#7E4F88',     # Same purple for pilot projects
+    'Other' = '#7E4F88'              # Same purple for other
+  )) +
+  theme_void() +
+  theme(
+    legend.position = "bottom",
+    legend.title = element_text(face = "bold", size = 12),
+    legend.text = element_text(size = 10)
+  ) +
+  labs(color = "Project Leadership",
+       edge_width = "Partnership Strength") 

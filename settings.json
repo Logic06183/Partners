@@ -1,0 +1,37 @@
+{
+    // R Configuration Settings
+    "r.term.windows": "C:\\Users\\CraigParker\\AppData\\Local\\Programs\\R\\R-4.4.1\\bin\\x64\\R.exe",
+    "r.rterm.windows": "C:\\Users\\CraigParker\\AppData\\Local\\Programs\\R\\R-4.4.1\\bin\\x64\\R.exe",
+    "r.rpath.windows": "C:\\Users\\CraigParker\\AppData\\Local\\Programs\\R\\R-4.4.1\\bin\\x64\\R.exe",
+    "r.bracketedPaste": true,
+    "r.plot.useHttpgd": true,
+    "r.sessionWatcher": true,
+    "r.workspace.mode": "workspace",
+    "r.alwaysUseActiveTerminal": true,
+    "r.bracketed.paste.mode": true,
+    "terminal.integrated.windowsEnableConpty": true,
+    "terminal.integrated.defaultProfile.windows": "R Terminal",
+    "terminal.integrated.profiles.windows": {
+        "PowerShell": {
+            "source": "PowerShell",
+            "icon": "terminal-powershell"
+        },
+        "Command Prompt": {
+            "path": [
+                "${env:windir}\\Sysnative\\cmd.exe",
+                "${env:windir}\\System32\\cmd.exe"
+            ],
+            "args": [],
+            "icon": "terminal-cmd"
+        },
+        "Git Bash": {
+            "source": "Git Bash"
+        },
+        "R Terminal": {
+            "path": "C:\\Users\\CraigParker\\AppData\\Local\\Programs\\R\\R-4.4.1\\bin\\x64\\R.exe",
+            "icon": "beaker",
+            "args": ["--no-save", "--no-restore"]
+        },
+        "bash": null
+    }
+} 
