@@ -1,0 +1,1671 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_136df6dfe80b38b01b8742f954dc23eb {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+<div style="position: fixed; 
+            bottom: 50px; left: 50px; 
+            border:2px solid gray; z-index:9999; 
+            background-color:white;
+            padding: 10px;
+            font-size:14px;
+            font-family: Arial;">
+    <p><b>Research Programs</b></p>
+
+    <p><span style="color:#0077BB;">●</span> CHAMNHA</p>
+    
+    <p><span style="color:#EE3377;">●</span> HEAT</p>
+    
+    <p><span style="color:#009988;">●</span> ENBEL</p>
+    
+    <p><span style="color:#CC3311;">●</span> GHAP</p>
+    
+    <p><span style="color:#33BBEE;">●</span> HAPI</p>
+    
+    <p><span style="color:#EE7733;">●</span> BioHEAT</p>
+    
+    <p><span style="color:#555555;">●</span> HIGH_Horizons</p>
+    
+    <p><span style="display:inline-block; width:0; height:0; 
+              border-left:6px solid transparent;
+              border-right:6px solid transparent;
+              border-bottom:12px solid black;
+              margin-right:5px;"></span> Funding Organization</p>
+    </div>
+    
+<div style="position: fixed; 
+            top: 20px; left: 50%; 
+            transform: translateX(-50%);
+            z-index:9999; 
+            background-color:white;
+            padding: 10px;
+            border:2px solid gray;
+            font-size:18px;
+            font-family: Arial;">
+    <h3 style="margin:0;">Global Health Research Partnership Network</h3>
+    <p style="margin:5px 0 0 0; font-size:14px; font-style:italic;">
+        Size indicates number of project participations
+    </p>
+</div>
+    
+            <div class="folium-map" id="map_136df6dfe80b38b01b8742f954dc23eb" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_136df6dfe80b38b01b8742f954dc23eb = L.map(
+                "map_136df6dfe80b38b01b8742f954dc23eb",
+                {
+                    center: [0.0, 20.0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 3,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_32c29ca0edcbf9b404bdbb6662a4f348 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_32c29ca0edcbf9b404bdbb6662a4f348.addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+            var circle_marker_dd77d83079c6561cecdd4ecb128f7f80 = L.circleMarker(
+                [-24.6581357, 25.9088474],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#009988", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_06237aab44321ffbf7d4ffb45afb1deb = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_35d69d4adb4c835cd58a486be5336b09 = $(`<div id="html_35d69d4adb4c835cd58a486be5336b09" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>University of Botswana</h4>             <b>Location:</b> Gaborone, Botswana<br>             <b>Projects:</b><br>             ENBEL<br>GHAP         </div>         </div>`)[0];
+                popup_06237aab44321ffbf7d4ffb45afb1deb.setContent(html_35d69d4adb4c835cd58a486be5336b09);
+            
+        
+
+        circle_marker_dd77d83079c6561cecdd4ecb128f7f80.bindPopup(popup_06237aab44321ffbf7d4ffb45afb1deb)
+        ;
+
+        
+    
+    
+            var circle_marker_ccbe12f19884abe013ba5f7aee47bca5 = L.circleMarker(
+                [12.3681873, -1.5270944],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#EE3377", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_f98701229b7abeb13ea6c94b423ae543 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_9cd32f7434916a2261231df96b6c883f = $(`<div id="html_9cd32f7434916a2261231df96b6c883f" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>Higher Institute of Public Health</h4>             <b>Location:</b> Ouagadougou, Burkina Faso<br>             <b>Projects:</b><br>             HEAT         </div>         </div>`)[0];
+                popup_f98701229b7abeb13ea6c94b423ae543.setContent(html_9cd32f7434916a2261231df96b6c883f);
+            
+        
+
+        circle_marker_ccbe12f19884abe013ba5f7aee47bca5.bindPopup(popup_f98701229b7abeb13ea6c94b423ae543)
+        ;
+
+        
+    
+    
+            var circle_marker_f52dcf21816ff87f622d0300c17fb1b2 = L.circleMarker(
+                [12.3681873, -1.5270944],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0077BB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_2cd586d309c2ac832429077f5b5a95dd = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_12b588a64a9499387ea98a16455a3682 = $(`<div id="html_12b588a64a9499387ea98a16455a3682" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>Institut de Recherche en Sciences de la Santé</h4>             <b>Location:</b> Ouagadougou, Burkina Faso<br>             <b>Projects:</b><br>             CHAMNHA<br>GHAP         </div>         </div>`)[0];
+                popup_2cd586d309c2ac832429077f5b5a95dd.setContent(html_12b588a64a9499387ea98a16455a3682);
+            
+        
+
+        circle_marker_f52dcf21816ff87f622d0300c17fb1b2.bindPopup(popup_2cd586d309c2ac832429077f5b5a95dd)
+        ;
+
+        
+    
+    
+            var circle_marker_e32632322dd4e93e1582975225cc8756 = L.circleMarker(
+                [-3.3638125, 29.3675028],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#EE3377", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_b5c9349983f55774ef5ba99819db546c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a24d5db897f00c97e77ead79737cf5ec = $(`<div id="html_a24d5db897f00c97e77ead79737cf5ec" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>Institute of Public Health</h4>             <b>Location:</b> Bujumbura, Burundi<br>             <b>Projects:</b><br>             HEAT         </div>         </div>`)[0];
+                popup_b5c9349983f55774ef5ba99819db546c.setContent(html_a24d5db897f00c97e77ead79737cf5ec);
+            
+        
+
+        circle_marker_e32632322dd4e93e1582975225cc8756.bindPopup(popup_b5c9349983f55774ef5ba99819db546c)
+        ;
+
+        
+    
+    
+            var circle_marker_b5ed3d1ef0b42a8fc59ed1c1a2cef784 = L.circleMarker(
+                [3.8689867, 11.5213344],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#EE3377", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_b2e73a0ec157daa6d7859cb92748079c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_1cccf1a6750f18325fec0fe81f73580d = $(`<div id="html_1cccf1a6750f18325fec0fe81f73580d" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>University of Yaoundé</h4>             <b>Location:</b> Yaoundé, Cameroon<br>             <b>Projects:</b><br>             HEAT         </div>         </div>`)[0];
+                popup_b2e73a0ec157daa6d7859cb92748079c.setContent(html_1cccf1a6750f18325fec0fe81f73580d);
+            
+        
+
+        circle_marker_b5ed3d1ef0b42a8fc59ed1c1a2cef784.bindPopup(popup_b2e73a0ec157daa6d7859cb92748079c)
+        ;
+
+        
+    
+    
+            var circle_marker_ed9c45008a04fdf798f79f48a3dc9d30 = L.circleMarker(
+                [12.1191543, 15.0502758],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#EE3377", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_ca70bc02428106cbe19b430cd0002723 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_56077b6e4081224968dd19aa6aa9e7ad = $(`<div id="html_56077b6e4081224968dd19aa6aa9e7ad" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>International Health Support Centre</h4>             <b>Location:</b> N'Djamena, Chad<br>             <b>Projects:</b><br>             HEAT         </div>         </div>`)[0];
+                popup_ca70bc02428106cbe19b430cd0002723.setContent(html_56077b6e4081224968dd19aa6aa9e7ad);
+            
+        
+
+        circle_marker_ed9c45008a04fdf798f79f48a3dc9d30.bindPopup(popup_ca70bc02428106cbe19b430cd0002723)
+        ;
+
+        
+    
+    
+            var circle_marker_e454f65da7b5e8280a941bceabafd28e = L.circleMarker(
+                [5.320357, -4.016107],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#EE3377", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_1df128965364296e60f23a80e8bd00f1 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_497ce76b43940babc7804a78100f1825 = $(`<div id="html_497ce76b43940babc7804a78100f1825" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>Centre Suisse de Recherches Scientifiques</h4>             <b>Location:</b> Abidjan, Côte d'Ivoire<br>             <b>Projects:</b><br>             HEAT         </div>         </div>`)[0];
+                popup_1df128965364296e60f23a80e8bd00f1.setContent(html_497ce76b43940babc7804a78100f1825);
+            
+        
+
+        circle_marker_e454f65da7b5e8280a941bceabafd28e.bindPopup(popup_1df128965364296e60f23a80e8bd00f1)
+        ;
+
+        
+    
+    
+            var circle_marker_0e3ae671ef17261948989eeb2c27058a = L.circleMarker(
+                [5.320357, -4.016107],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#EE3377", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_1565c0ad3f66c8bad3d1bac1633d325c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e8b10200e943385abe6cdd0568bfab53 = $(`<div id="html_e8b10200e943385abe6cdd0568bfab53" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>Felix Houphouët Boigny University</h4>             <b>Location:</b> Abidjan, Côte d'Ivoire<br>             <b>Projects:</b><br>             HEAT         </div>         </div>`)[0];
+                popup_1565c0ad3f66c8bad3d1bac1633d325c.setContent(html_e8b10200e943385abe6cdd0568bfab53);
+            
+        
+
+        circle_marker_0e3ae671ef17261948989eeb2c27058a.bindPopup(popup_1565c0ad3f66c8bad3d1bac1633d325c)
+        ;
+
+        
+    
+    
+            var circle_marker_ee4062708940d961dc202636b91cd520 = L.circleMarker(
+                [5.320357, -4.016107],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#EE3377", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_34f6eae37ae72fffce3dfab474c0ea22 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d296d53ac275b79282901552ee762217 = $(`<div id="html_d296d53ac275b79282901552ee762217" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>Nangui Abrogoua University</h4>             <b>Location:</b> Abidjan, Côte d'Ivoire<br>             <b>Projects:</b><br>             HEAT         </div>         </div>`)[0];
+                popup_34f6eae37ae72fffce3dfab474c0ea22.setContent(html_d296d53ac275b79282901552ee762217);
+            
+        
+
+        circle_marker_ee4062708940d961dc202636b91cd520.bindPopup(popup_34f6eae37ae72fffce3dfab474c0ea22)
+        ;
+
+        
+    
+    
+            var circle_marker_bbc9867ba9ce98c6aa34875809091755 = L.circleMarker(
+                [9.4580698, -5.6316293],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#EE3377", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_d5028665b1b8adf36440dafdd95e1ae9 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6288a4de2f0613d7554898b21c5cb9e2 = $(`<div id="html_6288a4de2f0613d7554898b21c5cb9e2" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>University Peleforo Gon Coulibaly</h4>             <b>Location:</b> Korhogo, Côte d'Ivoire<br>             <b>Projects:</b><br>             HEAT<br>GHAP         </div>         </div>`)[0];
+                popup_d5028665b1b8adf36440dafdd95e1ae9.setContent(html_6288a4de2f0613d7554898b21c5cb9e2);
+            
+        
+
+        circle_marker_bbc9867ba9ce98c6aa34875809091755.bindPopup(popup_d5028665b1b8adf36440dafdd95e1ae9)
+        ;
+
+        
+    
+    
+            var circle_marker_2f1ecc021e23b8b6e9c6e5be3aaf3242 = L.circleMarker(
+                [-3.15073925, 39.67507159193717],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0077BB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_1cdfd08f44163d3f4b2fb5a8a63e4c27 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_702fd06936a40cee4e4415801c4e097c = $(`<div id="html_702fd06936a40cee4e4415801c4e097c" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>KEMRI-Wellcome Trust</h4>             <b>Location:</b> Kilifi, Kenya<br>             <b>Projects:</b><br>             CHAMNHA         </div>         </div>`)[0];
+                popup_1cdfd08f44163d3f4b2fb5a8a63e4c27.setContent(html_702fd06936a40cee4e4415801c4e097c);
+            
+        
+
+        circle_marker_2f1ecc021e23b8b6e9c6e5be3aaf3242.bindPopup(popup_1cdfd08f44163d3f4b2fb5a8a63e4c27)
+        ;
+
+        
+    
+    
+            var circle_marker_c79607d16e86c75ead5fdabf7df7a0d9 = L.circleMarker(
+                [-1.30261485, 36.82884201813725],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0077BB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 28, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_f0d83b068e37dea0e73c6c7caff16cbe = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_5dcfdd9f0095cef9fd223ba6da0001db = $(`<div id="html_5dcfdd9f0095cef9fd223ba6da0001db" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>Aga Khan University</h4>             <b>Location:</b> Nairobi, Kenya<br>             <b>Projects:</b><br>             CHAMNHA<br>ENBEL<br>GHAP<br>HIGH_Horizons         </div>         </div>`)[0];
+                popup_f0d83b068e37dea0e73c6c7caff16cbe.setContent(html_5dcfdd9f0095cef9fd223ba6da0001db);
+            
+        
+
+        circle_marker_c79607d16e86c75ead5fdabf7df7a0d9.bindPopup(popup_f0d83b068e37dea0e73c6c7caff16cbe)
+        ;
+
+        
+    
+    
+            var circle_marker_9a0590e8d7212dc950cf56b502159d42 = L.circleMarker(
+                [18.0792379, -15.9780071],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#EE3377", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_81250f114a2085e3f6fa9e977b6078b1 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b16ebdebec0c883b5ee314a41b1f3ecf = $(`<div id="html_b16ebdebec0c883b5ee314a41b1f3ecf" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>Institute of Public Health</h4>             <b>Location:</b> Nouakchott, Mauritania<br>             <b>Projects:</b><br>             HEAT         </div>         </div>`)[0];
+                popup_81250f114a2085e3f6fa9e977b6078b1.setContent(html_b16ebdebec0c883b5ee314a41b1f3ecf);
+            
+        
+
+        circle_marker_9a0590e8d7212dc950cf56b502159d42.bindPopup(popup_81250f114a2085e3f6fa9e977b6078b1)
+        ;
+
+        
+    
+    
+            var circle_marker_08f476392ff9f3094d3bafc10b688f74 = L.circleMarker(
+                [7.2525595, 5.1932647],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#EE3377", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_27a8fca774b391091a98288a9cc6a542 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_547cbf4159e88f0e131039203a619782 = $(`<div id="html_547cbf4159e88f0e131039203a619782" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>Federal University of Technology</h4>             <b>Location:</b> Akure, Nigeria<br>             <b>Projects:</b><br>             HEAT         </div>         </div>`)[0];
+                popup_27a8fca774b391091a98288a9cc6a542.setContent(html_547cbf4159e88f0e131039203a619782);
+            
+        
+
+        circle_marker_08f476392ff9f3094d3bafc10b688f74.bindPopup(popup_27a8fca774b391091a98288a9cc6a542)
+        ;
+
+        
+    
+    
+            var circle_marker_1ee41fe3720a2e6c0fb13626f9438922 = L.circleMarker(
+                [-1.8859597, 30.1296751],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#EE3377", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_7e4cd22f7ed4c56070b994328ce70755 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_45902741f0a26e2e82afc5e07ae8859f = $(`<div id="html_45902741f0a26e2e82afc5e07ae8859f" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>Medical School of Rwanda</h4>             <b>Location:</b> Kigali, Rwanda<br>             <b>Projects:</b><br>             HEAT         </div>         </div>`)[0];
+                popup_7e4cd22f7ed4c56070b994328ce70755.setContent(html_45902741f0a26e2e82afc5e07ae8859f);
+            
+        
+
+        circle_marker_1ee41fe3720a2e6c0fb13626f9438922.bindPopup(popup_7e4cd22f7ed4c56070b994328ce70755)
+        ;
+
+        
+    
+    
+            var circle_marker_cc0fedd91bd97ba548d3e4cc834ca929 = L.circleMarker(
+                [14.693425, -17.447938],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#EE3377", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_8d375110ddc0b229bf50f0e6370db47b = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ffb152ba87e90da9be0ac474f4f850a8 = $(`<div id="html_ffb152ba87e90da9be0ac474f4f850a8" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>Cheikh Anta Diop University</h4>             <b>Location:</b> Dakar, Senegal<br>             <b>Projects:</b><br>             HEAT         </div>         </div>`)[0];
+                popup_8d375110ddc0b229bf50f0e6370db47b.setContent(html_ffb152ba87e90da9be0ac474f4f850a8);
+            
+        
+
+        circle_marker_cc0fedd91bd97ba548d3e4cc834ca929.bindPopup(popup_8d375110ddc0b229bf50f0e6370db47b)
+        ;
+
+        
+    
+    
+            var circle_marker_e8cd84acb09154fede3c7af711e4178e = L.circleMarker(
+                [14.693425, -17.447938],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#EE3377", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_8c480f26f6bf93ab325fd4d654d9c5cd = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f678351f27f571eb050a00f21276cc38 = $(`<div id="html_f678351f27f571eb050a00f21276cc38" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>IRESSEF</h4>             <b>Location:</b> Dakar, Senegal<br>             <b>Projects:</b><br>             HEAT         </div>         </div>`)[0];
+                popup_8c480f26f6bf93ab325fd4d654d9c5cd.setContent(html_f678351f27f571eb050a00f21276cc38);
+            
+        
+
+        circle_marker_e8cd84acb09154fede3c7af711e4178e.bindPopup(popup_8c480f26f6bf93ab325fd4d654d9c5cd)
+        ;
+
+        
+    
+    
+            var circle_marker_fa7ede5670636c2ca69759373b1699d4 = L.circleMarker(
+                [12.5634929, -16.2724609],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#EE3377", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_b1f5f4fa00fcbe8a3f553c7ab81bb804 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b9e6e5115d7990314782cbfa940742c8 = $(`<div id="html_b9e6e5115d7990314782cbfa940742c8" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>Ziguinchor University</h4>             <b>Location:</b> Ziguinchor, Senegal<br>             <b>Projects:</b><br>             HEAT         </div>         </div>`)[0];
+                popup_b1f5f4fa00fcbe8a3f553c7ab81bb804.setContent(html_b9e6e5115d7990314782cbfa940742c8);
+            
+        
+
+        circle_marker_fa7ede5670636c2ca69759373b1699d4.bindPopup(popup_b1f5f4fa00fcbe8a3f553c7ab81bb804)
+        ;
+
+        
+    
+    
+            var circle_marker_b177d6cc4c9fc485876b2d243c2fb752 = L.circleMarker(
+                [-33.9288301, 18.4172197],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#EE3377", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_184ad852dc4a7af1d05b373b25824cc4 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_24c596756259108897b114e946dee787 = $(`<div id="html_24c596756259108897b114e946dee787" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>Climate Systems Analysis Group</h4>             <b>Location:</b> Cape Town, South Africa<br>             <b>Projects:</b><br>             HEAT<br>GHAP         </div>         </div>`)[0];
+                popup_184ad852dc4a7af1d05b373b25824cc4.setContent(html_24c596756259108897b114e946dee787);
+            
+        
+
+        circle_marker_b177d6cc4c9fc485876b2d243c2fb752.bindPopup(popup_184ad852dc4a7af1d05b373b25824cc4)
+        ;
+
+        
+    
+    
+            var circle_marker_0665467ba69f899b9d49417ef0e66faf = L.circleMarker(
+                [-33.9288301, 18.4172197],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#CC3311", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_22b28c8c41b146c132e1c843dc3e2b85 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_64136fa6cbaf9068026e030ea3008792 = $(`<div id="html_64136fa6cbaf9068026e030ea3008792" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>Climate-Health Africa Network for Collaboration and Engagement</h4>             <b>Location:</b> Cape Town, South Africa<br>             <b>Projects:</b><br>             GHAP         </div>         </div>`)[0];
+                popup_22b28c8c41b146c132e1c843dc3e2b85.setContent(html_64136fa6cbaf9068026e030ea3008792);
+            
+        
+
+        circle_marker_0665467ba69f899b9d49417ef0e66faf.bindPopup(popup_22b28c8c41b146c132e1c843dc3e2b85)
+        ;
+
+        
+    
+    
+            var circle_marker_6c32ebc7894983661a19ce6d717cb924 = L.circleMarker(
+                [-33.9288301, 18.4172197],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#CC3311", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_96f7f07b4d1867aeb02e15965bbb4b82 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_fbdf1817589128592aae97042a0fbb35 = $(`<div id="html_fbdf1817589128592aae97042a0fbb35" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>University of Cape Town/The Health Foundation</h4>             <b>Location:</b> Cape Town, South Africa<br>             <b>Projects:</b><br>             GHAP         </div>         </div>`)[0];
+                popup_96f7f07b4d1867aeb02e15965bbb4b82.setContent(html_fbdf1817589128592aae97042a0fbb35);
+            
+        
+
+        circle_marker_6c32ebc7894983661a19ce6d717cb924.bindPopup(popup_96f7f07b4d1867aeb02e15965bbb4b82)
+        ;
+
+        
+    
+    
+            var circle_marker_abec7781bf0cf31935b2767fe8790132 = L.circleMarker(
+                [-26.205, 28.049722],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#EE7733", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_803d9ba0435727c11480991cdf7bc7fd = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b2be1296125e1ffb8f529da63b4833e9 = $(`<div id="html_b2be1296125e1ffb8f529da63b4833e9" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>Empilweni clinic, University of the Witwatersrand</h4>             <b>Location:</b> Johannesburg, South Africa<br>             <b>Projects:</b><br>             BioHEAT         </div>         </div>`)[0];
+                popup_803d9ba0435727c11480991cdf7bc7fd.setContent(html_b2be1296125e1ffb8f529da63b4833e9);
+            
+        
+
+        circle_marker_abec7781bf0cf31935b2767fe8790132.bindPopup(popup_803d9ba0435727c11480991cdf7bc7fd)
+        ;
+
+        
+    
+    
+            var circle_marker_1ac8bbf64b747a38c71be037f8009880 = L.circleMarker(
+                [-26.205, 28.049722],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#EE3377", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 23, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_c0250a7c04f68b1d01eff2af522fdce9 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_91985bfec7871ad2f62c0800e3775ba8 = $(`<div id="html_91985bfec7871ad2f62c0800e3775ba8" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>IBM Research Africa</h4>             <b>Location:</b> Johannesburg, South Africa<br>             <b>Projects:</b><br>             HEAT<br>GHAP<br>BioHEAT         </div>         </div>`)[0];
+                popup_c0250a7c04f68b1d01eff2af522fdce9.setContent(html_91985bfec7871ad2f62c0800e3775ba8);
+            
+        
+
+        circle_marker_1ac8bbf64b747a38c71be037f8009880.bindPopup(popup_c0250a7c04f68b1d01eff2af522fdce9)
+        ;
+
+        
+    
+    
+            var circle_marker_ef7fe13bb6ba40c0ce3c61844376c1da = L.circleMarker(
+                [-26.205, 28.049722],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#CC3311", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_3b80089f7e568fa0bcece386e8bb5b05 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_593d148f55d968544566c9bcfba80f2a = $(`<div id="html_593d148f55d968544566c9bcfba80f2a" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>Quantum Health</h4>             <b>Location:</b> Johannesburg, South Africa<br>             <b>Projects:</b><br>             GHAP         </div>         </div>`)[0];
+                popup_3b80089f7e568fa0bcece386e8bb5b05.setContent(html_593d148f55d968544566c9bcfba80f2a);
+            
+        
+
+        circle_marker_ef7fe13bb6ba40c0ce3c61844376c1da.bindPopup(popup_3b80089f7e568fa0bcece386e8bb5b05)
+        ;
+
+        
+    
+    
+            var circle_marker_466ce71c82aadcab13fc8c5de803cd0e = L.circleMarker(
+                [-26.205, 28.049722],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#CC3311", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_b87beef3f53fd312ab80534a2944a81d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a78148d05e46da79687edc257e1d4dc2 = $(`<div id="html_a78148d05e46da79687edc257e1d4dc2" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>Section 27</h4>             <b>Location:</b> Johannesburg, South Africa<br>             <b>Projects:</b><br>             GHAP         </div>         </div>`)[0];
+                popup_b87beef3f53fd312ab80534a2944a81d.setContent(html_a78148d05e46da79687edc257e1d4dc2);
+            
+        
+
+        circle_marker_466ce71c82aadcab13fc8c5de803cd0e.bindPopup(popup_b87beef3f53fd312ab80534a2944a81d)
+        ;
+
+        
+    
+    
+            var circle_marker_f865177d6f5d9d90404ea54f32d2d7f2 = L.circleMarker(
+                [-26.205, 28.049722],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0077BB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 43, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_cd69b512a7becd60568dfbe3c66f006b = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_7cbc9736c07ee92f644d44eeee7bacc1 = $(`<div id="html_7cbc9736c07ee92f644d44eeee7bacc1" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>Wits Health Consortium</h4>             <b>Location:</b> Johannesburg, South Africa<br>             <b>Projects:</b><br>             CHAMNHA<br>HEAT<br>ENBEL<br>GHAP<br>HAPI<br>BioHEAT<br>HIGH_Horizons         </div>         </div>`)[0];
+                popup_cd69b512a7becd60568dfbe3c66f006b.setContent(html_7cbc9736c07ee92f644d44eeee7bacc1);
+            
+        
+
+        circle_marker_f865177d6f5d9d90404ea54f32d2d7f2.bindPopup(popup_cd69b512a7becd60568dfbe3c66f006b)
+        ;
+
+        
+    
+    
+            var circle_marker_f143cc435a8f5446189c46ff25b59446 = L.circleMarker(
+                [-25.7459277, 28.1879101],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0077BB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_35e2babf93d26eca8dfc3f35a015df2c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_035a312a85b5c0e3304cc8ed4ffb23d4 = $(`<div id="html_035a312a85b5c0e3304cc8ed4ffb23d4" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>South African Medical Research Council</h4>             <b>Location:</b> Pretoria, South Africa<br>             <b>Projects:</b><br>             CHAMNHA<br>GHAP         </div>         </div>`)[0];
+                popup_35e2babf93d26eca8dfc3f35a015df2c.setContent(html_035a312a85b5c0e3304cc8ed4ffb23d4);
+            
+        
+
+        circle_marker_f143cc435a8f5446189c46ff25b59446.bindPopup(popup_35e2babf93d26eca8dfc3f35a015df2c)
+        ;
+
+        
+    
+    
+            var circle_marker_56fe644b27c5f333b05676abeb9471ab = L.circleMarker(
+                [-25.7459277, 28.1879101],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#EE3377", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_bc3bcac6f820af176470f51dde0bee54 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d0ef7a0126b46289910a47360ae2d8a2 = $(`<div id="html_d0ef7a0126b46289910a47360ae2d8a2" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>University of Pretoria</h4>             <b>Location:</b> Pretoria, South Africa<br>             <b>Projects:</b><br>             HEAT<br>GHAP         </div>         </div>`)[0];
+                popup_bc3bcac6f820af176470f51dde0bee54.setContent(html_d0ef7a0126b46289910a47360ae2d8a2);
+            
+        
+
+        circle_marker_56fe644b27c5f333b05676abeb9471ab.bindPopup(popup_bc3bcac6f820af176470f51dde0bee54)
+        ;
+
+        
+    
+    
+            var circle_marker_adcf9f14c81c5583fbe8134b203a4f3a = L.circleMarker(
+                [-33.934444, 18.869167],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#EE7733", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_2a078043b8e52f6fabc545c625a67908 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_0558dccba0fa350d4790619a9700c6d7 = $(`<div id="html_0558dccba0fa350d4790619a9700c6d7" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>Stellenbosch University</h4>             <b>Location:</b> Stellenbosch, South Africa<br>             <b>Projects:</b><br>             BioHEAT         </div>         </div>`)[0];
+                popup_2a078043b8e52f6fabc545c625a67908.setContent(html_0558dccba0fa350d4790619a9700c6d7);
+            
+        
+
+        circle_marker_adcf9f14c81c5583fbe8134b203a4f3a.bindPopup(popup_2a078043b8e52f6fabc545c625a67908)
+        ;
+
+        
+    
+    
+            var circle_marker_a97f41e60281ddd9629338c8692619d4 = L.circleMarker(
+                [6.130419, 1.215829],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#EE3377", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_bfaaada1351277c4ad7d775787c55807 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_44d21fe1cee397c037f99ca934a33de6 = $(`<div id="html_44d21fe1cee397c037f99ca934a33de6" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>University of Lome</h4>             <b>Location:</b> Lome, Togo<br>             <b>Projects:</b><br>             HEAT         </div>         </div>`)[0];
+                popup_bfaaada1351277c4ad7d775787c55807.setContent(html_44d21fe1cee397c037f99ca934a33de6);
+            
+        
+
+        circle_marker_a97f41e60281ddd9629338c8692619d4.bindPopup(popup_bfaaada1351277c4ad7d775787c55807)
+        ;
+
+        
+    
+    
+            var circle_marker_7f27aab48688e21070a4a81af6bbd9f5 = L.circleMarker(
+                [0.3177137, 32.5813539],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#EE3377", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_631761e9f27ad6d4b2953b4dacdc1605 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_91d0462638169de452e11959867a690e = $(`<div id="html_91d0462638169de452e11959867a690e" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>Makerere University</h4>             <b>Location:</b> Kampala, Uganda<br>             <b>Projects:</b><br>             HEAT         </div>         </div>`)[0];
+                popup_631761e9f27ad6d4b2953b4dacdc1605.setContent(html_91d0462638169de452e11959867a690e);
+            
+        
+
+        circle_marker_7f27aab48688e21070a4a81af6bbd9f5.bindPopup(popup_631761e9f27ad6d4b2953b4dacdc1605)
+        ;
+
+        
+    
+    
+            var circle_marker_af66b00063f61fda11008484d92b0c0b = L.circleMarker(
+                [-19.4616316, 29.8205953],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#EE3377", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_32b12d6b445fe610bd78eba5196e9f75 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_3b0f37409acc097a7ff02789596a5be6 = $(`<div id="html_3b0f37409acc097a7ff02789596a5be6" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>Midlands State University</h4>             <b>Location:</b> Gweru, Zimbabwe<br>             <b>Projects:</b><br>             HEAT         </div>         </div>`)[0];
+                popup_32b12d6b445fe610bd78eba5196e9f75.setContent(html_3b0f37409acc097a7ff02789596a5be6);
+            
+        
+
+        circle_marker_af66b00063f61fda11008484d92b0c0b.bindPopup(popup_32b12d6b445fe610bd78eba5196e9f75)
+        ;
+
+        
+    
+    
+            var circle_marker_14560c722cb8f869eaab6e877992c0a8 = L.circleMarker(
+                [-17.8567035, 31.0601584],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0077BB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 33, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_8893e12b4f3fae5f005d89290b3157ec = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_11e2489473fcdc2f8e66c3fe4a8340de = $(`<div id="html_11e2489473fcdc2f8e66c3fe4a8340de" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>CeSHHAR</h4>             <b>Location:</b> Harare, Zimbabwe<br>             <b>Projects:</b><br>             CHAMNHA<br>HEAT<br>GHAP<br>HAPI<br>HIGH_Horizons         </div>         </div>`)[0];
+                popup_8893e12b4f3fae5f005d89290b3157ec.setContent(html_11e2489473fcdc2f8e66c3fe4a8340de);
+            
+        
+
+        circle_marker_14560c722cb8f869eaab6e877992c0a8.bindPopup(popup_8893e12b4f3fae5f005d89290b3157ec)
+        ;
+
+        
+    
+    
+            var circle_marker_6d42a0e0dea53fd3a3019e0fdcc46ac7 = L.circleMarker(
+                [-26.205, 28.049722],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#EE7733", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_ec5188ab15896623f0aa7b9db4594858 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ea69e312ec2893124dccde120b250351 = $(`<div id="html_ea69e312ec2893124dccde120b250351" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>Sydney Brenner Institute for Molecular Bioscience</h4>             <b>Location:</b> Johannesburg, South Africa<br>             <b>Projects:</b><br>             BioHEAT         </div>         </div>`)[0];
+                popup_ec5188ab15896623f0aa7b9db4594858.setContent(html_ea69e312ec2893124dccde120b250351);
+            
+        
+
+        circle_marker_6d42a0e0dea53fd3a3019e0fdcc46ac7.bindPopup(popup_ec5188ab15896623f0aa7b9db4594858)
+        ;
+
+        
+    
+    
+            var circle_marker_1996b6ca5222c800f1e06c70b942ddb0 = L.circleMarker(
+                [-26.205, 28.049722],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#EE7733", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_8125c5b5d8266fab56fd4abec0ee13b1 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_06c9555f1ecd8d0295dae158bf574efc = $(`<div id="html_06c9555f1ecd8d0295dae158bf574efc" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>Rahima Moosa Mother & Child Hospital</h4>             <b>Location:</b> Johannesburg, South Africa<br>             <b>Projects:</b><br>             BioHEAT         </div>         </div>`)[0];
+                popup_8125c5b5d8266fab56fd4abec0ee13b1.setContent(html_06c9555f1ecd8d0295dae158bf574efc);
+            
+        
+
+        circle_marker_1996b6ca5222c800f1e06c70b942ddb0.bindPopup(popup_8125c5b5d8266fab56fd4abec0ee13b1)
+        ;
+
+        
+    
+    
+            var circle_marker_1983f27b85a9a3ce01886e241db7ef1b = L.circleMarker(
+                [-33.9288301, 18.4172197],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#CC3311", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_6d83eac71dcde4cb0e6792f1e6827a63 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_1a0d0e19b9fdf062e0f1cb3e57490229 = $(`<div id="html_1a0d0e19b9fdf062e0f1cb3e57490229" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>Centre for Infectious Disease Epidemiology and Research, University of Cape Town</h4>             <b>Location:</b> Cape Town, South Africa<br>             <b>Projects:</b><br>             GHAP         </div>         </div>`)[0];
+                popup_6d83eac71dcde4cb0e6792f1e6827a63.setContent(html_1a0d0e19b9fdf062e0f1cb3e57490229);
+            
+        
+
+        circle_marker_1983f27b85a9a3ce01886e241db7ef1b.bindPopup(popup_6d83eac71dcde4cb0e6792f1e6827a63)
+        ;
+
+        
+    
+    
+            var circle_marker_0d549316fd4eb6df5d9b59d900ef6f66 = L.circleMarker(
+                [-26.205, 28.049722],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#EE7733", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_a44e4dbc2e9b82d1a8006ad6fb54b8f0 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6e6307f537f3505c7be873d835eccb81 = $(`<div id="html_6e6307f537f3505c7be873d835eccb81" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>Division of Human Genetics, University of the Witwatersrand</h4>             <b>Location:</b> Johannesburg, South Africa<br>             <b>Projects:</b><br>             BioHEAT         </div>         </div>`)[0];
+                popup_a44e4dbc2e9b82d1a8006ad6fb54b8f0.setContent(html_6e6307f537f3505c7be873d835eccb81);
+            
+        
+
+        circle_marker_0d549316fd4eb6df5d9b59d900ef6f66.bindPopup(popup_a44e4dbc2e9b82d1a8006ad6fb54b8f0)
+        ;
+
+        
+    
+    
+            var circle_marker_a3b9e897b5dac79157abacddc94d73a3 = L.circleMarker(
+                [50.9025349, -1.404189],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#EE7733", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_42f7f453e11ec050680c9e272dae0506 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e2cab6c3417a68bcc74a05113aff64da = $(`<div id="html_e2cab6c3417a68bcc74a05113aff64da" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>University of Southampton</h4>             <b>Location:</b> Southampton, United Kingdom<br>             <b>Projects:</b><br>             BioHEAT         </div>         </div>`)[0];
+                popup_42f7f453e11ec050680c9e272dae0506.setContent(html_e2cab6c3417a68bcc74a05113aff64da);
+            
+        
+
+        circle_marker_a3b9e897b5dac79157abacddc94d73a3.bindPopup(popup_42f7f453e11ec050680c9e272dae0506)
+        ;
+
+        
+    
+    
+            var circle_marker_5ffa6e17c90216b4cdf2d8d033136c0f = L.circleMarker(
+                [53.3493795, -6.2605593],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#CC3311", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_ff9cd7e740d57e4ab8d920031dcb58ec = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e72f3855d3e91b709b3cc0b3e7046af5 = $(`<div id="html_e72f3855d3e91b709b3cc0b3e7046af5" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>Trinity College Dublin</h4>             <b>Location:</b> Dublin, Ireland<br>             <b>Projects:</b><br>             GHAP         </div>         </div>`)[0];
+                popup_ff9cd7e740d57e4ab8d920031dcb58ec.setContent(html_e72f3855d3e91b709b3cc0b3e7046af5);
+            
+        
+
+        circle_marker_5ffa6e17c90216b4cdf2d8d033136c0f.bindPopup(popup_ff9cd7e740d57e4ab8d920031dcb58ec)
+        ;
+
+        
+    
+    
+            var circle_marker_d0caa5c570a61b708e5bdf1e9bcbdb6b = L.circleMarker(
+                [53.7974185, -1.5437941],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#CC3311", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_6b954962b4111b5326e82200fff1f6b4 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_20afa7daf8b06521e143dcef59396ef5 = $(`<div id="html_20afa7daf8b06521e143dcef59396ef5" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>University of Leeds</h4>             <b>Location:</b> Leeds, United Kingdom<br>             <b>Projects:</b><br>             GHAP         </div>         </div>`)[0];
+                popup_6b954962b4111b5326e82200fff1f6b4.setContent(html_20afa7daf8b06521e143dcef59396ef5);
+            
+        
+
+        circle_marker_d0caa5c570a61b708e5bdf1e9bcbdb6b.bindPopup(popup_6b954962b4111b5326e82200fff1f6b4)
+        ;
+
+        
+    
+    
+            var circle_marker_502db43dc2f8f762ea584c1a5f3f7d6d = L.circleMarker(
+                [51.4893335, -0.1440550845276872],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#CC3311", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_169b4002612dd7516e97abe86578bcbd = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6d65a7a5a6110c945099a857c370fda5 = $(`<div id="html_6d65a7a5a6110c945099a857c370fda5" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>University College London, Lancet Countdown</h4>             <b>Location:</b> London, United Kingdom<br>             <b>Projects:</b><br>             GHAP         </div>         </div>`)[0];
+                popup_169b4002612dd7516e97abe86578bcbd.setContent(html_6d65a7a5a6110c945099a857c370fda5);
+            
+        
+
+        circle_marker_502db43dc2f8f762ea584c1a5f3f7d6d.bindPopup(popup_169b4002612dd7516e97abe86578bcbd)
+        ;
+
+        
+    
+    
+            var circle_marker_672599e152a584b42597b0007845241b = L.circleMarker(
+                [50.9281717, 11.5879359],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#CC3311", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_5fdbbd0e8133d606cd2aed594db9788b = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a6c687d9240a2c04318f87139235d2a1 = $(`<div id="html_a6c687d9240a2c04318f87139235d2a1" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>University of Jena, Department of Obstetric Medicine</h4>             <b>Location:</b> Jena, Germany<br>             <b>Projects:</b><br>             GHAP         </div>         </div>`)[0];
+                popup_5fdbbd0e8133d606cd2aed594db9788b.setContent(html_a6c687d9240a2c04318f87139235d2a1);
+            
+        
+
+        circle_marker_672599e152a584b42597b0007845241b.bindPopup(popup_5fdbbd0e8133d606cd2aed594db9788b)
+        ;
+
+        
+    
+    
+            var circle_marker_718a8fd48309c8aedb58bf0e4b3de091 = L.circleMarker(
+                [45.4641943, 9.1896346],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#CC3311", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_a0044a5588d49c583293da2f621c5ccc = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a8c35c9c31b0c2dc71e94341691d099e = $(`<div id="html_a8c35c9c31b0c2dc71e94341691d099e" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>Human Technopole</h4>             <b>Location:</b> Milan, Italy<br>             <b>Projects:</b><br>             GHAP         </div>         </div>`)[0];
+                popup_a0044a5588d49c583293da2f621c5ccc.setContent(html_a8c35c9c31b0c2dc71e94341691d099e);
+            
+        
+
+        circle_marker_718a8fd48309c8aedb58bf0e4b3de091.bindPopup(popup_a0044a5588d49c583293da2f621c5ccc)
+        ;
+
+        
+    
+    
+            var circle_marker_e50fe640b00c3b14c12ef4381eddc6e8 = L.circleMarker(
+                [59.3251172, 18.0710935],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0077BB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 23, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_2584a0ed671f59ab444728d9823a4671 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_8d94f62689a7b6f1e65131544f7a5e9b = $(`<div id="html_8d94f62689a7b6f1e65131544f7a5e9b" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>Karolinska Institute</h4>             <b>Location:</b> Stockholm, Sweden<br>             <b>Projects:</b><br>             CHAMNHA<br>GHAP<br>HIGH_Horizons         </div>         </div>`)[0];
+                popup_2584a0ed671f59ab444728d9823a4671.setContent(html_8d94f62689a7b6f1e65131544f7a5e9b);
+            
+        
+
+        circle_marker_e50fe640b00c3b14c12ef4381eddc6e8.bindPopup(popup_2584a0ed671f59ab444728d9823a4671)
+        ;
+
+        
+    
+    
+            var circle_marker_74c8d34dd2e31e528c568f0335e3ecfd = L.circleMarker(
+                [50.9281717, 11.5879359],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#CC3311", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_705251ba6ace5d8f34a275745ba5c40c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_2044ff6d273d20dbb93ddd26da9658af = $(`<div id="html_2044ff6d273d20dbb93ddd26da9658af" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>Friedrich Schiller Universität</h4>             <b>Location:</b> Jena, Germany<br>             <b>Projects:</b><br>             GHAP         </div>         </div>`)[0];
+                popup_705251ba6ace5d8f34a275745ba5c40c.setContent(html_2044ff6d273d20dbb93ddd26da9658af);
+            
+        
+
+        circle_marker_74c8d34dd2e31e528c568f0335e3ecfd.bindPopup(popup_705251ba6ace5d8f34a275745ba5c40c)
+        ;
+
+        
+    
+    
+            var circle_marker_45cd29a213d2ec33c0c240873b8f4244 = L.circleMarker(
+                [46.2017559, 6.1466014],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#CC3311", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_0ff73db7e3b8adb4d68ce609bf55cacb = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ead40bcf863717d704414cec0096f354 = $(`<div id="html_ead40bcf863717d704414cec0096f354" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>World Health Organization</h4>             <b>Location:</b> Geneva, Switzerland<br>             <b>Projects:</b><br>             GHAP<br>HIGH_Horizons         </div>         </div>`)[0];
+                popup_0ff73db7e3b8adb4d68ce609bf55cacb.setContent(html_ead40bcf863717d704414cec0096f354);
+            
+        
+
+        circle_marker_45cd29a213d2ec33c0c240873b8f4244.bindPopup(popup_0ff73db7e3b8adb4d68ce609bf55cacb)
+        ;
+
+        
+    
+    
+            var circle_marker_a26ad59b8287509b99970778c7df182a = L.circleMarker(
+                [46.2017559, 6.1466014],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#CC3311", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_e0abbf32ab2425520454f5facd49ed16 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f210c9dbf743b45a933c10e5ba6fdad0 = $(`<div id="html_f210c9dbf743b45a933c10e5ba6fdad0" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>World Meteorological Organization</h4>             <b>Location:</b> Geneva, Switzerland<br>             <b>Projects:</b><br>             GHAP         </div>         </div>`)[0];
+                popup_e0abbf32ab2425520454f5facd49ed16.setContent(html_f210c9dbf743b45a933c10e5ba6fdad0);
+            
+        
+
+        circle_marker_a26ad59b8287509b99970778c7df182a.bindPopup(popup_e0abbf32ab2425520454f5facd49ed16)
+        ;
+
+        
+    
+    
+            var circle_marker_abb65cd51c154961059cc914bb54bd57 = L.circleMarker(
+                [-33.9288301, 18.4172197],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#CC3311", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_8221c04100dd5b3e485df3950f3893a1 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_9064c9eec2be495e1b47b56775cae908 = $(`<div id="html_9064c9eec2be495e1b47b56775cae908" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>Western Cape Provincial Health</h4>             <b>Location:</b> Cape Town, South Africa<br>             <b>Projects:</b><br>             GHAP         </div>         </div>`)[0];
+                popup_8221c04100dd5b3e485df3950f3893a1.setContent(html_9064c9eec2be495e1b47b56775cae908);
+            
+        
+
+        circle_marker_abb65cd51c154961059cc914bb54bd57.bindPopup(popup_8221c04100dd5b3e485df3950f3893a1)
+        ;
+
+        
+    
+    
+            var circle_marker_2911a7f95f9541e95bc4d4d7d5b878ba = L.circleMarker(
+                [50.7256138, -3.5269209],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#CC3311", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_662b5598b22437d549da488a5c5aeb0a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_41fccb79c47750d307741e1c0bd0bdae = $(`<div id="html_41fccb79c47750d307741e1c0bd0bdae" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>Met Office</h4>             <b>Location:</b> Exeter, United Kingdom<br>             <b>Projects:</b><br>             GHAP         </div>         </div>`)[0];
+                popup_662b5598b22437d549da488a5c5aeb0a.setContent(html_41fccb79c47750d307741e1c0bd0bdae);
+            
+        
+
+        circle_marker_2911a7f95f9541e95bc4d4d7d5b878ba.bindPopup(popup_662b5598b22437d549da488a5c5aeb0a)
+        ;
+
+        
+    
+    
+            var circle_marker_31e4591e29022c6f9e572ed7232a87a0 = L.circleMarker(
+                [48.8534951, 2.3483915],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#CC3311", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_808da4c5fec1443bd3799a110dbc9dcb = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_4b129ce117cf070e8f9e549e898f98ce = $(`<div id="html_4b129ce117cf070e8f9e549e898f98ce" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>European Association of Perinatal Medicine</h4>             <b>Location:</b> Paris, France<br>             <b>Projects:</b><br>             GHAP         </div>         </div>`)[0];
+                popup_808da4c5fec1443bd3799a110dbc9dcb.setContent(html_4b129ce117cf070e8f9e549e898f98ce);
+            
+        
+
+        circle_marker_31e4591e29022c6f9e572ed7232a87a0.bindPopup(popup_808da4c5fec1443bd3799a110dbc9dcb)
+        ;
+
+        
+    
+    
+            var circle_marker_76d52da0b0eb694441342f044b38f136 = L.circleMarker(
+                [51.4893335, -0.1440550845276872],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0077BB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 23, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_ea53f3469492813325cacfa622ce15a3 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d8dd736e7f99f7ee3179bf8bd7020a34 = $(`<div id="html_d8dd736e7f99f7ee3179bf8bd7020a34" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>London School of Hygiene and Tropical Medicine</h4>             <b>Location:</b> London, United Kingdom<br>             <b>Projects:</b><br>             CHAMNHA<br>ENBEL<br>HIGH_Horizons         </div>         </div>`)[0];
+                popup_ea53f3469492813325cacfa622ce15a3.setContent(html_d8dd736e7f99f7ee3179bf8bd7020a34);
+            
+        
+
+        circle_marker_76d52da0b0eb694441342f044b38f136.bindPopup(popup_ea53f3469492813325cacfa622ce15a3)
+        ;
+
+        
+    
+    
+            var circle_marker_10aabb6ae42fa8e1ed0284808c6ba9d5 = L.circleMarker(
+                [47.6038321, -122.330062],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0077BB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_da6d987712fb1495a51b18320877c58e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f124c9689931a698c744e0d54d43b35c = $(`<div id="html_f124c9689931a698c744e0d54d43b35c" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>University of Washington</h4>             <b>Location:</b> Seattle, United States<br>             <b>Projects:</b><br>             CHAMNHA<br>HEAT         </div>         </div>`)[0];
+                popup_da6d987712fb1495a51b18320877c58e.setContent(html_f124c9689931a698c744e0d54d43b35c);
+            
+        
+
+        circle_marker_10aabb6ae42fa8e1ed0284808c6ba9d5.bindPopup(popup_da6d987712fb1495a51b18320877c58e)
+        ;
+
+        
+    
+    
+            var circle_marker_42ff1941ac6adbc72c4bfb44273b38b7 = L.circleMarker(
+                [59.9133301, 10.7389701],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0077BB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_d25a97479ee3adec8b40393639d872ef = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_383ff56f7ee58a8e37f52395052a7ee2 = $(`<div id="html_383ff56f7ee58a8e37f52395052a7ee2" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>University of Oslo</h4>             <b>Location:</b> Oslo, Norway<br>             <b>Projects:</b><br>             CHAMNHA         </div>         </div>`)[0];
+                popup_d25a97479ee3adec8b40393639d872ef.setContent(html_383ff56f7ee58a8e37f52395052a7ee2);
+            
+        
+
+        circle_marker_42ff1941ac6adbc72c4bfb44273b38b7.bindPopup(popup_d25a97479ee3adec8b40393639d872ef)
+        ;
+
+        
+    
+    
+            var circle_marker_0a7a567c571bda39c6bec32b6a77f09a = L.circleMarker(
+                [42.2813722, -83.7484616],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#EE3377", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_b5ae6977ea7ce19341cf88aee611f27a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_3bb7fe4a6887da41ac39a552c2a3cb6f = $(`<div id="html_3bb7fe4a6887da41ac39a552c2a3cb6f" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>University of Michigan</h4>             <b>Location:</b> Ann Arbor, United States<br>             <b>Projects:</b><br>             HEAT         </div>         </div>`)[0];
+                popup_b5ae6977ea7ce19341cf88aee611f27a.setContent(html_3bb7fe4a6887da41ac39a552c2a3cb6f);
+            
+        
+
+        circle_marker_0a7a567c571bda39c6bec32b6a77f09a.bindPopup(popup_b5ae6977ea7ce19341cf88aee611f27a)
+        ;
+
+        
+    
+    
+            var circle_marker_83ce939450e03df912d8963838835d87 = L.circleMarker(
+                [55.7029296, 13.1929449],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#009988", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_0a16e202991d70e1962fbfdfdf876a2a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6b6802b0e4973a53addb427db639209e = $(`<div id="html_6b6802b0e4973a53addb427db639209e" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>Lunds University</h4>             <b>Location:</b> Lund, Sweden<br>             <b>Projects:</b><br>             ENBEL<br>HIGH_Horizons         </div>         </div>`)[0];
+                popup_0a16e202991d70e1962fbfdfdf876a2a.setContent(html_6b6802b0e4973a53addb427db639209e);
+            
+        
+
+        circle_marker_83ce939450e03df912d8963838835d87.bindPopup(popup_0a16e202991d70e1962fbfdfdf876a2a)
+        ;
+
+        
+    
+    
+            var circle_marker_c3d2a45338f46036260d5eb10ee13329 = L.circleMarker(
+                [55.6867243, 12.5700724],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#555555", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_91d426feb12c10ab17729933c6d8858a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6544d59012d8a01269290b7d4be67edd = $(`<div id="html_6544d59012d8a01269290b7d4be67edd" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>Denmark Technical University</h4>             <b>Location:</b> Copenhagen, Denmark<br>             <b>Projects:</b><br>             HIGH_Horizons         </div>         </div>`)[0];
+                popup_91d426feb12c10ab17729933c6d8858a.setContent(html_6544d59012d8a01269290b7d4be67edd);
+            
+        
+
+        circle_marker_c3d2a45338f46036260d5eb10ee13329.bindPopup(popup_91d426feb12c10ab17729933c6d8858a)
+        ;
+
+        
+    
+    
+            var circle_marker_e726115e82cc9a2c0eec059c9599cb1d = L.circleMarker(
+                [47.0708678, 15.4382786],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#009988", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_ed62a3abf3eae4c46a6d063da9c8a540 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d277b8ed7ceef7e43dc85e634b02ebb9 = $(`<div id="html_d277b8ed7ceef7e43dc85e634b02ebb9" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>University of Graz</h4>             <b>Location:</b> Graz, Austria<br>             <b>Projects:</b><br>             ENBEL<br>HIGH_Horizons         </div>         </div>`)[0];
+                popup_ed62a3abf3eae4c46a6d063da9c8a540.setContent(html_d277b8ed7ceef7e43dc85e634b02ebb9);
+            
+        
+
+        circle_marker_e726115e82cc9a2c0eec059c9599cb1d.bindPopup(popup_ed62a3abf3eae4c46a6d063da9c8a540)
+        ;
+
+        
+    
+    
+            var circle_marker_7ad0be56cc262620ff6e89a0b73c99f9 = L.circleMarker(
+                [41.8933203, 12.4829321],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#009988", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_ada8d98907ab635718446fc4bbfc83b3 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_3949c35422f4757acddd4f1ebfd71595 = $(`<div id="html_3949c35422f4757acddd4f1ebfd71595" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>Azienda Sanitaria Locale Roma</h4>             <b>Location:</b> Rome, Italy<br>             <b>Projects:</b><br>             ENBEL<br>HIGH_Horizons         </div>         </div>`)[0];
+                popup_ada8d98907ab635718446fc4bbfc83b3.setContent(html_3949c35422f4757acddd4f1ebfd71595);
+            
+        
+
+        circle_marker_7ad0be56cc262620ff6e89a0b73c99f9.bindPopup(popup_ada8d98907ab635718446fc4bbfc83b3)
+        ;
+
+        
+    
+    
+            var circle_marker_32f56c5a967f42dac466bb3cc5c525ca = L.circleMarker(
+                [63.8256568, 20.2630745],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#009988", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_fd157e2ffe490f658e1dd97da1d5699e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_607799cddcbb7e3890bd1f2f674cdfcc = $(`<div id="html_607799cddcbb7e3890bd1f2f674cdfcc" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>Umea University</h4>             <b>Location:</b> Umea, Sweden<br>             <b>Projects:</b><br>             ENBEL         </div>         </div>`)[0];
+                popup_fd157e2ffe490f658e1dd97da1d5699e.setContent(html_607799cddcbb7e3890bd1f2f674cdfcc);
+            
+        
+
+        circle_marker_32f56c5a967f42dac466bb3cc5c525ca.bindPopup(popup_fd157e2ffe490f658e1dd97da1d5699e)
+        ;
+
+        
+    
+    
+            var circle_marker_88ac731ae9caa55347cdef3cafb6af97 = L.circleMarker(
+                [58.3801207, 26.72245],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#009988", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_f7a871e0a3bf358432d0a067fb11ca02 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_183fc0843646f24780f2297e696a9a86 = $(`<div id="html_183fc0843646f24780f2297e696a9a86" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>Tartu Ulikool</h4>             <b>Location:</b> Tartu, Estonia<br>             <b>Projects:</b><br>             ENBEL         </div>         </div>`)[0];
+                popup_f7a871e0a3bf358432d0a067fb11ca02.setContent(html_183fc0843646f24780f2297e696a9a86);
+            
+        
+
+        circle_marker_88ac731ae9caa55347cdef3cafb6af97.bindPopup(popup_f7a871e0a3bf358432d0a067fb11ca02)
+        ;
+
+        
+    
+    
+            var circle_marker_b274192ed90dac1979e5ef0dbdadf02a = L.circleMarker(
+                [59.9133301, 10.7389701],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#009988", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_2a6ed53d1e2da6af34c32145df3ac532 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_37659a0f59f016aecdb8a3272de273bf = $(`<div id="html_37659a0f59f016aecdb8a3272de273bf" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>Folkehelseinstituttet</h4>             <b>Location:</b> Oslo, Norway<br>             <b>Projects:</b><br>             ENBEL         </div>         </div>`)[0];
+                popup_2a6ed53d1e2da6af34c32145df3ac532.setContent(html_37659a0f59f016aecdb8a3272de273bf);
+            
+        
+
+        circle_marker_b274192ed90dac1979e5ef0dbdadf02a.bindPopup(popup_2a6ed53d1e2da6af34c32145df3ac532)
+        ;
+
+        
+    
+    
+            var circle_marker_ac930a2b876af9ac037157dc8458090a = L.circleMarker(
+                [59.9133301, 10.7389701],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#009988", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_d392713105d0f1a9b0a48bb47d65da1d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_957d3f65efb52837d040a1aa60664467 = $(`<div id="html_957d3f65efb52837d040a1aa60664467" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>Center for International Climate Research</h4>             <b>Location:</b> Oslo, Norway<br>             <b>Projects:</b><br>             ENBEL         </div>         </div>`)[0];
+                popup_d392713105d0f1a9b0a48bb47d65da1d.setContent(html_957d3f65efb52837d040a1aa60664467);
+            
+        
+
+        circle_marker_ac930a2b876af9ac037157dc8458090a.bindPopup(popup_d392713105d0f1a9b0a48bb47d65da1d)
+        ;
+
+        
+    
+    
+            var circle_marker_0b044d579c70c3a94c316b86af248463 = L.circleMarker(
+                [53.3493795, -6.2605593],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#009988", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_58ffb3dba751b5d293195b7e0b3ea762 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_764db87b1acd46bf1a449bb38b6ef65c = $(`<div id="html_764db87b1acd46bf1a449bb38b6ef65c" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>Royal College of Surgeons in Ireland</h4>             <b>Location:</b> Dublin, Ireland<br>             <b>Projects:</b><br>             ENBEL         </div>         </div>`)[0];
+                popup_58ffb3dba751b5d293195b7e0b3ea762.setContent(html_764db87b1acd46bf1a449bb38b6ef65c);
+            
+        
+
+        circle_marker_0b044d579c70c3a94c316b86af248463.bindPopup(popup_58ffb3dba751b5d293195b7e0b3ea762)
+        ;
+
+        
+    
+    
+            var circle_marker_cb888933e7cee474ab3e70efdf018c7a = L.circleMarker(
+                [50.8465573, 4.351697],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#009988", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_4efda1ff6dd335d0a8f707a6feb07aef = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d056a28578445ce2ecf7dc2d3c1a0672 = $(`<div id="html_d056a28578445ce2ecf7dc2d3c1a0672" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>Health and Environment Alliance</h4>             <b>Location:</b> Brussels, Belgium<br>             <b>Projects:</b><br>             ENBEL         </div>         </div>`)[0];
+                popup_4efda1ff6dd335d0a8f707a6feb07aef.setContent(html_d056a28578445ce2ecf7dc2d3c1a0672);
+            
+        
+
+        circle_marker_cb888933e7cee474ab3e70efdf018c7a.bindPopup(popup_4efda1ff6dd335d0a8f707a6feb07aef)
+        ;
+
+        
+    
+    
+            var circle_marker_95f562daf934b92ba80d722fb24673a6 = L.circleMarker(
+                [52.07494555, 4.269680220536452],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#009988", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_e1da19804e5c4b0c913170bb1e10fee6 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e5afe79740472c1b2391cf95ee563604 = $(`<div id="html_e5afe79740472c1b2391cf95ee563604" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>International Red Cross Red Crescent Centre on Climate Change and Disaster Preparedness</h4>             <b>Location:</b> The Hague, Netherlands<br>             <b>Projects:</b><br>             ENBEL         </div>         </div>`)[0];
+                popup_e1da19804e5c4b0c913170bb1e10fee6.setContent(html_e5afe79740472c1b2391cf95ee563604);
+            
+        
+
+        circle_marker_95f562daf934b92ba80d722fb24673a6.bindPopup(popup_e1da19804e5c4b0c913170bb1e10fee6)
+        ;
+
+        
+    
+    
+            var circle_marker_2030987bd027dcbed0a5548c9221979e = L.circleMarker(
+                [43.6044622, 1.4442469],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#009988", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_2b22d8c79483c2c7600377761a5b2390 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c29e3ad863d9af676afd897693fde182 = $(`<div id="html_c29e3ad863d9af676afd897693fde182" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>University Paul Sabatier Toulouse</h4>             <b>Location:</b> Toulouse, France<br>             <b>Projects:</b><br>             ENBEL         </div>         </div>`)[0];
+                popup_2b22d8c79483c2c7600377761a5b2390.setContent(html_c29e3ad863d9af676afd897693fde182);
+            
+        
+
+        circle_marker_2030987bd027dcbed0a5548c9221979e.bindPopup(popup_2b22d8c79483c2c7600377761a5b2390)
+        ;
+
+        
+    
+    
+            var circle_marker_354069aa4f3451617d7f828ee1cb9c8e = L.circleMarker(
+                [57.7072326, 11.9670171],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#009988", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_5506c0d7dfa09bb58e619d92a8fbfd24 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_28cd3f34a9bf48084add36fd5111686d = $(`<div id="html_28cd3f34a9bf48084add36fd5111686d" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>Goeteborgs University</h4>             <b>Location:</b> Gothenburg, Sweden<br>             <b>Projects:</b><br>             ENBEL         </div>         </div>`)[0];
+                popup_5506c0d7dfa09bb58e619d92a8fbfd24.setContent(html_28cd3f34a9bf48084add36fd5111686d);
+            
+        
+
+        circle_marker_354069aa4f3451617d7f828ee1cb9c8e.bindPopup(popup_5506c0d7dfa09bb58e619d92a8fbfd24)
+        ;
+
+        
+    
+    
+            var circle_marker_b69ce95ba55f22d6bc19f8be83867537 = L.circleMarker(
+                [60.1674881, 24.9427473],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#009988", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_ac286f6071573c4f8265ccd996644766 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_53446cee10446e235f18cfdce8e5eedd = $(`<div id="html_53446cee10446e235f18cfdce8e5eedd" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>Ilmatieteen Laitos</h4>             <b>Location:</b> Helsinki, Finland<br>             <b>Projects:</b><br>             ENBEL         </div>         </div>`)[0];
+                popup_ac286f6071573c4f8265ccd996644766.setContent(html_53446cee10446e235f18cfdce8e5eedd);
+            
+        
+
+        circle_marker_b69ce95ba55f22d6bc19f8be83867537.bindPopup(popup_ac286f6071573c4f8265ccd996644766)
+        ;
+
+        
+    
+    
+            var circle_marker_2261b510f03e3b70e738ea6239788791 = L.circleMarker(
+                [38.98127255, -77.12335871396549],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 2}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_dbaa57e6c1453bf08f9571dadbc5fbaf = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_33d97c7d44b4c481d3f33393defca0c0 = $(`<div id="html_33d97c7d44b4c481d3f33393defca0c0" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>US National Institutes of Health</h4>             <b>Location:</b> Bethesda, United States<br>             <b>Projects:</b><br>             GHAP         </div>         </div>`)[0];
+                popup_dbaa57e6c1453bf08f9571dadbc5fbaf.setContent(html_33d97c7d44b4c481d3f33393defca0c0);
+            
+        
+
+        circle_marker_2261b510f03e3b70e738ea6239788791.bindPopup(popup_dbaa57e6c1453bf08f9571dadbc5fbaf)
+        ;
+
+        
+    
+    
+            var circle_marker_6aafa92ab5a64dd4d3185bcb5eeabe14 = L.circleMarker(
+                [51.5615327, -1.7854322],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 2}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_151786c8b51b8aa15441295269f0a201 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_9b7685780bccf5839d2d54a891c5eafc = $(`<div id="html_9b7685780bccf5839d2d54a891c5eafc" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>UK Research and Innovation</h4>             <b>Location:</b> Swindon, United Kingdom<br>             <b>Projects:</b><br>             CHAMNHA         </div>         </div>`)[0];
+                popup_151786c8b51b8aa15441295269f0a201.setContent(html_9b7685780bccf5839d2d54a891c5eafc);
+            
+        
+
+        circle_marker_6aafa92ab5a64dd4d3185bcb5eeabe14.bindPopup(popup_151786c8b51b8aa15441295269f0a201)
+        ;
+
+        
+    
+    
+            var circle_marker_d9c15b6333b55fa1690b1b1132922ddc = L.circleMarker(
+                [59.9133301, 10.7389701],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 2}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_e2f7915f388c751f5f6828f2a281bf16 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_faaba3dd8547b5e5d707392006e8a3df = $(`<div id="html_faaba3dd8547b5e5d707392006e8a3df" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>Research Council of Norway</h4>             <b>Location:</b> Oslo, Norway<br>             <b>Projects:</b><br>             CHAMNHA         </div>         </div>`)[0];
+                popup_e2f7915f388c751f5f6828f2a281bf16.setContent(html_faaba3dd8547b5e5d707392006e8a3df);
+            
+        
+
+        circle_marker_d9c15b6333b55fa1690b1b1132922ddc.bindPopup(popup_e2f7915f388c751f5f6828f2a281bf16)
+        ;
+
+        
+    
+    
+            var circle_marker_7ba251d6285bf2cbfd14191efff9dd28 = L.circleMarker(
+                [59.3251172, 18.0710935],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 2}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_07a75b53f891c4dce7efd0532b9a297a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d015dd3d0f800d681d255f6a4a69d7c4 = $(`<div id="html_d015dd3d0f800d681d255f6a4a69d7c4" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>Forte</h4>             <b>Location:</b> Stockholm, Sweden<br>             <b>Projects:</b><br>             CHAMNHA         </div>         </div>`)[0];
+                popup_07a75b53f891c4dce7efd0532b9a297a.setContent(html_d015dd3d0f800d681d255f6a4a69d7c4);
+            
+        
+
+        circle_marker_7ba251d6285bf2cbfd14191efff9dd28.bindPopup(popup_07a75b53f891c4dce7efd0532b9a297a)
+        ;
+
+        
+    
+    
+            var circle_marker_fdddeec225be21b92d8adf11999b9e1b = L.circleMarker(
+                [51.0543422, 3.7174243],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#555555", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_a87e34a58bdb9ca6f471fd5cfb1aeb46 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d7f2855e7e10dd2e11c2592cc1a708f7 = $(`<div id="html_d7f2855e7e10dd2e11c2592cc1a708f7" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>Ghent University</h4>             <b>Location:</b> Ghent, Belgium<br>             <b>Projects:</b><br>             HIGH_Horizons         </div>         </div>`)[0];
+                popup_a87e34a58bdb9ca6f471fd5cfb1aeb46.setContent(html_d7f2855e7e10dd2e11c2592cc1a708f7);
+            
+        
+
+        circle_marker_fdddeec225be21b92d8adf11999b9e1b.bindPopup(popup_a87e34a58bdb9ca6f471fd5cfb1aeb46)
+        ;
+
+        
+    
+    
+            var circle_marker_e3b41166e84a5724b670dd91c3bc5017 = L.circleMarker(
+                [39.3621095, 22.9444191],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#555555", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 1}
+            ).addTo(map_136df6dfe80b38b01b8742f954dc23eb);
+        
+    
+        var popup_b330f1e583dc89a5312ced214967906c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d044433134e533e052bf5a4f187a432a = $(`<div id="html_d044433134e533e052bf5a4f187a432a" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; min-width: 200px;">             <h4>University of Thessaly</h4>             <b>Location:</b> Volos, Greece<br>             <b>Projects:</b><br>             HIGH_Horizons         </div>         </div>`)[0];
+                popup_b330f1e583dc89a5312ced214967906c.setContent(html_d044433134e533e052bf5a4f187a432a);
+            
+        
+
+        circle_marker_e3b41166e84a5724b670dd91c3bc5017.bindPopup(popup_b330f1e583dc89a5312ced214967906c)
+        ;
+
+        
+    
+</script>
+</html>
