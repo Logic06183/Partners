@@ -40,7 +40,20 @@ df <- df %>%
       HIGH_Horizons == 1 ~ "HIGH Horizons",
       TRUE ~ "Multiple Projects"
     ),
-    is_major_partner = total_projects >= 3  # Flag major partners
+    # Expand criteria for labeling
+    is_major_partner = total_projects >= 2 |  # Show institutions with 2+ projects
+      Funder == 1 |                          # Show all funders
+      Institution %in% c(                     # Show specific key institutions
+        "London School of Hygiene and Tropical Medicine",
+        "Karolinska Institute",
+        "University of Washington",
+        "University of Michigan",
+        "Wits Planetary Health",
+        "CeSHHAR",
+        "Aga Khan University",
+        "University of Pretoria",
+        "IBM Research Africa"
+      )
   )
 
 # Convert to sf object
@@ -89,18 +102,20 @@ world_map <- ggplot() +
     aes(label = Institution,
         geometry = geometry),
     stat = "sf_coordinates",
-    size = 3,
+    size = 2.8,  # Slightly smaller text for more labels
     fontface = "bold",
-    box.padding = 0.8,
-    point.padding = 0.5,
-    force = 10,
-    max.overlaps = 100,
+    box.padding = 0.6,
+    point.padding = 0.4,
+    force = 12,
+    max.overlaps = 50,  # Allow more overlaps
     color = "black",
     bg.color = "white",
     bg.r = 0.15,
-    min.segment.length = 0.3,
+    min.segment.length = 0.2,
     segment.color = "gray50",
-    segment.size = 0.2
+    segment.size = 0.2,
+    nudge_x = 1,  # Add some horizontal nudging
+    nudge_y = 1   # Add some vertical nudging
   ) +
   
   # Customize colors for points
@@ -190,4 +205,41 @@ project_summary <- df %>%
 
 write.csv(project_summary, 
           "global_partners_summary.csv", 
-          row.names = FALSE) 
+          row.names = FALSE)
+
+# Add this diagnostic print to see all institutions with longitude > 100
+print(df %>% 
+  filter(lon > 100) %>%  
+  select(Institution, City, Country, lon, lat))
+
+# Create a new row for NIEHS if it doesn't exist
+niehs_row <- data.frame(
+  Institution = "National Institute of Environmental Health Sciences (NIEHS)",
+  City = "Research Triangle Park",
+  Country = "United States",
+  CHAMNHA = 0,
+  HEAT = 0,
+  ENBEL = 0,
+  GHAP = 0,
+  HAPI = 0,
+  BioHEAT = 0,
+  HIGH_Horizons = 0,
+  Funder = 1,  # Mark as funder
+  Partners = 0,
+  Data_Providers = 0,
+  Policy_Stakeholders = 0,
+  Gueladio_Cisse = 0,
+  Matthew_Chersich = 0,
+  Pilot_Projects = 0,
+  lon = -78.8669,
+  lat = 35.9052
+)
+
+# If NIEHS isn't in the CSV, add it
+if (!("National Institute of Environmental Health Sciences (NIEHS)" %in% df$Institution)) {
+  write.table(niehs_row, "partners_cleaned.csv", 
+              append = TRUE, 
+              sep = ",", 
+              row.names = FALSE, 
+              col.names = FALSE)
+} 
