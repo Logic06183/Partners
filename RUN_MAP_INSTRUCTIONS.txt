@@ -1,0 +1,50 @@
+INSTRUCTIONS TO RUN THE UPDATED PARTNERSHIP MAP SCRIPT IN RSTUDIO
+
+1. Open RStudio
+2. Open the partnership_map.R file: 
+   File > Open File > Navigate to:
+   c:\Users\CraigParker\OneDrive - Wits Health Consortium\PHR PC\Desktop\Partners\partnership_map.R
+
+3. You can run the entire script by clicking "Source" at the top-right of the editor window,
+   or by pressing Ctrl+Alt+R
+
+4. The script will generate and save TWO files:
+   - Wits_Planetary_Health_partnership_map_for_Wellcome.pdf (Main map with Europe inset)
+   - Wits_Planetary_Health_partnership_map_for_Wellcome.png
+
+WHAT'S CHANGED IN THIS VERSION:
+
+1. Integrated Map with Europe Inset:
+   - Instead of two separate maps, the Europe partners are now shown as a zoomed-in inset
+     within the main map
+   - The inset is positioned in the top-right corner for better visibility
+   - A dashed outline on the main map shows the area that is magnified in the inset
+   - Labels are more readable in the zoomed Europe section
+
+2. Project-Based Categorization:
+   - Partners are categorized by PROJECT TYPE rather than leadership group
+   - Each partner is color-coded according to their primary project: CHAMNHA, HEAT, ENBEL, etc.
+   - The color scheme is consistent between the main map and the inset
+
+3. Improved Map Layout:
+   - No overlapping elements between map features and legends
+   - Proper spacing between all map components
+   - Better label placement with less overlap
+   - Clean borders around the inset for visual clarity
+
+4. Better Visual Hierarchy:
+   - Clear distinction between the main map and the inset
+   - Appropriate sizing of all map elements
+   - Consistent styling throughout
+   - "European Partners (Zoomed View)" label clearly identifies the inset
+
+5. Additional Project Statistics:
+   - Generated project-specific CSV summaries
+   - Added detailed project type analysis in the console output
+
+TIPS FOR TROUBLESHOOTING:
+   - If any packages fail to install, you may need to install them manually with:
+     install.packages("package_name")
+   - Make sure cowplot is installed: install.packages("cowplot")
+   - For any font issues, run: install.packages("extrafont"); library(extrafont); font_import()
+   - If map doesn't display properly, try print(combined_map) command separately
