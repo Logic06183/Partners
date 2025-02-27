@@ -244,7 +244,7 @@ map <- ggplot() +
   ) +
   
   # Set the aspect ratio for better display of Africa and Europe
-  coord_sf(xlim = c(-25, 50), ylim = c(-40, 70), expand = FALSE, ratio = 1.3)
+  coord_sf(xlim = c(-25, 50), ylim = c(-40, 70), expand = FALSE)
 
 # Add rectangle to the main map to show the inset area with improved styling
 europe_rect_coords <- data.frame(
