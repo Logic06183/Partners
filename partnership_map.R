@@ -240,11 +240,11 @@ map <- ggplot() +
     legend.box.just = "top",
     axis.text = element_text(size = 7, color = "gray40"),
     plot.background = element_rect(fill = "white", color = NA),
-    plot.margin = margin(0.5, 0.5, 0.5, 0.5, "cm")
+    plot.margin = margin(0.5, 1.5, 0.5, 0.5, "cm")
   ) +
   
   # Set the aspect ratio for better display of Africa and Europe
-  coord_sf(xlim = c(-25, 55), ylim = c(-40, 70), expand = FALSE, ratio = 1.1)
+  coord_sf(xlim = c(-25, 50), ylim = c(-40, 70), expand = FALSE, ratio = 1.3)
 
 # Add rectangle to the main map to show the inset area with improved styling
 europe_rect_coords <- data.frame(
@@ -407,7 +407,7 @@ combined_map <- ggdraw(map) +
   draw_plot(
     europe_map,
     # Position in the right side with improved placement - moved further right
-    x = 0.78,  
+    x = 0.82,  
     y = 0.68, 
     # Slightly larger size for better readability
     width = 0.28, 
@@ -422,7 +422,7 @@ map_with_label <- combined_map +
   # Add a more reliable text annotation with background
   annotate(
     "label",
-    x = 0.78 + (0.28/2),  # Center of inset width - adjusted to match new position
+    x = 0.82 + (0.28/2),  # Center of inset width - adjusted to match new position
     y = 0.68 - 0.04,      # Just below the inset
     label = "European Partners (Zoomed View)",
     size = 3.5,           # Adjusted size
