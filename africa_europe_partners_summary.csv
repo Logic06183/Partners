@@ -1,41 +1,30 @@
 "Institution","Country","CHAMNHA","HEAT","ENBEL","GHAP","HAPI","BioHEAT","HIGH_Horizons","total_projects"
 "Wits Planetary Health","South Africa",1,1,1,1,1,1,1,7
 "CeSHHAR","Zimbabwe",1,1,0,1,1,0,1,5
-"Aga Khan University","Kenya",1,0,1,1,0,0,1,4
 "IBM Research Africa","South Africa",0,1,0,1,0,1,0,3
 "University of Pretoria","South Africa",0,1,0,1,1,0,0,3
 "Karolinska Institute","Sweden",1,0,0,1,0,0,1,3
 "London School of Hygiene and Tropical Medicine","United Kingdom",1,0,1,0,0,0,1,3
 "University of Graz","Austria",0,0,1,0,0,0,1,2
 "Azienda Sanitaria Locale Roma","Italy",0,0,1,0,0,0,1,2
-"International Red Cross Red Crescent Centre on Climate Change and Disaster Preparedness","Netherlands",0,0,1,0,1,0,0,2
 "Climate Systems Analysis Group","South Africa",0,1,0,1,0,0,0,2
 "Section 27","South Africa",0,0,0,1,1,0,0,2
 "Lunds University","Sweden",0,0,1,0,0,0,1,2
+"International Red Cross Red Crescent Centre on Climate Change and Disaster Preparedness","Switzerland",0,0,1,0,1,0,0,2
 "World Health Organization","Switzerland",0,0,0,1,0,0,1,2
-"European Union","Belgium",0,0,0,0,0,0,1,1
-"Ghent University","Belgium",0,0,0,0,0,0,1,1
 "Health and Environment Alliance","Belgium",0,0,1,0,0,0,0,1
 "University of Botswana","Botswana",0,0,1,0,0,0,0,1
 "Institut de Recherche en Sciences de la SantÃ©","Burkina Faso",1,0,0,0,0,0,0,1
 "Institute of Public Health","Burundi",0,1,0,0,0,0,0,1
 "University of Yaoundé","Cameroon",0,1,0,0,0,0,0,1
-"International Health Support Centre","Chad",0,1,0,0,0,0,0,1
 "Centre Suisse de Recherches Scientifiques","Côte d'Ivoire",0,1,0,0,0,0,0,1
-"Felix Houphouët Boigny University","Côte d'Ivoire",0,1,0,0,0,0,0,1
-"Nangui Abrogoua University","Côte d'Ivoire",0,1,0,0,0,0,0,1
 "University Peleforo Gon Coulibaly","Côte d'Ivoire",0,1,0,0,0,0,0,1
 "Denmark Technical University","Denmark",0,0,0,0,0,0,1,1
 "Tartu Ulikool","Estonia",0,0,1,0,0,0,0,1
 "Ilmatieteen Laitos","Finland",0,0,1,0,0,0,0,1
-"European Association of Perinatal Medicine","France",0,0,0,1,0,0,0,1
 "University Paul Sabatier Toulouse","France",0,0,1,0,0,0,0,1
-"Friedrich Schiller Universität","Germany",0,0,0,1,0,0,0,1
-"University of Jena, Department of Obstetric Medicine","Germany",0,0,0,1,0,0,0,1
-"University of Thessaly","Greece",0,0,0,0,0,0,1,1
 "Royal College of Surgeons in Ireland","Ireland",0,0,1,0,0,0,0,1
 "Trinity College Dublin","Ireland",0,0,0,1,0,0,0,1
-"Human Technopole","Italy",0,0,0,1,0,0,0,1
 "Aga Khan University Kilifi Research Centre","Kenya",1,0,0,0,0,0,0,1
 "Institute of Public Health","Mauritania",0,1,0,0,0,0,0,1
 "Federal University of Technology","Nigeria",0,1,0,0,0,0,0,1
@@ -45,30 +34,18 @@
 "Medical School of Rwanda","Rwanda",0,1,0,0,0,0,0,1
 "Cheikh Anta Diop University","Senegal",0,1,0,0,0,0,0,1
 "IRESSEF","Senegal",0,1,0,0,0,0,0,1
-"Ziguinchor University","Senegal",0,1,0,0,0,0,0,1
-"Centre for Infectious Disease Epidemiology and Research, University of Cape Town","South Africa",0,0,0,1,0,0,0,1
-"Division of Human Genetics, University of the Witwatersrand","South Africa",0,0,0,0,0,1,0,1
 "Empilweni Services and Research Unit (ESRU)","South Africa",0,0,0,0,0,1,0,1
-"Global Change Institute University of the Witwatersrand","South Africa",0,0,0,0,1,0,0,1
-"Quantium Health","South Africa",0,0,0,1,0,0,0,1
-"Rahima Moosa Mother and Child Hospital","South Africa",0,0,0,0,0,1,0,1
 "South African Medical Research Council","South Africa",1,0,0,0,0,0,0,1
 "South African Weather Service","South Africa",0,0,0,0,1,0,0,1
-"Stellenbosch University","South Africa",0,0,0,0,0,1,0,1
 "Sydney Brenner Institute for Molecular Bioscience","South Africa",0,0,0,0,0,1,0,1
 "University of Cape Town/The Health Foundation","South Africa",0,0,0,1,0,0,0,1
-"Western Cape Provincial Health","South Africa",0,0,0,1,0,0,0,1
 "Goeteborgs University","Sweden",0,0,1,0,0,0,0,1
 "Umea University","Sweden",0,0,1,0,0,0,0,1
-"World Meteorological Organization","Switzerland",0,0,0,1,0,0,0,1
 "University of Lome","Togo",0,1,0,0,0,0,0,1
 "Makerere University","Uganda",0,1,0,0,0,0,0,1
-"Met Office","United Kingdom",0,0,0,1,0,0,0,1
-"University College London, Lancet Countdown","United Kingdom",0,0,0,1,0,0,0,1
 "University of Leeds","United Kingdom",0,0,0,1,0,0,0,1
 "University of Southampton","United Kingdom",0,0,0,0,0,1,0,1
 "Midlands State University","Zimbabwe",0,1,0,0,0,0,0,1
-"Research Council of Norway","Norway",0,0,0,0,0,0,0,0
-"Forte","Sweden",0,0,0,0,0,0,0,0
-"UK Research and Innovation","United Kingdom",0,0,0,0,0,0,0,0
-"Wellcome Trust","United Kingdom",0,0,0,0,0,0,0,0
+"University of Jena","Germany",NA,NA,NA,NA,NA,NA,NA,NA
+"Division of Human Genetics","South Africa",NA,NA,NA,NA,NA,NA,NA,NA
+"University College London","United Kingdom",NA,NA,NA,NA,NA,NA,NA,NA

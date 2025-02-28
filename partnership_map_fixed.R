@@ -262,26 +262,6 @@ map <- ggplot() +
   # Set the fill manually
   scale_fill_identity() +
   
-  # Add legend for HE²AT contributing countries manually
-  # This ensures the yellow choropleth highlighting is included in the legend
-  geom_rect(
-    aes(
-      xmin = -Inf, xmax = -Inf, ymin = -Inf, ymax = -Inf,
-      fill = "#FFFAC8"
-    ),
-    show.legend = TRUE
-  ) +
-  scale_fill_manual(
-    name = "Country Type",
-    values = c("#FFFAC8" = "#FFFAC8", "white" = "white"),
-    labels = c("HE²AT Contributing Country", "Other Countries"),
-    guide = guide_legend(override.aes = list(
-      fill = c("#FFFAC8", "white"),
-      color = "gray40", 
-      size = 0.3
-    ))
-  ) +
-  
   # Add partner points sized by project count and colored by project
   # Using filled circles instead of outlined ones
   geom_sf(data = partners_sf,
@@ -329,6 +309,7 @@ map <- ggplot() +
   # Add title and legend
   labs(
     title = "Wits Planetary Health's Research Partners",
+    subtitle = "Research Partnerships in Africa and Europe",
     caption = paste0("Figure prepared for Wellcome Trust application | Data: Research Collaboration Network | ", format(Sys.Date(), "%B %Y"))
   ) +
   
@@ -357,12 +338,12 @@ map <- ggplot() +
     legend.box.just = "top",
     axis.text = element_text(size = 7, color = "gray40"),
     plot.background = element_rect(fill = "white", color = NA),
-    plot.margin = margin(0.5, 2.5, 0.5, 0.5, "cm")
+    plot.margin = margin(0.5, 1.5, 0.5, 0.5, "cm")
   ) +
   
   # Set the aspect ratio for better display of Africa and Europe
   # Shift further left to avoid cutoff and create more space for inset
-  coord_sf(xlim = c(-35, 40), ylim = c(-40, 70), expand = FALSE)
+  coord_sf(xlim = c(-30, 45), ylim = c(-40, 70), expand = FALSE)
 
 # Add rectangle to the main map to show the inset area with improved styling
 europe_rect_coords <- data.frame(
@@ -406,10 +387,10 @@ map <- map +
   # Move scale bar further to the left to avoid label overlaps
   annotation_scale(
     location = "bl",
-    width_hint = 0.15,
+    width_hint = 0.2,
     bar_cols = c("gray20", "white"),
     text_family = body_font,
-    pad_x = unit(2.0, "in"),
+    pad_x = unit(1.5, "in"),
     pad_y = unit(0.2, "in"),
     text_cex = 0.7,
     text_pad = unit(0.15, "cm"),
@@ -431,9 +412,9 @@ map <- map +
 combined_map <- ggdraw(map) +
   draw_plot(
     europe_map,
-    # Position moved further right to avoid any overlap with African continent
-    x = 0.72,  
-    y = 0.22, 
+    # Position in bottom-right corner to avoid African continent
+    x = 0.62,  
+    y = 0.26, 
     # Size adjusted for more clarity
     width = 0.35, 
     height = 0.35,
@@ -447,14 +428,14 @@ map_with_label <- combined_map +
   # Add a more reliable text annotation with background - positioned above inset
   annotate(
     "label",
-    x = 0.72 + (0.35/2),  # Center of inset width
-    y = 0.22 + 0.35 + 0.03,  # Slightly higher above the inset
+    x = 0.62 + (0.35/2),  # Center of inset width
+    y = 0.26 + 0.35 + 0.02,  # Just above the inset
     label = "European Partners (Zoomed View)",
-    size = 3.5,
+    size = 3.5,           # Adjusted size
     fontface = "bold",
     color = "black",
-    fill = alpha("white", 0.95),
-    label.size = 0.8
+    fill = alpha("white", 0.9),
+    label.size = 0.5
   )
 
 # Save the combined map as a high-quality PDF for publication
@@ -660,6 +641,7 @@ cat("\nCreating full maps with Europe inset (with and without title)...\n")
 combined_map_with_title <- combined_map + 
   labs(
     title = "Wits Planetary Health's Research Partners",
+    subtitle = "Research Partnerships in Africa and Europe",
     caption = paste0("Figure prepared for Wellcome Trust application | Data: Research Collaboration Network | ", format(Sys.Date(), "%B %Y"))
   )
 
