@@ -1,0 +1,2577 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_a78d6aae6720bba1097f2f0d7e7121e5 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_a78d6aae6720bba1097f2f0d7e7121e5" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_a78d6aae6720bba1097f2f0d7e7121e5 = L.map(
+                "map_a78d6aae6720bba1097f2f0d7e7121e5",
+                {
+                    center: [-28.5, 24.5],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 6,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_18245c39d856bcccae8b8d41d9f7b96e = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_18245c39d856bcccae8b8d41d9f7b96e.addTo(map_a78d6aae6720bba1097f2f0d7e7121e5);
+        
+    
+            var marker_cluster_e5e67088e40013262be351f005a90124 = L.markerClusterGroup(
+                {}
+            );
+        
+    
+            var marker_9670fa96ad35b068bec9a78b1b7d41ac = L.marker(
+                [-33.9301, 18.4607],
+                {}
+            ).addTo(marker_cluster_e5e67088e40013262be351f005a90124);
+        
+    
+            var icon_40ba051707530ca26f7ea57971433cf6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_9670fa96ad35b068bec9a78b1b7d41ac.setIcon(icon_40ba051707530ca26f7ea57971433cf6);
+        
+    
+        var popup_110772b73acd405d962007c774e84b95 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_168d49ea30c92e624c10832dc48f4799 = $(`<div id="html_168d49ea30c92e624c10832dc48f4799" style="width: 100.0%; height: 100.0%;">     <b>Climate Systems Analysis Group</b><br>     Short Name: CSAG<br>     City: Cape Town<br>     Projects: HEAT, GHAP<br></div>`)[0];
+                popup_110772b73acd405d962007c774e84b95.setContent(html_168d49ea30c92e624c10832dc48f4799);
+            
+        
+
+        marker_9670fa96ad35b068bec9a78b1b7d41ac.bindPopup(popup_110772b73acd405d962007c774e84b95)
+        ;
+
+        
+    
+    
+            marker_9670fa96ad35b068bec9a78b1b7d41ac.bindTooltip(
+                `<div>
+                     CSAG
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4f5e572ebc67394a00311493de96c4ec = L.marker(
+                [-33.9575, 18.4597],
+                {}
+            ).addTo(marker_cluster_e5e67088e40013262be351f005a90124);
+        
+    
+            var icon_886b8275e09efecd6aa277e10eb92656 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_4f5e572ebc67394a00311493de96c4ec.setIcon(icon_886b8275e09efecd6aa277e10eb92656);
+        
+    
+        var popup_e14af7497908e37da5b6c5ee7ae3f18f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_30f1abe66fed17a6b85ae56a822674d2 = $(`<div id="html_30f1abe66fed17a6b85ae56a822674d2" style="width: 100.0%; height: 100.0%;">     <b>University of Cape Town</b><br>     Short Name: UCT<br>     City: Cape Town<br>     Projects: GHAP<br></div>`)[0];
+                popup_e14af7497908e37da5b6c5ee7ae3f18f.setContent(html_30f1abe66fed17a6b85ae56a822674d2);
+            
+        
+
+        marker_4f5e572ebc67394a00311493de96c4ec.bindPopup(popup_e14af7497908e37da5b6c5ee7ae3f18f)
+        ;
+
+        
+    
+    
+            marker_4f5e572ebc67394a00311493de96c4ec.bindTooltip(
+                `<div>
+                     UCT
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6f51cb65c608d7e9ca375312789d4879 = L.marker(
+                [-33.9249, 18.4241],
+                {}
+            ).addTo(marker_cluster_e5e67088e40013262be351f005a90124);
+        
+    
+            var icon_2ec1bb0034a09c94f8f1f62621df2dd5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_6f51cb65c608d7e9ca375312789d4879.setIcon(icon_2ec1bb0034a09c94f8f1f62621df2dd5);
+        
+    
+        var popup_2c42501dfad0e56d7394251be46f785b = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_4d5a78cd6d3b4a2dad2cb376a9c25da8 = $(`<div id="html_4d5a78cd6d3b4a2dad2cb376a9c25da8" style="width: 100.0%; height: 100.0%;">     <b>Western Cape Provincial Health</b><br>     Short Name: WCPH<br>     City: Cape Town<br>     Projects: GHAP<br></div>`)[0];
+                popup_2c42501dfad0e56d7394251be46f785b.setContent(html_4d5a78cd6d3b4a2dad2cb376a9c25da8);
+            
+        
+
+        marker_6f51cb65c608d7e9ca375312789d4879.bindPopup(popup_2c42501dfad0e56d7394251be46f785b)
+        ;
+
+        
+    
+    
+            marker_6f51cb65c608d7e9ca375312789d4879.bindTooltip(
+                `<div>
+                     WCPH
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5021f4b9e764f800abc0415e03aa631b = L.marker(
+                [-26.2601, 27.9408],
+                {}
+            ).addTo(marker_cluster_e5e67088e40013262be351f005a90124);
+        
+    
+            var icon_eb09307f1f8f8b64723a76e90fb89254 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_5021f4b9e764f800abc0415e03aa631b.setIcon(icon_eb09307f1f8f8b64723a76e90fb89254);
+        
+    
+        var popup_7b75415d1bbc6397521a5f595a6ae490 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6b2f80f32e1c023bf6b92a2bfe37aab4 = $(`<div id="html_6b2f80f32e1c023bf6b92a2bfe37aab4" style="width: 100.0%; height: 100.0%;">     <b>Empilweni Services and Research Unit</b><br>     Short Name: ESRU<br>     City: Johannesburg<br>     Projects: BioHEAT<br></div>`)[0];
+                popup_7b75415d1bbc6397521a5f595a6ae490.setContent(html_6b2f80f32e1c023bf6b92a2bfe37aab4);
+            
+        
+
+        marker_5021f4b9e764f800abc0415e03aa631b.bindPopup(popup_7b75415d1bbc6397521a5f595a6ae490)
+        ;
+
+        
+    
+    
+            marker_5021f4b9e764f800abc0415e03aa631b.bindTooltip(
+                `<div>
+                     ESRU
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9b0e26b0582a0b33c50c61751d9e1e7e = L.marker(
+                [-26.0455, 28.0687],
+                {}
+            ).addTo(marker_cluster_e5e67088e40013262be351f005a90124);
+        
+    
+            var icon_4fb41d4c0c991684b8a478cb9342aee7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_9b0e26b0582a0b33c50c61751d9e1e7e.setIcon(icon_4fb41d4c0c991684b8a478cb9342aee7);
+        
+    
+        var popup_6ce35f709c77e79f014c0abc2b72d0f0 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ba4a9066a5d60721b79ec2eea6dd4a13 = $(`<div id="html_ba4a9066a5d60721b79ec2eea6dd4a13" style="width: 100.0%; height: 100.0%;">     <b>IBM Research Africa</b><br>     Short Name: IBM Africa<br>     City: Johannesburg<br>     Projects: HEAT, GHAP, BioHEAT<br></div>`)[0];
+                popup_6ce35f709c77e79f014c0abc2b72d0f0.setContent(html_ba4a9066a5d60721b79ec2eea6dd4a13);
+            
+        
+
+        marker_9b0e26b0582a0b33c50c61751d9e1e7e.bindPopup(popup_6ce35f709c77e79f014c0abc2b72d0f0)
+        ;
+
+        
+    
+    
+            marker_9b0e26b0582a0b33c50c61751d9e1e7e.bindTooltip(
+                `<div>
+                     IBM Africa
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_50a9ec06754dbb9a084cb16ad54b7675 = L.marker(
+                [-26.0999, 28.0566],
+                {}
+            ).addTo(marker_cluster_e5e67088e40013262be351f005a90124);
+        
+    
+            var icon_654bb57610b2d545f1cd43c07187003b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_50a9ec06754dbb9a084cb16ad54b7675.setIcon(icon_654bb57610b2d545f1cd43c07187003b);
+        
+    
+        var popup_cdcf0c33e2fa0a14d13978b34ad9501b = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f07134c3116d8e0976971659b5490e95 = $(`<div id="html_f07134c3116d8e0976971659b5490e95" style="width: 100.0%; height: 100.0%;">     <b>Quantium Health</b><br>     Short Name: QH<br>     City: Johannesburg<br>     Projects: GHAP<br></div>`)[0];
+                popup_cdcf0c33e2fa0a14d13978b34ad9501b.setContent(html_f07134c3116d8e0976971659b5490e95);
+            
+        
+
+        marker_50a9ec06754dbb9a084cb16ad54b7675.bindPopup(popup_cdcf0c33e2fa0a14d13978b34ad9501b)
+        ;
+
+        
+    
+    
+            marker_50a9ec06754dbb9a084cb16ad54b7675.bindTooltip(
+                `<div>
+                     QH
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_61cfa940ac12f3bc77a34030f439d883 = L.marker(
+                [-26.1921, 28.0307],
+                {}
+            ).addTo(marker_cluster_e5e67088e40013262be351f005a90124);
+        
+    
+            var icon_f4b409149b278bacc3e2c98d0d51c701 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_61cfa940ac12f3bc77a34030f439d883.setIcon(icon_f4b409149b278bacc3e2c98d0d51c701);
+        
+    
+        var popup_5b7233d40a48949fa34ccec450482cd2 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_bc7085cefb7335e71fd4721414ec8145 = $(`<div id="html_bc7085cefb7335e71fd4721414ec8145" style="width: 100.0%; height: 100.0%;">     <b>Section 27</b><br>     Short Name: S27<br>     City: Johannesburg<br>     Projects: GHAP, HAPI<br></div>`)[0];
+                popup_5b7233d40a48949fa34ccec450482cd2.setContent(html_bc7085cefb7335e71fd4721414ec8145);
+            
+        
+
+        marker_61cfa940ac12f3bc77a34030f439d883.bindPopup(popup_5b7233d40a48949fa34ccec450482cd2)
+        ;
+
+        
+    
+    
+            marker_61cfa940ac12f3bc77a34030f439d883.bindTooltip(
+                `<div>
+                     S27
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6880993629510a3d9d7ae38a9d89908e = L.marker(
+                [-26.1913, 28.0305],
+                {}
+            ).addTo(marker_cluster_e5e67088e40013262be351f005a90124);
+        
+    
+            var icon_5d13c29dc288bdd5645cae971e6f9e44 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_6880993629510a3d9d7ae38a9d89908e.setIcon(icon_5d13c29dc288bdd5645cae971e6f9e44);
+        
+    
+        var popup_123f378a169e3089a490a01c16bbf15c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_abe2895019c4bec1726b81b0479533b6 = $(`<div id="html_abe2895019c4bec1726b81b0479533b6" style="width: 100.0%; height: 100.0%;">     <b>Wits Planetary Health</b><br>     Short Name: WPH<br>     City: Johannesburg<br>     Projects: CHAMNHA, HEAT, ENBEL, GHAP, HAPI, BioHEAT, HIGH_Horizons<br></div>`)[0];
+                popup_123f378a169e3089a490a01c16bbf15c.setContent(html_abe2895019c4bec1726b81b0479533b6);
+            
+        
+
+        marker_6880993629510a3d9d7ae38a9d89908e.bindPopup(popup_123f378a169e3089a490a01c16bbf15c)
+        ;
+
+        
+    
+    
+            marker_6880993629510a3d9d7ae38a9d89908e.bindTooltip(
+                `<div>
+                     WPH
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_52aeac4b59915e38e2ff16c2627fbba7 = L.marker(
+                [-26.1814, 28.0382],
+                {}
+            ).addTo(marker_cluster_e5e67088e40013262be351f005a90124);
+        
+    
+            var icon_8da01ee816d07869489e5a69833c7c18 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_52aeac4b59915e38e2ff16c2627fbba7.setIcon(icon_8da01ee816d07869489e5a69833c7c18);
+        
+    
+        var popup_e316d1591f13ef8786dc188026a477ef = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_139c46953ab4aa448377ca77a44f9d5c = $(`<div id="html_139c46953ab4aa448377ca77a44f9d5c" style="width: 100.0%; height: 100.0%;">     <b>Sydney Brenner Institute</b><br>     Short Name: SBIMB<br>     City: Johannesburg<br>     Projects: BioHEAT<br></div>`)[0];
+                popup_e316d1591f13ef8786dc188026a477ef.setContent(html_139c46953ab4aa448377ca77a44f9d5c);
+            
+        
+
+        marker_52aeac4b59915e38e2ff16c2627fbba7.bindPopup(popup_e316d1591f13ef8786dc188026a477ef)
+        ;
+
+        
+    
+    
+            marker_52aeac4b59915e38e2ff16c2627fbba7.bindTooltip(
+                `<div>
+                     SBIMB
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6c1b53089582732e35867503dc19d0eb = L.marker(
+                [-26.1825, 27.9735],
+                {}
+            ).addTo(marker_cluster_e5e67088e40013262be351f005a90124);
+        
+    
+            var icon_f29d4444713bbc7ee727b230519164b1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_6c1b53089582732e35867503dc19d0eb.setIcon(icon_f29d4444713bbc7ee727b230519164b1);
+        
+    
+        var popup_944d6136b69c99056e26ea87f8e907b0 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d912fa522ff8c1c634c2b67cb8b7e377 = $(`<div id="html_d912fa522ff8c1c634c2b67cb8b7e377" style="width: 100.0%; height: 100.0%;">     <b>Rahima Moosa Hospital</b><br>     Short Name: RMH<br>     City: Johannesburg<br>     Projects: BioHEAT<br></div>`)[0];
+                popup_944d6136b69c99056e26ea87f8e907b0.setContent(html_d912fa522ff8c1c634c2b67cb8b7e377);
+            
+        
+
+        marker_6c1b53089582732e35867503dc19d0eb.bindPopup(popup_944d6136b69c99056e26ea87f8e907b0)
+        ;
+
+        
+    
+    
+            marker_6c1b53089582732e35867503dc19d0eb.bindTooltip(
+                `<div>
+                     RMH
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e48f1f10f69b0049656e113f38f8a144 = L.marker(
+                [-26.1814, 28.0382],
+                {}
+            ).addTo(marker_cluster_e5e67088e40013262be351f005a90124);
+        
+    
+            var icon_d147440d65e6fd0264479f6ae917268b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_e48f1f10f69b0049656e113f38f8a144.setIcon(icon_d147440d65e6fd0264479f6ae917268b);
+        
+    
+        var popup_4c5199efbb97717586e3ad82a7ba05bb = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_00aef687576dfdfe5b8fa34997dba298 = $(`<div id="html_00aef687576dfdfe5b8fa34997dba298" style="width: 100.0%; height: 100.0%;">     <b>Division of Human Genetics</b><br>     Short Name: DHG<br>     City: Johannesburg<br>     Projects: BioHEAT<br></div>`)[0];
+                popup_4c5199efbb97717586e3ad82a7ba05bb.setContent(html_00aef687576dfdfe5b8fa34997dba298);
+            
+        
+
+        marker_e48f1f10f69b0049656e113f38f8a144.bindPopup(popup_4c5199efbb97717586e3ad82a7ba05bb)
+        ;
+
+        
+    
+    
+            marker_e48f1f10f69b0049656e113f38f8a144.bindTooltip(
+                `<div>
+                     DHG
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_49a02f68b84ac6dd8f6f877397d8e05b = L.marker(
+                [-26.1905, 28.0298],
+                {}
+            ).addTo(marker_cluster_e5e67088e40013262be351f005a90124);
+        
+    
+            var icon_2fa7785583f1eaffda1a8778c1433e87 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_49a02f68b84ac6dd8f6f877397d8e05b.setIcon(icon_2fa7785583f1eaffda1a8778c1433e87);
+        
+    
+        var popup_2623cff92b8ff47b18e0d3a17c0cd361 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f6f8120dbf3747fa3393dbfea674cd7b = $(`<div id="html_f6f8120dbf3747fa3393dbfea674cd7b" style="width: 100.0%; height: 100.0%;">     <b>Global Change Institute</b><br>     Short Name: GCI<br>     City: Johannesburg<br>     Projects: HAPI<br></div>`)[0];
+                popup_2623cff92b8ff47b18e0d3a17c0cd361.setContent(html_f6f8120dbf3747fa3393dbfea674cd7b);
+            
+        
+
+        marker_49a02f68b84ac6dd8f6f877397d8e05b.bindPopup(popup_2623cff92b8ff47b18e0d3a17c0cd361)
+        ;
+
+        
+    
+    
+            marker_49a02f68b84ac6dd8f6f877397d8e05b.bindTooltip(
+                `<div>
+                     GCI
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_76a33d6c3f8d23d5461564004cdc47b3 = L.marker(
+                [-33.9351, 18.4683],
+                {}
+            ).addTo(marker_cluster_e5e67088e40013262be351f005a90124);
+        
+    
+            var icon_082b0048ff98c0e0bffbe6940cefae81 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_76a33d6c3f8d23d5461564004cdc47b3.setIcon(icon_082b0048ff98c0e0bffbe6940cefae81);
+        
+    
+        var popup_2a265913f469a5127b858d30e08ef623 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_8f3d55d966733379fe8cbece7ae1992b = $(`<div id="html_8f3d55d966733379fe8cbece7ae1992b" style="width: 100.0%; height: 100.0%;">     <b>South African Medical Research Council</b><br>     Short Name: SAMRC<br>     City: Cape Town<br>     Projects: CHAMNHA<br></div>`)[0];
+                popup_2a265913f469a5127b858d30e08ef623.setContent(html_8f3d55d966733379fe8cbece7ae1992b);
+            
+        
+
+        marker_76a33d6c3f8d23d5461564004cdc47b3.bindPopup(popup_2a265913f469a5127b858d30e08ef623)
+        ;
+
+        
+    
+    
+            marker_76a33d6c3f8d23d5461564004cdc47b3.bindTooltip(
+                `<div>
+                     SAMRC
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2e3d5f26eaadee30bb641b8345578ea0 = L.marker(
+                [-25.7545, 28.2293],
+                {}
+            ).addTo(marker_cluster_e5e67088e40013262be351f005a90124);
+        
+    
+            var icon_c44cebe39ca788300843344d23ec1da1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_2e3d5f26eaadee30bb641b8345578ea0.setIcon(icon_c44cebe39ca788300843344d23ec1da1);
+        
+    
+        var popup_74567e7bf47af23483d0a4473d3fe586 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_fd70536773f99a12eee02e809cb0e9aa = $(`<div id="html_fd70536773f99a12eee02e809cb0e9aa" style="width: 100.0%; height: 100.0%;">     <b>University of Pretoria</b><br>     Short Name: UP<br>     City: Pretoria<br>     Projects: HEAT, GHAP, HAPI<br></div>`)[0];
+                popup_74567e7bf47af23483d0a4473d3fe586.setContent(html_fd70536773f99a12eee02e809cb0e9aa);
+            
+        
+
+        marker_2e3d5f26eaadee30bb641b8345578ea0.bindPopup(popup_74567e7bf47af23483d0a4473d3fe586)
+        ;
+
+        
+    
+    
+            marker_2e3d5f26eaadee30bb641b8345578ea0.bindTooltip(
+                `<div>
+                     UP
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0548806e186b7a6d9e6360df18ab6096 = L.marker(
+                [-25.8069, 28.2041],
+                {}
+            ).addTo(marker_cluster_e5e67088e40013262be351f005a90124);
+        
+    
+            var icon_7d684ce4b330f3d207e78d7071ddeffb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_0548806e186b7a6d9e6360df18ab6096.setIcon(icon_7d684ce4b330f3d207e78d7071ddeffb);
+        
+    
+        var popup_537b4c5b8a92c622dd6a904f72da4a51 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_4df5bd1f6f0b9d4851cd356361014fac = $(`<div id="html_4df5bd1f6f0b9d4851cd356361014fac" style="width: 100.0%; height: 100.0%;">     <b>South African Weather Service</b><br>     Short Name: SAWS<br>     City: Pretoria<br>     Projects: HAPI<br></div>`)[0];
+                popup_537b4c5b8a92c622dd6a904f72da4a51.setContent(html_4df5bd1f6f0b9d4851cd356361014fac);
+            
+        
+
+        marker_0548806e186b7a6d9e6360df18ab6096.bindPopup(popup_537b4c5b8a92c622dd6a904f72da4a51)
+        ;
+
+        
+    
+    
+            marker_0548806e186b7a6d9e6360df18ab6096.bindTooltip(
+                `<div>
+                     SAWS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b47ad0f993c5ebb53bb4d2221bb6c378 = L.marker(
+                [-33.9328, 18.8654],
+                {}
+            ).addTo(marker_cluster_e5e67088e40013262be351f005a90124);
+        
+    
+            var icon_0245fbbef6ef1f8be72b25fbc6316c65 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_b47ad0f993c5ebb53bb4d2221bb6c378.setIcon(icon_0245fbbef6ef1f8be72b25fbc6316c65);
+        
+    
+        var popup_f15d3363605ac4cd34c53e1367c9d3a1 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_59448ce69f292105502008a7815b8b78 = $(`<div id="html_59448ce69f292105502008a7815b8b78" style="width: 100.0%; height: 100.0%;">     <b>Stellenbosch University</b><br>     Short Name: SU<br>     City: Stellenbosch<br>     Projects: BioHEAT<br></div>`)[0];
+                popup_f15d3363605ac4cd34c53e1367c9d3a1.setContent(html_59448ce69f292105502008a7815b8b78);
+            
+        
+
+        marker_b47ad0f993c5ebb53bb4d2221bb6c378.bindPopup(popup_f15d3363605ac4cd34c53e1367c9d3a1)
+        ;
+
+        
+    
+    
+            marker_b47ad0f993c5ebb53bb4d2221bb6c378.bindTooltip(
+                `<div>
+                     SU
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_580f241f080c066c556c63897440ab05 = L.marker(
+                [-29.8587, 30.9819],
+                {}
+            ).addTo(marker_cluster_e5e67088e40013262be351f005a90124);
+        
+    
+            var icon_b393a1293a92e0106618688ffb9bce43 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_580f241f080c066c556c63897440ab05.setIcon(icon_b393a1293a92e0106618688ffb9bce43);
+        
+    
+        var popup_1e01927abc03cc1eb3385f91600d8de9 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a1788ab182979b4c4899378859e779eb = $(`<div id="html_a1788ab182979b4c4899378859e779eb" style="width: 100.0%; height: 100.0%;">     <b>University of KwaZulu-Natal Law Centre</b><br>     Short Name: UKZN Law<br>     City: Durban<br>     Projects: HEAT<br></div>`)[0];
+                popup_1e01927abc03cc1eb3385f91600d8de9.setContent(html_a1788ab182979b4c4899378859e779eb);
+            
+        
+
+        marker_580f241f080c066c556c63897440ab05.bindPopup(popup_1e01927abc03cc1eb3385f91600d8de9)
+        ;
+
+        
+    
+    
+            marker_580f241f080c066c556c63897440ab05.bindTooltip(
+                `<div>
+                     UKZN Law
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7ab1357a305ab6ff7b51461a54986e9b = L.marker(
+                [-25.7461, 28.2118],
+                {}
+            ).addTo(marker_cluster_e5e67088e40013262be351f005a90124);
+        
+    
+            var icon_74841ebd0a5ea37b338a0f136c8e8d23 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_7ab1357a305ab6ff7b51461a54986e9b.setIcon(icon_74841ebd0a5ea37b338a0f136c8e8d23);
+        
+    
+        var popup_fc4eb7a3b3bc6747044493b58dd76a24 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_45e6154992985da6d040f6010e912ed6 = $(`<div id="html_45e6154992985da6d040f6010e912ed6" style="width: 100.0%; height: 100.0%;">     <b>Department of Science & Innovation</b><br>     Short Name: DSI<br>     City: Pretoria<br>     </div>`)[0];
+                popup_fc4eb7a3b3bc6747044493b58dd76a24.setContent(html_45e6154992985da6d040f6010e912ed6);
+            
+        
+
+        marker_7ab1357a305ab6ff7b51461a54986e9b.bindPopup(popup_fc4eb7a3b3bc6747044493b58dd76a24)
+        ;
+
+        
+    
+    
+            marker_7ab1357a305ab6ff7b51461a54986e9b.bindTooltip(
+                `<div>
+                     DSI
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_82542b433095c02da26ab880b081b59a = L.marker(
+                [-33.9258, 18.4232],
+                {}
+            ).addTo(marker_cluster_e5e67088e40013262be351f005a90124);
+        
+    
+            var icon_c8be20546553877d67f6ab59cc873e28 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_82542b433095c02da26ab880b081b59a.setIcon(icon_c8be20546553877d67f6ab59cc873e28);
+        
+    
+        var popup_27e0360c763096a796e2867766bc8017 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_226883c1dbfed3d528f119a73e4eb41b = $(`<div id="html_226883c1dbfed3d528f119a73e4eb41b" style="width: 100.0%; height: 100.0%;">     <b>Kheth'Impilo</b><br>     Short Name: KI-SA<br>     City: Cape Town<br>     Projects: HEAT<br></div>`)[0];
+                popup_27e0360c763096a796e2867766bc8017.setContent(html_226883c1dbfed3d528f119a73e4eb41b);
+            
+        
+
+        marker_82542b433095c02da26ab880b081b59a.bindPopup(popup_27e0360c763096a796e2867766bc8017)
+        ;
+
+        
+    
+    
+            marker_82542b433095c02da26ab880b081b59a.bindTooltip(
+                `<div>
+                     KI-SA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e876af554661e0b8a925777d64b0ab62 = L.marker(
+                [-26.1803, 28.0457],
+                {}
+            ).addTo(marker_cluster_e5e67088e40013262be351f005a90124);
+        
+    
+            var icon_7a3bfca42260850d30f8e39349462683 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_e876af554661e0b8a925777d64b0ab62.setIcon(icon_7a3bfca42260850d30f8e39349462683);
+        
+    
+        var popup_723cd918243128dd38a8f2820dd65f80 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_9bbf86417a9b36916c1cb06f5bcd5602 = $(`<div id="html_9bbf86417a9b36916c1cb06f5bcd5602" style="width: 100.0%; height: 100.0%;">     <b>Developmental Pathways for Health</b><br>     Short Name: DPHRU<br>     City: Johannesburg<br>     Projects: HEAT<br></div>`)[0];
+                popup_723cd918243128dd38a8f2820dd65f80.setContent(html_9bbf86417a9b36916c1cb06f5bcd5602);
+            
+        
+
+        marker_e876af554661e0b8a925777d64b0ab62.bindPopup(popup_723cd918243128dd38a8f2820dd65f80)
+        ;
+
+        
+    
+    
+            marker_e876af554661e0b8a925777d64b0ab62.bindTooltip(
+                `<div>
+                     DPHRU
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fdb3dadd3170320dc07df7591cdc2c6e = L.marker(
+                [-26.1842, 28.0416],
+                {}
+            ).addTo(marker_cluster_e5e67088e40013262be351f005a90124);
+        
+    
+            var icon_43e6a3d67f56bd4be4b8100c35fbdb7f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_fdb3dadd3170320dc07df7591cdc2c6e.setIcon(icon_43e6a3d67f56bd4be4b8100c35fbdb7f);
+        
+    
+        var popup_db2741f0bc83531df549e06549d76291 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_52b9a92dc3e0ec5df26119a05cd08ec8 = $(`<div id="html_52b9a92dc3e0ec5df26119a05cd08ec8" style="width: 100.0%; height: 100.0%;">     <b>Ezintsha Research Centre</b><br>     Short Name: ERC<br>     City: Johannesburg<br>     Projects: HEAT<br></div>`)[0];
+                popup_db2741f0bc83531df549e06549d76291.setContent(html_52b9a92dc3e0ec5df26119a05cd08ec8);
+            
+        
+
+        marker_fdb3dadd3170320dc07df7591cdc2c6e.bindPopup(popup_db2741f0bc83531df549e06549d76291)
+        ;
+
+        
+    
+    
+            marker_fdb3dadd3170320dc07df7591cdc2c6e.bindTooltip(
+                `<div>
+                     ERC
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1da33981bbb8fea433edc4fa6aead320 = L.marker(
+                [-26.2601, 27.9407],
+                {}
+            ).addTo(marker_cluster_e5e67088e40013262be351f005a90124);
+        
+    
+            var icon_63122ce9f448f14a4d899a4c8cceecce = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_1da33981bbb8fea433edc4fa6aead320.setIcon(icon_63122ce9f448f14a4d899a4c8cceecce);
+        
+    
+        var popup_6ed04076d7f2797cf59187ad50e8b28e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c9ad73f31c5201a628e51f2be1c96709 = $(`<div id="html_c9ad73f31c5201a628e51f2be1c96709" style="width: 100.0%; height: 100.0%;">     <b>Chris Hani Baragwanath Hospital</b><br>     Short Name: CHBH<br>     City: Soweto<br>     Projects: HEAT<br></div>`)[0];
+                popup_6ed04076d7f2797cf59187ad50e8b28e.setContent(html_c9ad73f31c5201a628e51f2be1c96709);
+            
+        
+
+        marker_1da33981bbb8fea433edc4fa6aead320.bindPopup(popup_6ed04076d7f2797cf59187ad50e8b28e)
+        ;
+
+        
+    
+    
+            marker_1da33981bbb8fea433edc4fa6aead320.bindTooltip(
+                `<div>
+                     CHBH
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e662753c7ae5e23bda924324d8c7d08c = L.marker(
+                [-26.1742, 28.0196],
+                {}
+            ).addTo(marker_cluster_e5e67088e40013262be351f005a90124);
+        
+    
+            var icon_d50f3a540da009fd09af8ea1b9dbd579 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_e662753c7ae5e23bda924324d8c7d08c.setIcon(icon_d50f3a540da009fd09af8ea1b9dbd579);
+        
+    
+        var popup_4d08e126369b6c7f493eba7a30e644e7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_bdd1924ffaf6a2f5d4f7b02589db9235 = $(`<div id="html_bdd1924ffaf6a2f5d4f7b02589db9235" style="width: 100.0%; height: 100.0%;">     <b>Helen Joseph Hospital</b><br>     Short Name: HJH<br>     City: Johannesburg<br>     Projects: HEAT<br></div>`)[0];
+                popup_4d08e126369b6c7f493eba7a30e644e7.setContent(html_bdd1924ffaf6a2f5d4f7b02589db9235);
+            
+        
+
+        marker_e662753c7ae5e23bda924324d8c7d08c.bindPopup(popup_4d08e126369b6c7f493eba7a30e644e7)
+        ;
+
+        
+    
+    
+            marker_e662753c7ae5e23bda924324d8c7d08c.bindTooltip(
+                `<div>
+                     HJH
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2b53ebab13c9763c2a733fe08fdd4e6d = L.marker(
+                [-26.2601, 27.9407],
+                {}
+            ).addTo(marker_cluster_e5e67088e40013262be351f005a90124);
+        
+    
+            var icon_3ce49d6adb7f7b3f52fb36f2de07504c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_2b53ebab13c9763c2a733fe08fdd4e6d.setIcon(icon_3ce49d6adb7f7b3f52fb36f2de07504c);
+        
+    
+        var popup_c3bb2fda03f482a9dc72d90913f7812d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_3cc46195545872e504e4f9fe8c0e2ced = $(`<div id="html_3cc46195545872e504e4f9fe8c0e2ced" style="width: 100.0%; height: 100.0%;">     <b>Vaccines and Infectious Diseases Analytics</b><br>     Short Name: VIDA<br>     City: Soweto<br>     Projects: HEAT<br></div>`)[0];
+                popup_c3bb2fda03f482a9dc72d90913f7812d.setContent(html_3cc46195545872e504e4f9fe8c0e2ced);
+            
+        
+
+        marker_2b53ebab13c9763c2a733fe08fdd4e6d.bindPopup(popup_c3bb2fda03f482a9dc72d90913f7812d)
+        ;
+
+        
+    
+    
+            marker_2b53ebab13c9763c2a733fe08fdd4e6d.bindTooltip(
+                `<div>
+                     VIDA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c04c1791787031633874699dd82107cc = L.marker(
+                [-26.2601, 27.9407],
+                {}
+            ).addTo(marker_cluster_e5e67088e40013262be351f005a90124);
+        
+    
+            var icon_259dba3447679f1e51b59b43cb260abf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_c04c1791787031633874699dd82107cc.setIcon(icon_259dba3447679f1e51b59b43cb260abf);
+        
+    
+        var popup_ebe26a633f9196716f06a6eeaabe5232 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_167739490d6607a0b0e58aa0c0e66f21 = $(`<div id="html_167739490d6607a0b0e58aa0c0e66f21" style="width: 100.0%; height: 100.0%;">     <b>Perinatal HIV Research Unit</b><br>     Short Name: PHRU<br>     City: Soweto<br>     Projects: HEAT<br></div>`)[0];
+                popup_ebe26a633f9196716f06a6eeaabe5232.setContent(html_167739490d6607a0b0e58aa0c0e66f21);
+            
+        
+
+        marker_c04c1791787031633874699dd82107cc.bindPopup(popup_ebe26a633f9196716f06a6eeaabe5232)
+        ;
+
+        
+    
+    
+            marker_c04c1791787031633874699dd82107cc.bindTooltip(
+                `<div>
+                     PHRU
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c26217a6cc1fecdc88a3aa869bb6c21a = L.marker(
+                [-26.1739, 28.0194],
+                {}
+            ).addTo(marker_cluster_e5e67088e40013262be351f005a90124);
+        
+    
+            var icon_5b379b1eb6f7d5fdc91abbe6eef544de = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_c26217a6cc1fecdc88a3aa869bb6c21a.setIcon(icon_5b379b1eb6f7d5fdc91abbe6eef544de);
+        
+    
+        var popup_803a6226f7bd8d47acd1c65757e0cede = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_10fb06fa5f2c4eaf4770d760ee598ddd = $(`<div id="html_10fb06fa5f2c4eaf4770d760ee598ddd" style="width: 100.0%; height: 100.0%;">     <b>Right to Care</b><br>     Short Name: RTC<br>     City: Johannesburg<br>     Projects: HEAT<br></div>`)[0];
+                popup_803a6226f7bd8d47acd1c65757e0cede.setContent(html_10fb06fa5f2c4eaf4770d760ee598ddd);
+            
+        
+
+        marker_c26217a6cc1fecdc88a3aa869bb6c21a.bindPopup(popup_803a6226f7bd8d47acd1c65757e0cede)
+        ;
+
+        
+    
+    
+            marker_c26217a6cc1fecdc88a3aa869bb6c21a.bindTooltip(
+                `<div>
+                     RTC
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9fdd62ab360456947d6df94cb362075f = L.marker(
+                [-26.1745, 28.019],
+                {}
+            ).addTo(marker_cluster_e5e67088e40013262be351f005a90124);
+        
+    
+            var icon_5dcda13f099f3c9a055eb621b2821809 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_9fdd62ab360456947d6df94cb362075f.setIcon(icon_5dcda13f099f3c9a055eb621b2821809);
+        
+    
+        var popup_82440bca1f59120812a7b5333681722c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_5642023f0ec2f646b5fe41105c50ab84 = $(`<div id="html_5642023f0ec2f646b5fe41105c50ab84" style="width: 100.0%; height: 100.0%;">     <b>Clinical HIV Research Unit</b><br>     Short Name: CHRU<br>     City: Johannesburg<br>     Projects: HEAT<br></div>`)[0];
+                popup_82440bca1f59120812a7b5333681722c.setContent(html_5642023f0ec2f646b5fe41105c50ab84);
+            
+        
+
+        marker_9fdd62ab360456947d6df94cb362075f.bindPopup(popup_82440bca1f59120812a7b5333681722c)
+        ;
+
+        
+    
+    
+            marker_9fdd62ab360456947d6df94cb362075f.bindTooltip(
+                `<div>
+                     CHRU
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d370f56fc3ad5ed1860981e0929595a7 = L.marker(
+                [-26.1874, 28.0437],
+                {}
+            ).addTo(marker_cluster_e5e67088e40013262be351f005a90124);
+        
+    
+            var icon_af953394852b1f03afa5a464a149e86f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_d370f56fc3ad5ed1860981e0929595a7.setIcon(icon_af953394852b1f03afa5a464a149e86f);
+        
+    
+        var popup_f87a2407c84f1260d82efbe06380c6a3 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b59bc4b7ef1bf028871d6178b575913b = $(`<div id="html_b59bc4b7ef1bf028871d6178b575913b" style="width: 100.0%; height: 100.0%;">     <b>Wits Reproductive Health and HIV Institute</b><br>     Short Name: Wits RHI<br>     City: Johannesburg<br>     Projects: HEAT<br></div>`)[0];
+                popup_f87a2407c84f1260d82efbe06380c6a3.setContent(html_b59bc4b7ef1bf028871d6178b575913b);
+            
+        
+
+        marker_d370f56fc3ad5ed1860981e0929595a7.bindPopup(popup_f87a2407c84f1260d82efbe06380c6a3)
+        ;
+
+        
+    
+    
+            marker_d370f56fc3ad5ed1860981e0929595a7.bindTooltip(
+                `<div>
+                     Wits RHI
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f91e7bb6453feb6d00f37eb40908a501 = L.marker(
+                [-26.1864, 28.0405],
+                {}
+            ).addTo(marker_cluster_e5e67088e40013262be351f005a90124);
+        
+    
+            var icon_fbae04490abe6f1e4f97a4af438754bb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_f91e7bb6453feb6d00f37eb40908a501.setIcon(icon_fbae04490abe6f1e4f97a4af438754bb);
+        
+    
+        var popup_487e3df16f14d73993fc08e798a07065 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_2269709a4f4bd6edcf714d97136e7879 = $(`<div id="html_2269709a4f4bd6edcf714d97136e7879" style="width: 100.0%; height: 100.0%;">     <b>The Aurum Institute</b><br>     Short Name: Aurum<br>     City: Johannesburg<br>     Projects: HEAT<br></div>`)[0];
+                popup_487e3df16f14d73993fc08e798a07065.setContent(html_2269709a4f4bd6edcf714d97136e7879);
+            
+        
+
+        marker_f91e7bb6453feb6d00f37eb40908a501.bindPopup(popup_487e3df16f14d73993fc08e798a07065)
+        ;
+
+        
+    
+    
+            marker_f91e7bb6453feb6d00f37eb40908a501.bindTooltip(
+                `<div>
+                     Aurum
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            marker_cluster_e5e67088e40013262be351f005a90124.addTo(map_a78d6aae6720bba1097f2f0d7e7121e5);
+        
+    
+            var marker_cluster_b784817517fdc693c2d0bc09119bab3a = L.markerClusterGroup(
+                {}
+            );
+        
+    
+            var marker_61cf9fce8ffc51f8124e8d3c3159b8c6 = L.marker(
+                [-26.1913, 28.0305],
+                {}
+            ).addTo(marker_cluster_b784817517fdc693c2d0bc09119bab3a);
+        
+    
+            var icon_fce9077724b49db3badeb83446f1bd19 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_61cf9fce8ffc51f8124e8d3c3159b8c6.setIcon(icon_fce9077724b49db3badeb83446f1bd19);
+        
+    
+        var popup_d4ef6bdf36c0d372b2f228ad267cb855 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ee64e3f46ac288b463037a15d3b06464 = $(`<div id="html_ee64e3f46ac288b463037a15d3b06464" style="width: 100.0%; height: 100.0%;">     <b>Wits Planetary Health</b><br>     Short Name: WPH<br>     City: Johannesburg<br>     Projects: CHAMNHA, HEAT, ENBEL, GHAP, HAPI, BioHEAT, HIGH_Horizons<br></div>`)[0];
+                popup_d4ef6bdf36c0d372b2f228ad267cb855.setContent(html_ee64e3f46ac288b463037a15d3b06464);
+            
+        
+
+        marker_61cf9fce8ffc51f8124e8d3c3159b8c6.bindPopup(popup_d4ef6bdf36c0d372b2f228ad267cb855)
+        ;
+
+        
+    
+    
+            marker_61cf9fce8ffc51f8124e8d3c3159b8c6.bindTooltip(
+                `<div>
+                     WPH
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_35707b533430d4348378db3d50b4ebf6 = L.marker(
+                [-33.9351, 18.4683],
+                {}
+            ).addTo(marker_cluster_b784817517fdc693c2d0bc09119bab3a);
+        
+    
+            var icon_8187766ee87d07481777eec9f409e460 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_35707b533430d4348378db3d50b4ebf6.setIcon(icon_8187766ee87d07481777eec9f409e460);
+        
+    
+        var popup_672cc2e2013b8d7bb0e24683b3714565 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_2cfaa2136fd2a20e63cf92fa7d91c13d = $(`<div id="html_2cfaa2136fd2a20e63cf92fa7d91c13d" style="width: 100.0%; height: 100.0%;">     <b>South African Medical Research Council</b><br>     Short Name: SAMRC<br>     City: Cape Town<br>     Projects: CHAMNHA<br></div>`)[0];
+                popup_672cc2e2013b8d7bb0e24683b3714565.setContent(html_2cfaa2136fd2a20e63cf92fa7d91c13d);
+            
+        
+
+        marker_35707b533430d4348378db3d50b4ebf6.bindPopup(popup_672cc2e2013b8d7bb0e24683b3714565)
+        ;
+
+        
+    
+    
+            marker_35707b533430d4348378db3d50b4ebf6.bindTooltip(
+                `<div>
+                     SAMRC
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            marker_cluster_b784817517fdc693c2d0bc09119bab3a.addTo(map_a78d6aae6720bba1097f2f0d7e7121e5);
+        
+    
+            var marker_cluster_e89757678bafcbd2d9008b2cc861184d = L.markerClusterGroup(
+                {}
+            );
+        
+    
+            var marker_59572053c62b49548b113eb6d4f51793 = L.marker(
+                [-33.9301, 18.4607],
+                {}
+            ).addTo(marker_cluster_e89757678bafcbd2d9008b2cc861184d);
+        
+    
+            var icon_bc3adf3784fd01061705b15def6430d8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_59572053c62b49548b113eb6d4f51793.setIcon(icon_bc3adf3784fd01061705b15def6430d8);
+        
+    
+        var popup_58ae11033282d1cffe8c75c7a26bddd4 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a51243de915b7d8d1e30ccbee3265a46 = $(`<div id="html_a51243de915b7d8d1e30ccbee3265a46" style="width: 100.0%; height: 100.0%;">     <b>Climate Systems Analysis Group</b><br>     Short Name: CSAG<br>     City: Cape Town<br>     Projects: HEAT, GHAP<br></div>`)[0];
+                popup_58ae11033282d1cffe8c75c7a26bddd4.setContent(html_a51243de915b7d8d1e30ccbee3265a46);
+            
+        
+
+        marker_59572053c62b49548b113eb6d4f51793.bindPopup(popup_58ae11033282d1cffe8c75c7a26bddd4)
+        ;
+
+        
+    
+    
+            marker_59572053c62b49548b113eb6d4f51793.bindTooltip(
+                `<div>
+                     CSAG
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a7c1e3f09ca67accc941c6b3713dd3ca = L.marker(
+                [-26.0455, 28.0687],
+                {}
+            ).addTo(marker_cluster_e89757678bafcbd2d9008b2cc861184d);
+        
+    
+            var icon_1c9efe317d8eafb0ed7ba711c8d91384 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_a7c1e3f09ca67accc941c6b3713dd3ca.setIcon(icon_1c9efe317d8eafb0ed7ba711c8d91384);
+        
+    
+        var popup_55662c6fb8bcca7330594465839cd587 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b9cdd936de6a4100841331e2e184d9dd = $(`<div id="html_b9cdd936de6a4100841331e2e184d9dd" style="width: 100.0%; height: 100.0%;">     <b>IBM Research Africa</b><br>     Short Name: IBM Africa<br>     City: Johannesburg<br>     Projects: HEAT, GHAP, BioHEAT<br></div>`)[0];
+                popup_55662c6fb8bcca7330594465839cd587.setContent(html_b9cdd936de6a4100841331e2e184d9dd);
+            
+        
+
+        marker_a7c1e3f09ca67accc941c6b3713dd3ca.bindPopup(popup_55662c6fb8bcca7330594465839cd587)
+        ;
+
+        
+    
+    
+            marker_a7c1e3f09ca67accc941c6b3713dd3ca.bindTooltip(
+                `<div>
+                     IBM Africa
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_cc3c463ea45370265ce0b218aa2da653 = L.marker(
+                [-26.1913, 28.0305],
+                {}
+            ).addTo(marker_cluster_e89757678bafcbd2d9008b2cc861184d);
+        
+    
+            var icon_d19ebf2a4634a1c881f89a401a70f9ce = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_cc3c463ea45370265ce0b218aa2da653.setIcon(icon_d19ebf2a4634a1c881f89a401a70f9ce);
+        
+    
+        var popup_d7eefb01a8fce22d2bacc91b3f2b03ea = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_43f7d815937ddb67c23c0dbaa8e6d5b3 = $(`<div id="html_43f7d815937ddb67c23c0dbaa8e6d5b3" style="width: 100.0%; height: 100.0%;">     <b>Wits Planetary Health</b><br>     Short Name: WPH<br>     City: Johannesburg<br>     Projects: CHAMNHA, HEAT, ENBEL, GHAP, HAPI, BioHEAT, HIGH_Horizons<br></div>`)[0];
+                popup_d7eefb01a8fce22d2bacc91b3f2b03ea.setContent(html_43f7d815937ddb67c23c0dbaa8e6d5b3);
+            
+        
+
+        marker_cc3c463ea45370265ce0b218aa2da653.bindPopup(popup_d7eefb01a8fce22d2bacc91b3f2b03ea)
+        ;
+
+        
+    
+    
+            marker_cc3c463ea45370265ce0b218aa2da653.bindTooltip(
+                `<div>
+                     WPH
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9bf305171d576b1a366bdd79bb8bd673 = L.marker(
+                [-25.7545, 28.2293],
+                {}
+            ).addTo(marker_cluster_e89757678bafcbd2d9008b2cc861184d);
+        
+    
+            var icon_4381ee5bd921fdc929f44309a7e0f30c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_9bf305171d576b1a366bdd79bb8bd673.setIcon(icon_4381ee5bd921fdc929f44309a7e0f30c);
+        
+    
+        var popup_6c5d9a13b56c50093ade6208e8747bcd = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_4771230e3a10346bc0e06a38f367d633 = $(`<div id="html_4771230e3a10346bc0e06a38f367d633" style="width: 100.0%; height: 100.0%;">     <b>University of Pretoria</b><br>     Short Name: UP<br>     City: Pretoria<br>     Projects: HEAT, GHAP, HAPI<br></div>`)[0];
+                popup_6c5d9a13b56c50093ade6208e8747bcd.setContent(html_4771230e3a10346bc0e06a38f367d633);
+            
+        
+
+        marker_9bf305171d576b1a366bdd79bb8bd673.bindPopup(popup_6c5d9a13b56c50093ade6208e8747bcd)
+        ;
+
+        
+    
+    
+            marker_9bf305171d576b1a366bdd79bb8bd673.bindTooltip(
+                `<div>
+                     UP
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_081a8488477412b76a7bfbe34372983a = L.marker(
+                [-29.8587, 30.9819],
+                {}
+            ).addTo(marker_cluster_e89757678bafcbd2d9008b2cc861184d);
+        
+    
+            var icon_d4c409793ba73984b13987a0b2afbdf3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_081a8488477412b76a7bfbe34372983a.setIcon(icon_d4c409793ba73984b13987a0b2afbdf3);
+        
+    
+        var popup_ea3b3a44f785979ee23d8427c621ae85 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_fa31bb83023a92c4e918516c2fe7538d = $(`<div id="html_fa31bb83023a92c4e918516c2fe7538d" style="width: 100.0%; height: 100.0%;">     <b>University of KwaZulu-Natal Law Centre</b><br>     Short Name: UKZN Law<br>     City: Durban<br>     Projects: HEAT<br></div>`)[0];
+                popup_ea3b3a44f785979ee23d8427c621ae85.setContent(html_fa31bb83023a92c4e918516c2fe7538d);
+            
+        
+
+        marker_081a8488477412b76a7bfbe34372983a.bindPopup(popup_ea3b3a44f785979ee23d8427c621ae85)
+        ;
+
+        
+    
+    
+            marker_081a8488477412b76a7bfbe34372983a.bindTooltip(
+                `<div>
+                     UKZN Law
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4168f6d0e348c9051346db074a820365 = L.marker(
+                [-33.9258, 18.4232],
+                {}
+            ).addTo(marker_cluster_e89757678bafcbd2d9008b2cc861184d);
+        
+    
+            var icon_a8a367b88257b82cb40c2819328cf558 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_4168f6d0e348c9051346db074a820365.setIcon(icon_a8a367b88257b82cb40c2819328cf558);
+        
+    
+        var popup_cdabc43dec58d381e842095f07447ff6 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_350a70aaa2a89b0eb8b840146bac57a9 = $(`<div id="html_350a70aaa2a89b0eb8b840146bac57a9" style="width: 100.0%; height: 100.0%;">     <b>Kheth'Impilo</b><br>     Short Name: KI-SA<br>     City: Cape Town<br>     Projects: HEAT<br></div>`)[0];
+                popup_cdabc43dec58d381e842095f07447ff6.setContent(html_350a70aaa2a89b0eb8b840146bac57a9);
+            
+        
+
+        marker_4168f6d0e348c9051346db074a820365.bindPopup(popup_cdabc43dec58d381e842095f07447ff6)
+        ;
+
+        
+    
+    
+            marker_4168f6d0e348c9051346db074a820365.bindTooltip(
+                `<div>
+                     KI-SA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_984c3e1aa6053afcdabcb68d11ac6447 = L.marker(
+                [-26.1803, 28.0457],
+                {}
+            ).addTo(marker_cluster_e89757678bafcbd2d9008b2cc861184d);
+        
+    
+            var icon_51b303f47a3460a5bef90168f36328aa = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_984c3e1aa6053afcdabcb68d11ac6447.setIcon(icon_51b303f47a3460a5bef90168f36328aa);
+        
+    
+        var popup_dff1e601d340089973045a275b57ff1a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_92d4c9fe43eb060f5b86303c73c81b72 = $(`<div id="html_92d4c9fe43eb060f5b86303c73c81b72" style="width: 100.0%; height: 100.0%;">     <b>Developmental Pathways for Health</b><br>     Short Name: DPHRU<br>     City: Johannesburg<br>     Projects: HEAT<br></div>`)[0];
+                popup_dff1e601d340089973045a275b57ff1a.setContent(html_92d4c9fe43eb060f5b86303c73c81b72);
+            
+        
+
+        marker_984c3e1aa6053afcdabcb68d11ac6447.bindPopup(popup_dff1e601d340089973045a275b57ff1a)
+        ;
+
+        
+    
+    
+            marker_984c3e1aa6053afcdabcb68d11ac6447.bindTooltip(
+                `<div>
+                     DPHRU
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b8e81c220ecee3745654c510e2a46495 = L.marker(
+                [-26.1842, 28.0416],
+                {}
+            ).addTo(marker_cluster_e89757678bafcbd2d9008b2cc861184d);
+        
+    
+            var icon_792a25ef13c8b70ad8c7944317f0a3c1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_b8e81c220ecee3745654c510e2a46495.setIcon(icon_792a25ef13c8b70ad8c7944317f0a3c1);
+        
+    
+        var popup_c8357b4824f894f075bccdd74d6278a0 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_dbd7be4702535f0bf80a2874cb4ac36b = $(`<div id="html_dbd7be4702535f0bf80a2874cb4ac36b" style="width: 100.0%; height: 100.0%;">     <b>Ezintsha Research Centre</b><br>     Short Name: ERC<br>     City: Johannesburg<br>     Projects: HEAT<br></div>`)[0];
+                popup_c8357b4824f894f075bccdd74d6278a0.setContent(html_dbd7be4702535f0bf80a2874cb4ac36b);
+            
+        
+
+        marker_b8e81c220ecee3745654c510e2a46495.bindPopup(popup_c8357b4824f894f075bccdd74d6278a0)
+        ;
+
+        
+    
+    
+            marker_b8e81c220ecee3745654c510e2a46495.bindTooltip(
+                `<div>
+                     ERC
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3a2005e7c8bf99eb9878cfb695f51be2 = L.marker(
+                [-26.2601, 27.9407],
+                {}
+            ).addTo(marker_cluster_e89757678bafcbd2d9008b2cc861184d);
+        
+    
+            var icon_7eb27ad3e82186dbb455ffa5400eef09 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_3a2005e7c8bf99eb9878cfb695f51be2.setIcon(icon_7eb27ad3e82186dbb455ffa5400eef09);
+        
+    
+        var popup_25fa8d567dbb02ddd47c07ff1a70347a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e242e7a3305b32c1472e2208dd55b3d4 = $(`<div id="html_e242e7a3305b32c1472e2208dd55b3d4" style="width: 100.0%; height: 100.0%;">     <b>Chris Hani Baragwanath Hospital</b><br>     Short Name: CHBH<br>     City: Soweto<br>     Projects: HEAT<br></div>`)[0];
+                popup_25fa8d567dbb02ddd47c07ff1a70347a.setContent(html_e242e7a3305b32c1472e2208dd55b3d4);
+            
+        
+
+        marker_3a2005e7c8bf99eb9878cfb695f51be2.bindPopup(popup_25fa8d567dbb02ddd47c07ff1a70347a)
+        ;
+
+        
+    
+    
+            marker_3a2005e7c8bf99eb9878cfb695f51be2.bindTooltip(
+                `<div>
+                     CHBH
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b4307560909d4f62e4756b30fb0012aa = L.marker(
+                [-26.1742, 28.0196],
+                {}
+            ).addTo(marker_cluster_e89757678bafcbd2d9008b2cc861184d);
+        
+    
+            var icon_0fb8b412e2017f1ee613b0368fe33302 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_b4307560909d4f62e4756b30fb0012aa.setIcon(icon_0fb8b412e2017f1ee613b0368fe33302);
+        
+    
+        var popup_b408150ccdefbeeaa68571a5140b0752 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_85a2c13b8a5257530d0140465d9d11a4 = $(`<div id="html_85a2c13b8a5257530d0140465d9d11a4" style="width: 100.0%; height: 100.0%;">     <b>Helen Joseph Hospital</b><br>     Short Name: HJH<br>     City: Johannesburg<br>     Projects: HEAT<br></div>`)[0];
+                popup_b408150ccdefbeeaa68571a5140b0752.setContent(html_85a2c13b8a5257530d0140465d9d11a4);
+            
+        
+
+        marker_b4307560909d4f62e4756b30fb0012aa.bindPopup(popup_b408150ccdefbeeaa68571a5140b0752)
+        ;
+
+        
+    
+    
+            marker_b4307560909d4f62e4756b30fb0012aa.bindTooltip(
+                `<div>
+                     HJH
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d8067c79a607518f595d1ce0519eba7a = L.marker(
+                [-26.2601, 27.9407],
+                {}
+            ).addTo(marker_cluster_e89757678bafcbd2d9008b2cc861184d);
+        
+    
+            var icon_d59fee329cf0d440543d6136b970ccfb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_d8067c79a607518f595d1ce0519eba7a.setIcon(icon_d59fee329cf0d440543d6136b970ccfb);
+        
+    
+        var popup_b588a986b5114a8979915fedf76988db = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_4d9f0ea6a121e657e0fc264bfc92b298 = $(`<div id="html_4d9f0ea6a121e657e0fc264bfc92b298" style="width: 100.0%; height: 100.0%;">     <b>Vaccines and Infectious Diseases Analytics</b><br>     Short Name: VIDA<br>     City: Soweto<br>     Projects: HEAT<br></div>`)[0];
+                popup_b588a986b5114a8979915fedf76988db.setContent(html_4d9f0ea6a121e657e0fc264bfc92b298);
+            
+        
+
+        marker_d8067c79a607518f595d1ce0519eba7a.bindPopup(popup_b588a986b5114a8979915fedf76988db)
+        ;
+
+        
+    
+    
+            marker_d8067c79a607518f595d1ce0519eba7a.bindTooltip(
+                `<div>
+                     VIDA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8e4d9a05d8a15fc6aed770e83771379a = L.marker(
+                [-26.2601, 27.9407],
+                {}
+            ).addTo(marker_cluster_e89757678bafcbd2d9008b2cc861184d);
+        
+    
+            var icon_bf174fda09c959f9c841e9cf7c31f106 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_8e4d9a05d8a15fc6aed770e83771379a.setIcon(icon_bf174fda09c959f9c841e9cf7c31f106);
+        
+    
+        var popup_5ab00ddda863b0f1514f0554cc3bec2e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_bfc239622fae53f07f5c942265c97c73 = $(`<div id="html_bfc239622fae53f07f5c942265c97c73" style="width: 100.0%; height: 100.0%;">     <b>Perinatal HIV Research Unit</b><br>     Short Name: PHRU<br>     City: Soweto<br>     Projects: HEAT<br></div>`)[0];
+                popup_5ab00ddda863b0f1514f0554cc3bec2e.setContent(html_bfc239622fae53f07f5c942265c97c73);
+            
+        
+
+        marker_8e4d9a05d8a15fc6aed770e83771379a.bindPopup(popup_5ab00ddda863b0f1514f0554cc3bec2e)
+        ;
+
+        
+    
+    
+            marker_8e4d9a05d8a15fc6aed770e83771379a.bindTooltip(
+                `<div>
+                     PHRU
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_918a864598d06d7afb5494277d29469b = L.marker(
+                [-26.1739, 28.0194],
+                {}
+            ).addTo(marker_cluster_e89757678bafcbd2d9008b2cc861184d);
+        
+    
+            var icon_755cdb044a0befb73baea5ebcfd2ca1c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_918a864598d06d7afb5494277d29469b.setIcon(icon_755cdb044a0befb73baea5ebcfd2ca1c);
+        
+    
+        var popup_24cfbac66040a3c1c79fe68f24491038 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_be84a25d605755a06ead838d3a4e9d95 = $(`<div id="html_be84a25d605755a06ead838d3a4e9d95" style="width: 100.0%; height: 100.0%;">     <b>Right to Care</b><br>     Short Name: RTC<br>     City: Johannesburg<br>     Projects: HEAT<br></div>`)[0];
+                popup_24cfbac66040a3c1c79fe68f24491038.setContent(html_be84a25d605755a06ead838d3a4e9d95);
+            
+        
+
+        marker_918a864598d06d7afb5494277d29469b.bindPopup(popup_24cfbac66040a3c1c79fe68f24491038)
+        ;
+
+        
+    
+    
+            marker_918a864598d06d7afb5494277d29469b.bindTooltip(
+                `<div>
+                     RTC
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f8c6de4c4a85eb843af5b758523cec4e = L.marker(
+                [-26.1745, 28.019],
+                {}
+            ).addTo(marker_cluster_e89757678bafcbd2d9008b2cc861184d);
+        
+    
+            var icon_4ca1ed48c419cf9705f86cdfe9db2ee1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_f8c6de4c4a85eb843af5b758523cec4e.setIcon(icon_4ca1ed48c419cf9705f86cdfe9db2ee1);
+        
+    
+        var popup_de9977337f9daee274b39105c6d13010 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_76503623b43e1fa5500906f4007b2fb4 = $(`<div id="html_76503623b43e1fa5500906f4007b2fb4" style="width: 100.0%; height: 100.0%;">     <b>Clinical HIV Research Unit</b><br>     Short Name: CHRU<br>     City: Johannesburg<br>     Projects: HEAT<br></div>`)[0];
+                popup_de9977337f9daee274b39105c6d13010.setContent(html_76503623b43e1fa5500906f4007b2fb4);
+            
+        
+
+        marker_f8c6de4c4a85eb843af5b758523cec4e.bindPopup(popup_de9977337f9daee274b39105c6d13010)
+        ;
+
+        
+    
+    
+            marker_f8c6de4c4a85eb843af5b758523cec4e.bindTooltip(
+                `<div>
+                     CHRU
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a4b077c130595405cd8e12901eef4bc3 = L.marker(
+                [-26.1874, 28.0437],
+                {}
+            ).addTo(marker_cluster_e89757678bafcbd2d9008b2cc861184d);
+        
+    
+            var icon_f8a5d6ae56bbfd947d05b7216501ff80 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_a4b077c130595405cd8e12901eef4bc3.setIcon(icon_f8a5d6ae56bbfd947d05b7216501ff80);
+        
+    
+        var popup_93adef67fd83a59cfcf0a1382485bd3d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_8fabc98c7e557bd0e645359320db4be6 = $(`<div id="html_8fabc98c7e557bd0e645359320db4be6" style="width: 100.0%; height: 100.0%;">     <b>Wits Reproductive Health and HIV Institute</b><br>     Short Name: Wits RHI<br>     City: Johannesburg<br>     Projects: HEAT<br></div>`)[0];
+                popup_93adef67fd83a59cfcf0a1382485bd3d.setContent(html_8fabc98c7e557bd0e645359320db4be6);
+            
+        
+
+        marker_a4b077c130595405cd8e12901eef4bc3.bindPopup(popup_93adef67fd83a59cfcf0a1382485bd3d)
+        ;
+
+        
+    
+    
+            marker_a4b077c130595405cd8e12901eef4bc3.bindTooltip(
+                `<div>
+                     Wits RHI
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_540be88cf56c8c87f17a72fa9ce9dcb3 = L.marker(
+                [-26.1864, 28.0405],
+                {}
+            ).addTo(marker_cluster_e89757678bafcbd2d9008b2cc861184d);
+        
+    
+            var icon_60a7a695cbf6d0f95c91eb1f8c2c177e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_540be88cf56c8c87f17a72fa9ce9dcb3.setIcon(icon_60a7a695cbf6d0f95c91eb1f8c2c177e);
+        
+    
+        var popup_1f91b26fe2a54fc730d1b5ccd3260578 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_53c1a6f66b5c8e77c0d840c8824665a5 = $(`<div id="html_53c1a6f66b5c8e77c0d840c8824665a5" style="width: 100.0%; height: 100.0%;">     <b>The Aurum Institute</b><br>     Short Name: Aurum<br>     City: Johannesburg<br>     Projects: HEAT<br></div>`)[0];
+                popup_1f91b26fe2a54fc730d1b5ccd3260578.setContent(html_53c1a6f66b5c8e77c0d840c8824665a5);
+            
+        
+
+        marker_540be88cf56c8c87f17a72fa9ce9dcb3.bindPopup(popup_1f91b26fe2a54fc730d1b5ccd3260578)
+        ;
+
+        
+    
+    
+            marker_540be88cf56c8c87f17a72fa9ce9dcb3.bindTooltip(
+                `<div>
+                     Aurum
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            marker_cluster_e89757678bafcbd2d9008b2cc861184d.addTo(map_a78d6aae6720bba1097f2f0d7e7121e5);
+        
+    
+            var marker_cluster_5d9e54311d2bb5b2ef10f4e07c60f647 = L.markerClusterGroup(
+                {}
+            );
+        
+    
+            var marker_a7b6c34529a9620204cf6923ab0caf2b = L.marker(
+                [-26.1913, 28.0305],
+                {}
+            ).addTo(marker_cluster_5d9e54311d2bb5b2ef10f4e07c60f647);
+        
+    
+            var icon_cf8151eb40fa18943d3d41e6115ad32a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_a7b6c34529a9620204cf6923ab0caf2b.setIcon(icon_cf8151eb40fa18943d3d41e6115ad32a);
+        
+    
+        var popup_6592c6054c54b3315ba08809ddc250ee = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_642d46af94706af47c888bb9ddfd8d7a = $(`<div id="html_642d46af94706af47c888bb9ddfd8d7a" style="width: 100.0%; height: 100.0%;">     <b>Wits Planetary Health</b><br>     Short Name: WPH<br>     City: Johannesburg<br>     Projects: CHAMNHA, HEAT, ENBEL, GHAP, HAPI, BioHEAT, HIGH_Horizons<br></div>`)[0];
+                popup_6592c6054c54b3315ba08809ddc250ee.setContent(html_642d46af94706af47c888bb9ddfd8d7a);
+            
+        
+
+        marker_a7b6c34529a9620204cf6923ab0caf2b.bindPopup(popup_6592c6054c54b3315ba08809ddc250ee)
+        ;
+
+        
+    
+    
+            marker_a7b6c34529a9620204cf6923ab0caf2b.bindTooltip(
+                `<div>
+                     WPH
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            marker_cluster_5d9e54311d2bb5b2ef10f4e07c60f647.addTo(map_a78d6aae6720bba1097f2f0d7e7121e5);
+        
+    
+            var marker_cluster_7e815e28c07bb785bd1bf47ee94a304e = L.markerClusterGroup(
+                {}
+            );
+        
+    
+            var marker_01ffc73bd996569856886a8d3b9de477 = L.marker(
+                [-33.9301, 18.4607],
+                {}
+            ).addTo(marker_cluster_7e815e28c07bb785bd1bf47ee94a304e);
+        
+    
+            var icon_140c78b0375347b2fee8518057e7b451 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_01ffc73bd996569856886a8d3b9de477.setIcon(icon_140c78b0375347b2fee8518057e7b451);
+        
+    
+        var popup_fba745acc2d879b446debcc63a48ca47 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_55b577f91e91513e599ecf5e856f08ce = $(`<div id="html_55b577f91e91513e599ecf5e856f08ce" style="width: 100.0%; height: 100.0%;">     <b>Climate Systems Analysis Group</b><br>     Short Name: CSAG<br>     City: Cape Town<br>     Projects: HEAT, GHAP<br></div>`)[0];
+                popup_fba745acc2d879b446debcc63a48ca47.setContent(html_55b577f91e91513e599ecf5e856f08ce);
+            
+        
+
+        marker_01ffc73bd996569856886a8d3b9de477.bindPopup(popup_fba745acc2d879b446debcc63a48ca47)
+        ;
+
+        
+    
+    
+            marker_01ffc73bd996569856886a8d3b9de477.bindTooltip(
+                `<div>
+                     CSAG
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9f388e00a6fd73ca28de08cd4ef9cba4 = L.marker(
+                [-33.9575, 18.4597],
+                {}
+            ).addTo(marker_cluster_7e815e28c07bb785bd1bf47ee94a304e);
+        
+    
+            var icon_c6213f0267e98230583bc0bbd4a67df5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_9f388e00a6fd73ca28de08cd4ef9cba4.setIcon(icon_c6213f0267e98230583bc0bbd4a67df5);
+        
+    
+        var popup_4767a8222dfa3bb2fca8cb5abcba1081 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a2a63c81989be71478060be88deb6155 = $(`<div id="html_a2a63c81989be71478060be88deb6155" style="width: 100.0%; height: 100.0%;">     <b>University of Cape Town</b><br>     Short Name: UCT<br>     City: Cape Town<br>     Projects: GHAP<br></div>`)[0];
+                popup_4767a8222dfa3bb2fca8cb5abcba1081.setContent(html_a2a63c81989be71478060be88deb6155);
+            
+        
+
+        marker_9f388e00a6fd73ca28de08cd4ef9cba4.bindPopup(popup_4767a8222dfa3bb2fca8cb5abcba1081)
+        ;
+
+        
+    
+    
+            marker_9f388e00a6fd73ca28de08cd4ef9cba4.bindTooltip(
+                `<div>
+                     UCT
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0f5894f977a2e604e11103d7cfa13fc5 = L.marker(
+                [-33.9249, 18.4241],
+                {}
+            ).addTo(marker_cluster_7e815e28c07bb785bd1bf47ee94a304e);
+        
+    
+            var icon_32f92b38aa2d85b1b4dc967eb1c439dc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_0f5894f977a2e604e11103d7cfa13fc5.setIcon(icon_32f92b38aa2d85b1b4dc967eb1c439dc);
+        
+    
+        var popup_9ba20a18cd5ba397c87ad6ed0cdacf0e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_5a45c71fb5b21e5d9fc288521059c52b = $(`<div id="html_5a45c71fb5b21e5d9fc288521059c52b" style="width: 100.0%; height: 100.0%;">     <b>Western Cape Provincial Health</b><br>     Short Name: WCPH<br>     City: Cape Town<br>     Projects: GHAP<br></div>`)[0];
+                popup_9ba20a18cd5ba397c87ad6ed0cdacf0e.setContent(html_5a45c71fb5b21e5d9fc288521059c52b);
+            
+        
+
+        marker_0f5894f977a2e604e11103d7cfa13fc5.bindPopup(popup_9ba20a18cd5ba397c87ad6ed0cdacf0e)
+        ;
+
+        
+    
+    
+            marker_0f5894f977a2e604e11103d7cfa13fc5.bindTooltip(
+                `<div>
+                     WCPH
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_533a79867940cbd979618d15922ba89d = L.marker(
+                [-26.0455, 28.0687],
+                {}
+            ).addTo(marker_cluster_7e815e28c07bb785bd1bf47ee94a304e);
+        
+    
+            var icon_f373f03502b0fd7efca9cfcf6d8f0a71 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_533a79867940cbd979618d15922ba89d.setIcon(icon_f373f03502b0fd7efca9cfcf6d8f0a71);
+        
+    
+        var popup_683260428aa7b8e568667f6d26e4bd43 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_cbd3d323468a014d6c11fd7221e91a8f = $(`<div id="html_cbd3d323468a014d6c11fd7221e91a8f" style="width: 100.0%; height: 100.0%;">     <b>IBM Research Africa</b><br>     Short Name: IBM Africa<br>     City: Johannesburg<br>     Projects: HEAT, GHAP, BioHEAT<br></div>`)[0];
+                popup_683260428aa7b8e568667f6d26e4bd43.setContent(html_cbd3d323468a014d6c11fd7221e91a8f);
+            
+        
+
+        marker_533a79867940cbd979618d15922ba89d.bindPopup(popup_683260428aa7b8e568667f6d26e4bd43)
+        ;
+
+        
+    
+    
+            marker_533a79867940cbd979618d15922ba89d.bindTooltip(
+                `<div>
+                     IBM Africa
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5e0f62cbe0cff963b68e2a7477d4fa4f = L.marker(
+                [-26.0999, 28.0566],
+                {}
+            ).addTo(marker_cluster_7e815e28c07bb785bd1bf47ee94a304e);
+        
+    
+            var icon_6ca189a9a3abe53b54caed72b131dc22 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_5e0f62cbe0cff963b68e2a7477d4fa4f.setIcon(icon_6ca189a9a3abe53b54caed72b131dc22);
+        
+    
+        var popup_48f83ceb47a16fb66ac3d73493a57410 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_2a8bac5926f371df87c64b9e5535070b = $(`<div id="html_2a8bac5926f371df87c64b9e5535070b" style="width: 100.0%; height: 100.0%;">     <b>Quantium Health</b><br>     Short Name: QH<br>     City: Johannesburg<br>     Projects: GHAP<br></div>`)[0];
+                popup_48f83ceb47a16fb66ac3d73493a57410.setContent(html_2a8bac5926f371df87c64b9e5535070b);
+            
+        
+
+        marker_5e0f62cbe0cff963b68e2a7477d4fa4f.bindPopup(popup_48f83ceb47a16fb66ac3d73493a57410)
+        ;
+
+        
+    
+    
+            marker_5e0f62cbe0cff963b68e2a7477d4fa4f.bindTooltip(
+                `<div>
+                     QH
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a4cbaa399d4a3d9ffeef214a3fb74fe2 = L.marker(
+                [-26.1921, 28.0307],
+                {}
+            ).addTo(marker_cluster_7e815e28c07bb785bd1bf47ee94a304e);
+        
+    
+            var icon_fb5b3c5c926afc11fea5adef0ce15028 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_a4cbaa399d4a3d9ffeef214a3fb74fe2.setIcon(icon_fb5b3c5c926afc11fea5adef0ce15028);
+        
+    
+        var popup_b9073ff22648cf42a83ba9898dd7ff0b = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_865c3fbe991e84a127019d1a5de975d9 = $(`<div id="html_865c3fbe991e84a127019d1a5de975d9" style="width: 100.0%; height: 100.0%;">     <b>Section 27</b><br>     Short Name: S27<br>     City: Johannesburg<br>     Projects: GHAP, HAPI<br></div>`)[0];
+                popup_b9073ff22648cf42a83ba9898dd7ff0b.setContent(html_865c3fbe991e84a127019d1a5de975d9);
+            
+        
+
+        marker_a4cbaa399d4a3d9ffeef214a3fb74fe2.bindPopup(popup_b9073ff22648cf42a83ba9898dd7ff0b)
+        ;
+
+        
+    
+    
+            marker_a4cbaa399d4a3d9ffeef214a3fb74fe2.bindTooltip(
+                `<div>
+                     S27
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f3c67f51760b1edbda4d4b7ec60b14d9 = L.marker(
+                [-26.1913, 28.0305],
+                {}
+            ).addTo(marker_cluster_7e815e28c07bb785bd1bf47ee94a304e);
+        
+    
+            var icon_306c93388c46103ff96d2f0a91c639f4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_f3c67f51760b1edbda4d4b7ec60b14d9.setIcon(icon_306c93388c46103ff96d2f0a91c639f4);
+        
+    
+        var popup_a055cd1f69d060277bec2c3f5ba6b821 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_7dc87e5cccd10a67f705be8bff62025f = $(`<div id="html_7dc87e5cccd10a67f705be8bff62025f" style="width: 100.0%; height: 100.0%;">     <b>Wits Planetary Health</b><br>     Short Name: WPH<br>     City: Johannesburg<br>     Projects: CHAMNHA, HEAT, ENBEL, GHAP, HAPI, BioHEAT, HIGH_Horizons<br></div>`)[0];
+                popup_a055cd1f69d060277bec2c3f5ba6b821.setContent(html_7dc87e5cccd10a67f705be8bff62025f);
+            
+        
+
+        marker_f3c67f51760b1edbda4d4b7ec60b14d9.bindPopup(popup_a055cd1f69d060277bec2c3f5ba6b821)
+        ;
+
+        
+    
+    
+            marker_f3c67f51760b1edbda4d4b7ec60b14d9.bindTooltip(
+                `<div>
+                     WPH
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d9b49ff3918d6df9d3bb757b3519dfd7 = L.marker(
+                [-25.7545, 28.2293],
+                {}
+            ).addTo(marker_cluster_7e815e28c07bb785bd1bf47ee94a304e);
+        
+    
+            var icon_40a7b0af4af55b0b82e4415a0038ec12 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_d9b49ff3918d6df9d3bb757b3519dfd7.setIcon(icon_40a7b0af4af55b0b82e4415a0038ec12);
+        
+    
+        var popup_79b65de5817b7d05d3ffe450105592a4 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_cb6ada723c2bbe7d333c68f09538f8ba = $(`<div id="html_cb6ada723c2bbe7d333c68f09538f8ba" style="width: 100.0%; height: 100.0%;">     <b>University of Pretoria</b><br>     Short Name: UP<br>     City: Pretoria<br>     Projects: HEAT, GHAP, HAPI<br></div>`)[0];
+                popup_79b65de5817b7d05d3ffe450105592a4.setContent(html_cb6ada723c2bbe7d333c68f09538f8ba);
+            
+        
+
+        marker_d9b49ff3918d6df9d3bb757b3519dfd7.bindPopup(popup_79b65de5817b7d05d3ffe450105592a4)
+        ;
+
+        
+    
+    
+            marker_d9b49ff3918d6df9d3bb757b3519dfd7.bindTooltip(
+                `<div>
+                     UP
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            marker_cluster_7e815e28c07bb785bd1bf47ee94a304e.addTo(map_a78d6aae6720bba1097f2f0d7e7121e5);
+        
+    
+            var marker_cluster_0ffd0842d15c967d153dafef3a98bcdc = L.markerClusterGroup(
+                {}
+            );
+        
+    
+            var marker_57aab43f93348a1553a38a3b128e5720 = L.marker(
+                [-26.1921, 28.0307],
+                {}
+            ).addTo(marker_cluster_0ffd0842d15c967d153dafef3a98bcdc);
+        
+    
+            var icon_4e44a238b81aa8b5c0126eab7c515330 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_57aab43f93348a1553a38a3b128e5720.setIcon(icon_4e44a238b81aa8b5c0126eab7c515330);
+        
+    
+        var popup_7a7fa1f87b318710afc5863769f099fa = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_3a5ad4684165c65534c0e538312f3acb = $(`<div id="html_3a5ad4684165c65534c0e538312f3acb" style="width: 100.0%; height: 100.0%;">     <b>Section 27</b><br>     Short Name: S27<br>     City: Johannesburg<br>     Projects: GHAP, HAPI<br></div>`)[0];
+                popup_7a7fa1f87b318710afc5863769f099fa.setContent(html_3a5ad4684165c65534c0e538312f3acb);
+            
+        
+
+        marker_57aab43f93348a1553a38a3b128e5720.bindPopup(popup_7a7fa1f87b318710afc5863769f099fa)
+        ;
+
+        
+    
+    
+            marker_57aab43f93348a1553a38a3b128e5720.bindTooltip(
+                `<div>
+                     S27
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0dd00b3fa73ea50f50a95977928c8f22 = L.marker(
+                [-26.1913, 28.0305],
+                {}
+            ).addTo(marker_cluster_0ffd0842d15c967d153dafef3a98bcdc);
+        
+    
+            var icon_213904445f63b7c2f4e4d7b0417d9943 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_0dd00b3fa73ea50f50a95977928c8f22.setIcon(icon_213904445f63b7c2f4e4d7b0417d9943);
+        
+    
+        var popup_9b7a0343a0b67e192c8922a142747a5b = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_2717ea2d1b5c08b8554c86664d042a10 = $(`<div id="html_2717ea2d1b5c08b8554c86664d042a10" style="width: 100.0%; height: 100.0%;">     <b>Wits Planetary Health</b><br>     Short Name: WPH<br>     City: Johannesburg<br>     Projects: CHAMNHA, HEAT, ENBEL, GHAP, HAPI, BioHEAT, HIGH_Horizons<br></div>`)[0];
+                popup_9b7a0343a0b67e192c8922a142747a5b.setContent(html_2717ea2d1b5c08b8554c86664d042a10);
+            
+        
+
+        marker_0dd00b3fa73ea50f50a95977928c8f22.bindPopup(popup_9b7a0343a0b67e192c8922a142747a5b)
+        ;
+
+        
+    
+    
+            marker_0dd00b3fa73ea50f50a95977928c8f22.bindTooltip(
+                `<div>
+                     WPH
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7695eaeae32013746571c6bc9e0183d5 = L.marker(
+                [-26.1905, 28.0298],
+                {}
+            ).addTo(marker_cluster_0ffd0842d15c967d153dafef3a98bcdc);
+        
+    
+            var icon_0a4d69bcc499926e8bd48451c4c71332 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_7695eaeae32013746571c6bc9e0183d5.setIcon(icon_0a4d69bcc499926e8bd48451c4c71332);
+        
+    
+        var popup_53c4120ad0e8e1eeaabcf91c8c348c56 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6e820139a2afc4c9c25c2160a847c065 = $(`<div id="html_6e820139a2afc4c9c25c2160a847c065" style="width: 100.0%; height: 100.0%;">     <b>Global Change Institute</b><br>     Short Name: GCI<br>     City: Johannesburg<br>     Projects: HAPI<br></div>`)[0];
+                popup_53c4120ad0e8e1eeaabcf91c8c348c56.setContent(html_6e820139a2afc4c9c25c2160a847c065);
+            
+        
+
+        marker_7695eaeae32013746571c6bc9e0183d5.bindPopup(popup_53c4120ad0e8e1eeaabcf91c8c348c56)
+        ;
+
+        
+    
+    
+            marker_7695eaeae32013746571c6bc9e0183d5.bindTooltip(
+                `<div>
+                     GCI
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_474af7300856af014b219992ea9673e3 = L.marker(
+                [-25.7545, 28.2293],
+                {}
+            ).addTo(marker_cluster_0ffd0842d15c967d153dafef3a98bcdc);
+        
+    
+            var icon_ce1355311c65e4dba8aacc7a9c885af9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_474af7300856af014b219992ea9673e3.setIcon(icon_ce1355311c65e4dba8aacc7a9c885af9);
+        
+    
+        var popup_8502b1cc851a5d2640b1c2669b971494 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_8a3f9fecb87a4a60b1a2f965ece8f1b6 = $(`<div id="html_8a3f9fecb87a4a60b1a2f965ece8f1b6" style="width: 100.0%; height: 100.0%;">     <b>University of Pretoria</b><br>     Short Name: UP<br>     City: Pretoria<br>     Projects: HEAT, GHAP, HAPI<br></div>`)[0];
+                popup_8502b1cc851a5d2640b1c2669b971494.setContent(html_8a3f9fecb87a4a60b1a2f965ece8f1b6);
+            
+        
+
+        marker_474af7300856af014b219992ea9673e3.bindPopup(popup_8502b1cc851a5d2640b1c2669b971494)
+        ;
+
+        
+    
+    
+            marker_474af7300856af014b219992ea9673e3.bindTooltip(
+                `<div>
+                     UP
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_415939b4100daa819bdd44dc590bbe77 = L.marker(
+                [-25.8069, 28.2041],
+                {}
+            ).addTo(marker_cluster_0ffd0842d15c967d153dafef3a98bcdc);
+        
+    
+            var icon_ac74b4f26342eb719d746a0133cefd40 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_415939b4100daa819bdd44dc590bbe77.setIcon(icon_ac74b4f26342eb719d746a0133cefd40);
+        
+    
+        var popup_56e0f4aace6f425fc1275c282eb8f3ee = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_afe9209f1b4b6a395d9c3c88f941c054 = $(`<div id="html_afe9209f1b4b6a395d9c3c88f941c054" style="width: 100.0%; height: 100.0%;">     <b>South African Weather Service</b><br>     Short Name: SAWS<br>     City: Pretoria<br>     Projects: HAPI<br></div>`)[0];
+                popup_56e0f4aace6f425fc1275c282eb8f3ee.setContent(html_afe9209f1b4b6a395d9c3c88f941c054);
+            
+        
+
+        marker_415939b4100daa819bdd44dc590bbe77.bindPopup(popup_56e0f4aace6f425fc1275c282eb8f3ee)
+        ;
+
+        
+    
+    
+            marker_415939b4100daa819bdd44dc590bbe77.bindTooltip(
+                `<div>
+                     SAWS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            marker_cluster_0ffd0842d15c967d153dafef3a98bcdc.addTo(map_a78d6aae6720bba1097f2f0d7e7121e5);
+        
+    
+            var marker_cluster_9d2b2d55546046d52e13837f1739a7e4 = L.markerClusterGroup(
+                {}
+            );
+        
+    
+            var marker_7b76177bf656db80a52b044961f61cc3 = L.marker(
+                [-26.2601, 27.9408],
+                {}
+            ).addTo(marker_cluster_9d2b2d55546046d52e13837f1739a7e4);
+        
+    
+            var icon_878af51fdf21efce2ed47b1c23e6c3a0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkred", "prefix": "glyphicon"}
+            );
+            marker_7b76177bf656db80a52b044961f61cc3.setIcon(icon_878af51fdf21efce2ed47b1c23e6c3a0);
+        
+    
+        var popup_44f724a0463c05251051e2eed5d1d723 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_885b52bc20eb545bb52f95f182297a1d = $(`<div id="html_885b52bc20eb545bb52f95f182297a1d" style="width: 100.0%; height: 100.0%;">     <b>Empilweni Services and Research Unit</b><br>     Short Name: ESRU<br>     City: Johannesburg<br>     Projects: BioHEAT<br></div>`)[0];
+                popup_44f724a0463c05251051e2eed5d1d723.setContent(html_885b52bc20eb545bb52f95f182297a1d);
+            
+        
+
+        marker_7b76177bf656db80a52b044961f61cc3.bindPopup(popup_44f724a0463c05251051e2eed5d1d723)
+        ;
+
+        
+    
+    
+            marker_7b76177bf656db80a52b044961f61cc3.bindTooltip(
+                `<div>
+                     ESRU
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a35d785ee0341796c78410df044b8af2 = L.marker(
+                [-26.0455, 28.0687],
+                {}
+            ).addTo(marker_cluster_9d2b2d55546046d52e13837f1739a7e4);
+        
+    
+            var icon_ebc4f7fd706f5845b4ff04afc25cca66 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkred", "prefix": "glyphicon"}
+            );
+            marker_a35d785ee0341796c78410df044b8af2.setIcon(icon_ebc4f7fd706f5845b4ff04afc25cca66);
+        
+    
+        var popup_dc447d86c7883dbec017069820b1f62e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_75db0770e377a092894303ba0e63f825 = $(`<div id="html_75db0770e377a092894303ba0e63f825" style="width: 100.0%; height: 100.0%;">     <b>IBM Research Africa</b><br>     Short Name: IBM Africa<br>     City: Johannesburg<br>     Projects: HEAT, GHAP, BioHEAT<br></div>`)[0];
+                popup_dc447d86c7883dbec017069820b1f62e.setContent(html_75db0770e377a092894303ba0e63f825);
+            
+        
+
+        marker_a35d785ee0341796c78410df044b8af2.bindPopup(popup_dc447d86c7883dbec017069820b1f62e)
+        ;
+
+        
+    
+    
+            marker_a35d785ee0341796c78410df044b8af2.bindTooltip(
+                `<div>
+                     IBM Africa
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_48de448a63c2ce1e338570e4cc97ee97 = L.marker(
+                [-26.1913, 28.0305],
+                {}
+            ).addTo(marker_cluster_9d2b2d55546046d52e13837f1739a7e4);
+        
+    
+            var icon_becf97a5841c17cb022116b38d0decab = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkred", "prefix": "glyphicon"}
+            );
+            marker_48de448a63c2ce1e338570e4cc97ee97.setIcon(icon_becf97a5841c17cb022116b38d0decab);
+        
+    
+        var popup_d5d0bf70531706f0fc8af37d8e2d674a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_170230db5ba041368b71109ed5a7939e = $(`<div id="html_170230db5ba041368b71109ed5a7939e" style="width: 100.0%; height: 100.0%;">     <b>Wits Planetary Health</b><br>     Short Name: WPH<br>     City: Johannesburg<br>     Projects: CHAMNHA, HEAT, ENBEL, GHAP, HAPI, BioHEAT, HIGH_Horizons<br></div>`)[0];
+                popup_d5d0bf70531706f0fc8af37d8e2d674a.setContent(html_170230db5ba041368b71109ed5a7939e);
+            
+        
+
+        marker_48de448a63c2ce1e338570e4cc97ee97.bindPopup(popup_d5d0bf70531706f0fc8af37d8e2d674a)
+        ;
+
+        
+    
+    
+            marker_48de448a63c2ce1e338570e4cc97ee97.bindTooltip(
+                `<div>
+                     WPH
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c159e90ebe72e5bcb7affa14259e8636 = L.marker(
+                [-26.1814, 28.0382],
+                {}
+            ).addTo(marker_cluster_9d2b2d55546046d52e13837f1739a7e4);
+        
+    
+            var icon_c551238b2dac925b17a77d030b53067c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkred", "prefix": "glyphicon"}
+            );
+            marker_c159e90ebe72e5bcb7affa14259e8636.setIcon(icon_c551238b2dac925b17a77d030b53067c);
+        
+    
+        var popup_1af8739161a8947e3b616e713cbeff63 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f7e4318903f00cd5af00ff6215234651 = $(`<div id="html_f7e4318903f00cd5af00ff6215234651" style="width: 100.0%; height: 100.0%;">     <b>Sydney Brenner Institute</b><br>     Short Name: SBIMB<br>     City: Johannesburg<br>     Projects: BioHEAT<br></div>`)[0];
+                popup_1af8739161a8947e3b616e713cbeff63.setContent(html_f7e4318903f00cd5af00ff6215234651);
+            
+        
+
+        marker_c159e90ebe72e5bcb7affa14259e8636.bindPopup(popup_1af8739161a8947e3b616e713cbeff63)
+        ;
+
+        
+    
+    
+            marker_c159e90ebe72e5bcb7affa14259e8636.bindTooltip(
+                `<div>
+                     SBIMB
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a24efe75997045737d050808b16ff5c4 = L.marker(
+                [-26.1825, 27.9735],
+                {}
+            ).addTo(marker_cluster_9d2b2d55546046d52e13837f1739a7e4);
+        
+    
+            var icon_fd1f2409878c9c45ae21b1beb6e37dea = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkred", "prefix": "glyphicon"}
+            );
+            marker_a24efe75997045737d050808b16ff5c4.setIcon(icon_fd1f2409878c9c45ae21b1beb6e37dea);
+        
+    
+        var popup_afe1669d69feb68fc260993912aa1783 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6725f17a1faa23046c4aa021677c9915 = $(`<div id="html_6725f17a1faa23046c4aa021677c9915" style="width: 100.0%; height: 100.0%;">     <b>Rahima Moosa Hospital</b><br>     Short Name: RMH<br>     City: Johannesburg<br>     Projects: BioHEAT<br></div>`)[0];
+                popup_afe1669d69feb68fc260993912aa1783.setContent(html_6725f17a1faa23046c4aa021677c9915);
+            
+        
+
+        marker_a24efe75997045737d050808b16ff5c4.bindPopup(popup_afe1669d69feb68fc260993912aa1783)
+        ;
+
+        
+    
+    
+            marker_a24efe75997045737d050808b16ff5c4.bindTooltip(
+                `<div>
+                     RMH
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ade9f681fe640db6ecd6230fd0a1c787 = L.marker(
+                [-26.1814, 28.0382],
+                {}
+            ).addTo(marker_cluster_9d2b2d55546046d52e13837f1739a7e4);
+        
+    
+            var icon_0fd2b791ff766a3d1110695144c9efa8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkred", "prefix": "glyphicon"}
+            );
+            marker_ade9f681fe640db6ecd6230fd0a1c787.setIcon(icon_0fd2b791ff766a3d1110695144c9efa8);
+        
+    
+        var popup_44c7e25fe85a38320059bf589c0bb3a2 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a472c977e0c624dfbffeaaa067f21094 = $(`<div id="html_a472c977e0c624dfbffeaaa067f21094" style="width: 100.0%; height: 100.0%;">     <b>Division of Human Genetics</b><br>     Short Name: DHG<br>     City: Johannesburg<br>     Projects: BioHEAT<br></div>`)[0];
+                popup_44c7e25fe85a38320059bf589c0bb3a2.setContent(html_a472c977e0c624dfbffeaaa067f21094);
+            
+        
+
+        marker_ade9f681fe640db6ecd6230fd0a1c787.bindPopup(popup_44c7e25fe85a38320059bf589c0bb3a2)
+        ;
+
+        
+    
+    
+            marker_ade9f681fe640db6ecd6230fd0a1c787.bindTooltip(
+                `<div>
+                     DHG
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_eac06622b86bdb783611f97ea5abafd5 = L.marker(
+                [-33.9328, 18.8654],
+                {}
+            ).addTo(marker_cluster_9d2b2d55546046d52e13837f1739a7e4);
+        
+    
+            var icon_867868230a1186c414cabcc4ee45bbdd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkred", "prefix": "glyphicon"}
+            );
+            marker_eac06622b86bdb783611f97ea5abafd5.setIcon(icon_867868230a1186c414cabcc4ee45bbdd);
+        
+    
+        var popup_7fe4b0e6d97106b67cd55fe4933fd2f6 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_0120e4a0c11db515a424a57f1193d165 = $(`<div id="html_0120e4a0c11db515a424a57f1193d165" style="width: 100.0%; height: 100.0%;">     <b>Stellenbosch University</b><br>     Short Name: SU<br>     City: Stellenbosch<br>     Projects: BioHEAT<br></div>`)[0];
+                popup_7fe4b0e6d97106b67cd55fe4933fd2f6.setContent(html_0120e4a0c11db515a424a57f1193d165);
+            
+        
+
+        marker_eac06622b86bdb783611f97ea5abafd5.bindPopup(popup_7fe4b0e6d97106b67cd55fe4933fd2f6)
+        ;
+
+        
+    
+    
+            marker_eac06622b86bdb783611f97ea5abafd5.bindTooltip(
+                `<div>
+                     SU
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            marker_cluster_9d2b2d55546046d52e13837f1739a7e4.addTo(map_a78d6aae6720bba1097f2f0d7e7121e5);
+        
+    
+            var marker_cluster_d1a4d6f8863b0175fce3a52d6ec57075 = L.markerClusterGroup(
+                {}
+            );
+        
+    
+            var marker_8feb360823a53641d5cc54ca3b868530 = L.marker(
+                [-26.1913, 28.0305],
+                {}
+            ).addTo(marker_cluster_d1a4d6f8863b0175fce3a52d6ec57075);
+        
+    
+            var icon_1a027ad7f4e45494866d54f48936b628 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkblue", "prefix": "glyphicon"}
+            );
+            marker_8feb360823a53641d5cc54ca3b868530.setIcon(icon_1a027ad7f4e45494866d54f48936b628);
+        
+    
+        var popup_c28a9f705553870c232963d7e6175bc0 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_556e30c93031a4824e71e5b0e84df21c = $(`<div id="html_556e30c93031a4824e71e5b0e84df21c" style="width: 100.0%; height: 100.0%;">     <b>Wits Planetary Health</b><br>     Short Name: WPH<br>     City: Johannesburg<br>     Projects: CHAMNHA, HEAT, ENBEL, GHAP, HAPI, BioHEAT, HIGH_Horizons<br></div>`)[0];
+                popup_c28a9f705553870c232963d7e6175bc0.setContent(html_556e30c93031a4824e71e5b0e84df21c);
+            
+        
+
+        marker_8feb360823a53641d5cc54ca3b868530.bindPopup(popup_c28a9f705553870c232963d7e6175bc0)
+        ;
+
+        
+    
+    
+            marker_8feb360823a53641d5cc54ca3b868530.bindTooltip(
+                `<div>
+                     WPH
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            marker_cluster_d1a4d6f8863b0175fce3a52d6ec57075.addTo(map_a78d6aae6720bba1097f2f0d7e7121e5);
+        
+    
+            var layer_control_0cdbeae2751d70c34fa744934a4cfef2_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_18245c39d856bcccae8b8d41d9f7b96e,
+                },
+                overlays :  {
+                    "All Partners" : marker_cluster_e5e67088e40013262be351f005a90124,
+                    "CHAMNHA" : marker_cluster_b784817517fdc693c2d0bc09119bab3a,
+                    "HEAT" : marker_cluster_e89757678bafcbd2d9008b2cc861184d,
+                    "ENBEL" : marker_cluster_5d9e54311d2bb5b2ef10f4e07c60f647,
+                    "GHAP" : marker_cluster_7e815e28c07bb785bd1bf47ee94a304e,
+                    "HAPI" : marker_cluster_0ffd0842d15c967d153dafef3a98bcdc,
+                    "BioHEAT" : marker_cluster_9d2b2d55546046d52e13837f1739a7e4,
+                    "HIGH_Horizons" : marker_cluster_d1a4d6f8863b0175fce3a52d6ec57075,
+                },
+            };
+            let layer_control_0cdbeae2751d70c34fa744934a4cfef2 = L.control.layers(
+                layer_control_0cdbeae2751d70c34fa744934a4cfef2_layers.base_layers,
+                layer_control_0cdbeae2751d70c34fa744934a4cfef2_layers.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_a78d6aae6720bba1097f2f0d7e7121e5);
+
+        
+</script>
+</html>

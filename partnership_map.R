@@ -80,6 +80,18 @@ if(length(missing_countries) > 0) {
 df <- read_tsv("C:/Users/CraigParker/OneDrive - Wits Health Consortium/PHR PC/Desktop/Partners/partners_cleaned.csv") %>%
   mutate(across(where(is.character), ~ifelse(is.na(.), "", .)))  # Convert NA values to empty strings
 
+# Add a column with shortened institution names for labels
+df <- df %>%
+  mutate(
+    Short_Name = case_when(
+      grepl("University", Institution) ~ gsub("University of |University|Universität", "Univ.", Institution),
+      grepl("Institute", Institution) ~ gsub("Institute of |Institute", "Inst.", Institution),
+      TRUE ~ Institution
+    ),
+    # Further shorten names if they're still too long
+    Short_Name = ifelse(nchar(Short_Name) > 25, paste0(substr(Short_Name, 1, 22), "..."), Short_Name)
+  )
+
 # Filter for African and European institutions AND only include official partners
 all_countries <- africa_europe$name
 df_filtered <- df %>%
@@ -130,6 +142,13 @@ partners_sf <- df_filtered %>%
   filter(!is.na(lon) & !is.na(lat)) %>%  # Remove rows with missing coordinates
   st_as_sf(coords = c("lon", "lat"), crs = 4326)
 
+# Create separate datasets for Africa and Europe partners
+africa_partners_sf <- partners_sf %>% 
+  filter(Country %in% africa$name)
+
+europe_partners_sf <- partners_sf %>% 
+  filter(Country %in% europe$name)
+
 # Define project-specific colors - colorblind-friendly palette
 project_colors <- c(
   "CHAMNHA" = "#3182BD",       # Blue
@@ -150,7 +169,7 @@ custom_graticule <- st_graticule(
   crs = 4326
 )
 
-# Create Europe-only map
+# Create Europe-only map - UPDATED VERSION WITH BETTER LABEL HANDLING
 europe_map <- ggplot() +
   # Add light graticule for scientific precision
   geom_sf(data = custom_graticule,
@@ -167,7 +186,7 @@ europe_map <- ggplot() +
   scale_fill_identity() +
   
   # Filter for only European partners - with OFFICIAL partners only!
-  geom_sf(data = partners_sf %>% filter(Country %in% europe$name),
+  geom_sf(data = europe_partners_sf,
           aes(size = total_projects, fill = primary_project),
           alpha = 0.85,
           shape = 21,  # Filled circle
@@ -187,8 +206,8 @@ europe_map <- ggplot() +
   
   # Add precisely positioned labels for all European institutions with improved visibility
   geom_text_repel(
-    data = partners_sf %>% filter(Country %in% europe$name),
-    aes(label = Institution, geometry = geometry),
+    data = europe_partners_sf,
+    aes(label = Short_Name, geometry = geometry),
     stat = "sf_coordinates",
     size = 3.2,
     fontface = "plain",
@@ -200,7 +219,7 @@ europe_map <- ggplot() +
     segment.color = "gray40",
     segment.size = 0.3,
     min.segment.length = 0,
-    bg.colour = "white",
+    bg.colour = alpha("white", 0.7),  # Semi-transparent background
     bg.r = 0.15
   ) +
   
@@ -246,7 +265,7 @@ europe_map <- europe_map +
     panel.border = element_rect(fill = NA, color = "black", linewidth = 0.8)
   )
 
-# Create the map of Africa and Europe
+# Create the map of Africa and Europe - OVERVIEW MAP WITHOUT LABELS
 map <- ggplot() +
   # Add light graticule for scientific precision
   geom_sf(data = custom_graticule,
@@ -307,24 +326,7 @@ map <- ggplot() +
                          title.hjust = 0.5
                        )) +
   
-  # Add precisely positioned labels for all institutions
-  geom_text_repel(
-    data = partners_sf,
-    aes(label = Institution, geometry = geometry),
-    stat = "sf_coordinates",
-    size = 2.5,
-    fontface = "plain",
-    family = body_font,
-    force = 2,
-    max.overlaps = 15,
-    box.padding = 0.5,
-    point.padding = 0.2,
-    segment.color = "gray40",
-    segment.size = 0.3,
-    min.segment.length = 0,
-    bg.color = "white",
-    bg.r = 0.1
-  ) +
+  # REMOVED LABELS FOR OVERVIEW MAP
   
   # Add title and legend
   labs(
@@ -827,3 +829,143 @@ cat("3. Wits_Planetary_Health_Europe_Detailed_Map.pdf/png\n")
 print(map)
 print(map_with_label)
 print(detailed_europe_map)
+
+# Create detailed Africa-only map WITH LABELS
+africa_detailed_map <- ggplot() +
+  # Add light graticule for scientific precision
+  geom_sf(data = custom_graticule,
+          color = alpha("gray80", 0.5),
+          size = 0.2) +
+  
+  # Base map with highlighted countries
+  geom_sf(data = africa,
+          aes(fill = ifelse(name %in% heat_countries, "#FFFAC8", "white")),
+          color = "gray40",           
+          size = 0.3) +
+  
+  # Set the fill manually
+  scale_fill_identity() +
+  
+  # Add partner points sized by project count and colored by project
+  geom_sf(data = africa_partners_sf,
+          aes(size = total_projects, fill = primary_project),
+          alpha = 0.85,
+          shape = 21,
+          stroke = 0.5,
+          color = "gray20") +
+  
+  # Set project colors for the fill
+  scale_fill_manual(values = project_colors, 
+                    name = "Research Project",
+                    na.value = "gray50") +
+  
+  # Set size scale with clear breaks
+  scale_size_continuous(name = "Number of Projects",
+                       breaks = 1:7,
+                       limits = c(1, 7),
+                       range = c(3, 8)) +
+  
+  # Add labels for African institutions with improved visibility
+  geom_text_repel(
+    data = africa_partners_sf,
+    aes(label = Short_Name, geometry = geometry),
+    stat = "sf_coordinates",
+    size = 3.0,
+    fontface = "plain",
+    family = body_font,
+    force = 3,
+    max.overlaps = 30,
+    box.padding = 0.5,
+    point.padding = 0.3,
+    segment.color = "gray40",
+    segment.size = 0.3,
+    min.segment.length = 0,
+    bg.colour = alpha("white", 0.7),
+    bg.r = 0.15
+  ) +
+  
+  # Add title and caption
+  labs(
+    title = "Wits Planetary Health's African Research Partners",
+    subtitle = "Official Partners in Africa",
+    caption = paste0("Figure prepared for Wellcome Trust application | Data: Research Collaboration Network | ", format(Sys.Date(), "%B %Y"))
+  ) +
+  
+  # Apply a clean theme
+  theme_minimal(base_family = body_font) +
+  
+  # Customize the theme
+  theme(
+    text = element_text(family = body_font),
+    plot.title = element_text(family = title_font, size = 16, face = "bold", hjust = 0.5),
+    plot.subtitle = element_text(size = 12, hjust = 0.5),
+    plot.caption = element_text(size = 8, color = "gray40", hjust = 1, margin = margin(t = 10)),
+    panel.grid.major = element_line(color = "gray90", linewidth = 0.2),
+    panel.grid.minor = element_blank(),
+    legend.position = "right",
+    legend.box = "vertical",
+    legend.title = element_text(size = 9, face = "bold"),
+    legend.text = element_text(size = 8),
+    legend.key.size = unit(0.5, "cm"),
+    legend.margin = margin(6, 6, 6, 6),
+    legend.box.margin = margin(0, 0, 0, 10),
+    legend.box.background = element_rect(color = "gray60", fill = alpha("white", 0.95), linewidth = 0.5),
+    legend.background = element_rect(fill = alpha("white", 0.8)),
+    axis.text = element_text(size = 7, color = "gray40"),
+    plot.background = element_rect(fill = "white", color = "black", linewidth = 0.5)
+  ) +
+  
+  # Set the aspect ratio for better display of Africa
+  coord_sf(xlim = c(-25, 55), ylim = c(-40, 40), expand = FALSE) +
+  
+  # Add north arrow and scale bar
+  annotation_north_arrow(
+    location = "bl",
+    which_north = "true",
+    pad_x = unit(0.2, "in"),
+    pad_y = unit(0.2, "in"),
+    style = north_arrow_fancy_orienteering(
+      fill = c("gray40", "white"),
+      line_col = "gray20"
+    ),
+    height = unit(1, "cm"),
+    width = unit(1, "cm")
+  ) +
+  annotation_scale(
+    location = "bl",
+    width_hint = 0.15,
+    bar_cols = c("gray20", "white"),
+    text_family = body_font,
+    pad_x = unit(2.0, "in"),
+    pad_y = unit(0.2, "in"),
+    text_cex = 0.7,
+    text_pad = unit(0.15, "cm"),
+    height = unit(0.15, "cm")
+  )
+
+# Save the new maps
+ggsave(
+  "Wits_Planetary_Health_Africa_Detailed_Map.pdf", 
+  africa_detailed_map,
+  width = 10, 
+  height = 8, 
+  dpi = 600,
+  device = cairo_pdf
+)
+
+ggsave(
+  "Wits_Planetary_Health_Africa_Detailed_Map.png", 
+  africa_detailed_map,
+  width = 10, 
+  height = 8, 
+  dpi = 300
+)
+
+# Save the updated CSV with short names
+write.csv(df, 
+          "C:/Users/CraigParker/OneDrive - Wits Health Consortium/PHR PC/Desktop/Partners/partners_cleaned_with_short_names.csv", 
+          row.names = FALSE)
+
+cat("\nCreated detailed Africa map and saved updated CSV with shortened institution names.\n")
+cat("Files saved as: Wits_Planetary_Health_Africa_Detailed_Map.pdf/png\n")
+cat("Updated CSV saved as: partners_cleaned_with_short_names.csv\n")
